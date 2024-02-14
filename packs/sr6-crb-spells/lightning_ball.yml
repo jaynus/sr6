@@ -1,0 +1,26 @@
+name: Lightning Ball
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Its what deities from Zeus to Thor use to smite those who hav e it coming,
+    which means it should be good enough for you, too. Lightning Bol t hits a
+    single target with electricity, while Lightning Ball is area effect.  Both
+    spells do Electricity elemental damage (p. 109), imposing the Zapped status
+     (p. 53) for a number of turns equal to net hits.
+  type: P
+  formulas:
+    drain: '6'
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: I
+    value: 0
+  damage:
+    combat: indirect
+    type: P
+    form: electric
+_id: 49I6nkmE6MiyWrrr
+_key: '!items!49I6nkmE6MiyWrrr'

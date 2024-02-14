@@ -1,0 +1,18 @@
+name: Reflex Recorder
+type: augmentation
+img: /systems/sr6/assets/items/cyber_headware.webp
+effects: []
+system:
+  description: >-
+    This system uses extra nervous tissue linked to specific areas of the body
+    to improve muscle memory. The reflex recorder adds 1 to the rating of a
+    skill linked to a Physical attribute. Multiple recorders may be taken for
+    multiple skills, but you can’t implant two reflex recorders for the same
+    skill.
+  essenceCostFormula: '0.1'
+  cost: '@rating * 9000'
+  availability:
+    illegal: false
+    rating: 5
+_id: yh6WWPLIQY1sxjSc
+_key: '!items!yh6WWPLIQY1sxjSc'

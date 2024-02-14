@@ -1,0 +1,34 @@
+name: Ares Alpha (Grenade Launcher)
+type: weapon
+img: /systems/sr6/assets/items/rifle_assault.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: RIFLE_ASSAULT
+  skillUse:
+    skill: firearms
+    specialization: rifles
+    attribute: agility
+  costFormula: '0'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 5
+  matrix: null
+  attackRatings:
+    closeFormula: '4'
+    nearFormula: '10'
+    mediumFormula: '6'
+    farFormula: '2'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '0'
+    damageType: ''
+  firemodes:
+    - SS
+  description: |
+    6(c)
+_id: SzNUzQRdM7AQVP0W
+_key: '!items!SzNUzQRdM7AQVP0W'

@@ -1,0 +1,24 @@
+name: Stabilize
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    This is the spell to use when someone is in Overflow damage and is
+    sustaining an ongoing damaging effect or status. Roll Sorcery + Magic, with
+    a threshold of the number of Overflow boxes of damage the target has.
+    Meeting the threshold means the target is stabilized , and all Overflow
+    damage is removed. The net hits can only affect Overflow damage and cannot
+    heal regular damage.
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: P
+    value: 0
+_id: qA2mPGDRMWmxhvyX
+_key: '!items!qA2mPGDRMWmxhvyX'

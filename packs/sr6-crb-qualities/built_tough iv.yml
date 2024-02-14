@@ -1,0 +1,19 @@
+name: Built Tough IV
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects:
+  - name: Built Tough IV
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.monitors.physical.max
+        value: '4'
+    _key: '!items.effects!CG57kmQpPTeGDtt0.52t4w4yVru8qxDDk'
+    _id: 52t4w4yVru8qxDDk
+system:
+  description: >-
+    You’re built like a brick drekhouse. You’re pretty good at taking a few
+    extra hits before the lights go out. You have a number of additional boxes
+    on your Physical Condition Monitor equal to the rank of this quality. 
+_id: CG57kmQpPTeGDtt0
+_key: '!items!CG57kmQpPTeGDtt0'

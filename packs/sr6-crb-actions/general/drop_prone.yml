@@ -1,0 +1,15 @@
+name: Drop Prone
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may choose to drop themselves t the ground as a Minor Action.
+    They gain the Pron status (p. 53) until they choose to use the Stand U
+    Action.
+  category: combat
+  activation:
+    type: minor
+    period: initiative
+_id: f0jEEYT7GpIMoOJl
+_key: '!items!f0jEEYT7GpIMoOJl'

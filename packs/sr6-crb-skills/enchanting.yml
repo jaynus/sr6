@@ -1,0 +1,18 @@
+name: Enchanting
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: magic
+  description: ''
+  specializations:
+    - Alchemy
+    - Artificing
+    - Disenchanting
+  attribute: magic
+  canUntrained: false
+  points: 0
+  specialization: null
+  expertise: null
+_id: iNiZuJB9Dzqqb7CY
+_key: '!items!iNiZuJB9Dzqqb7CY'

@@ -1,0 +1,17 @@
+Waiting for current window manager (Xfwm4) on screen :0.0 to exit: Done
+Waiting for current window manager (Xfwm4) on screen :0.0 to exit: Done
+Waiting for current window manager (Xfwm4) on screen :0.0 to exit: Done
+Waiting for current window manager (Xfwm4) on screen :0.0 to exit: Done
+Waiting for current window manager (Xfwm4) on screen :0.0 to exit: Done
+
+(xfwm4:72091): xfwm4-CRITICAL **: 13:02:02.596: getMoveToMonitorProps: assertion 'other_rect->x == current_rect->x + current_rect->width' failed
+
+(xfwm4:72091): xfwm4-CRITICAL **: 13:02:02.596: clientMoveToMonitorByDirectionTarget: assertion 'candidate_monitors != NULL' failed
+
+(xfwm4:72091): xfwm4-CRITICAL **: 13:02:02.596: getMoveToMonitorProps: assertion 'current_rect->y == other_rect->y + other_rect->height' failed
+
+(xfwm4:72091): xfwm4-CRITICAL **: 13:02:02.596: clientMoveToMonitorByDirectionTarget: assertion 'candidate_monitors != NULL' failed
+
+(xfwm4:72091): xfwm4-CRITICAL **: 13:02:02.596: getMoveToMonitorProps: assertion 'other_rect->y == current_rect->y + current_rect->height' failed
+
+(xfwm4:72091): xfwm4-CRITICAL **: 13:02:02.596: clientMoveToMonitorByDirectionTarget: assertion 'candidate_monitors != NULL' failed

@@ -1,0 +1,11 @@
+name: Elemental Resistance (Water)
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    When attacked with a weapon or spell (including unarmed combat by a spirit)
+    that does this form of damage, gain a point of Edge before making your
+    Defense test.
+_id: jQS6ocJKssVudLgS
+_key: '!items!jQS6ocJKssVudLgS'

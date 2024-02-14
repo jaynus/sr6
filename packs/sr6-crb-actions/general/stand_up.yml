@@ -1,0 +1,14 @@
+name: Stand Up
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    Whether they chose to be prone or they go knocked down, a character uses
+    this action to get bac to their feet and remove the Prone status (p. 53).
+  category: combat
+  activation:
+    type: minor
+    period: initiative
+_id: HIYLoW0Orm4NAxom
+_key: '!items!HIYLoW0Orm4NAxom'

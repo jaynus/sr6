@@ -1,0 +1,25 @@
+name: Acid Stream
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    These spells shoot acid at targets, doing immediate damage while also doing
+    Chemical damage (p. 109) and giving hit targets the Corroded status (p. 52)
+    with a rating equal to net hits on the Spellcasting test. Acid Stream is a
+    single-target spell, Toxic Wave is area effect.
+  type: P
+  formulas:
+    drain: '5'
+  range:
+    type: los
+    value: 0
+  duration:
+    type: I
+    value: 0
+  damage:
+    combat: indirect
+    type: P
+    form: acid
+_id: QjbldHvi1xEUkGww
+_key: '!items!QjbldHvi1xEUkGww'

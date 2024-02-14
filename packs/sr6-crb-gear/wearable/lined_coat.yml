@@ -1,0 +1,25 @@
+name: Lined Coat
+type: wearable
+img: /systems/sr6/assets/items/armor_body.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: armor
+  skillUse: null
+  costFormula: '900'
+  capacity: 7
+  slots:
+    - armor
+  formulas:
+    defenseRatingFormula: '3'
+  availability:
+    illegal: false
+    rating: 2
+  description: >-
+    This cowboy-style duster has been consistently popular on the mean streets
+    of the worlds sprawls for the past fifty years. Besides being protective,
+    the armored trenchcoat provides a bonus Edge against tests to spot items
+    hidden underneath.
+_id: CGWGIRZlxYsKjMFm
+_key: '!items!CGWGIRZlxYsKjMFm'

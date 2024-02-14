@@ -1,0 +1,49 @@
+name: Laser Sight
+type: gear
+img: /systems/sr6/assets/items/laser.webp
+effects:
+  - name: Laser Sight
+    description: asdf
+    transfer: false
+    disabled: false
+    changes:
+      - mode: 901
+        key: RangedAttackTest
+        value: '1'
+    _key: '!items.effects!NdUZixQjQscpiYf7.vkh64G8zf4fDttFk'
+    _id: vkh64G8zf4fDttFk
+system:
+  description: >-
+    This device uses a laser beam to project a visible dot (normal, low-light,
+    or thermographic) on the target. This increases the weapon’s Attack Rating
+    by 1, not cumulative with smartlink modifiers. The laser sight can be
+    mounted as either an underbarrel mount or top mount. Activating or
+    deactivating a laser sight is a Minor Action. Note that in weapons with a
+    laser sight included as standard equipment, this bonus is already calculated
+    into the Attack Rating.
+  rating: 1
+  size: 5
+  category:
+    type: accessory
+    subtype: null
+  skillUse: null
+  costFormula: '125'
+  availability:
+    illegal: false
+    rating: 1
+  monitors: null
+  matrix:
+    active: false
+    wirelessBonus:
+      description: >-
+        The bonus to the Attack Rating increases to 2. You gain a bonus Minor
+        Action on a turn when you activate or deactivate the laser sight.
+      modifiers:
+        - class: AttackRatingModifier
+          target: item
+          data:
+            valueFormula: '1'
+            testClasses:
+              - RangedAttackTest
+_id: NdUZixQjQscpiYf7
+_key: '!items!NdUZixQjQscpiYf7'

@@ -1,0 +1,22 @@
+name: Combat Sense
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    The subject gets a heightened awareness of possible dangers and the ability
+    to react to them faster. Net hits on the Spellcasting test are adde d to the
+    subjects Defense Rating and dice pool for Surprise tests (see p. 108) as
+    long as the spell is sustained.
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: DR1XYPzUW8c0StIw
+_key: '!items!DR1XYPzUW8c0StIw'

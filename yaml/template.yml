@@ -1,0 +1,59 @@
+Actor:
+  types:
+    - character
+    - matrix_host
+    - vehicle
+    - drone
+    - sprite
+  character:
+  matrix_host:
+  vehicle:
+  drone:
+  sprite:
+Item:
+  types:
+    # Items
+    - gear
+    - weapon
+    - ammo
+    - credstick
+    - wearable
+    - program
+    # Character Building
+    - skill
+    - knowledge
+    - contact
+    - sin
+    - lifestyle
+    - quality
+    - augmentation
+    - spell
+    - adeptpower
+    - complexform
+    # Matrix Stuff
+    - matrix_persona
+    - matrix_ic
+    # Combat
+    - general_action
+    - matrix_action
+    - edge_action
+  gear:
+  weapon:
+  ammo:
+  wearable:
+  program:
+  skill:
+  contact:
+  sin:
+  lifestyle:
+  quality:
+  augmentation:
+  spell:
+  adeptpower:
+  complexform:
+  matrix_persona:
+  matrix_ic:
+  general_action:
+  matrix_action:
+  edge_action:
+  knowledge:

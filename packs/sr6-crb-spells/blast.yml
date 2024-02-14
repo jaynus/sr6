@@ -1,0 +1,25 @@
+name: Blast
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    A tricky little spell the magic doesnt hit the target,  but it shapes the
+    air to make the blow. The power of wind to shape rock formation s is
+    demonstrated solidly on the head of the target. Clout targets individuals,
+     Blast is area effect.
+  type: P
+  formulas:
+    drain: '4'
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: I
+    value: 0
+  damage:
+    combat: indirect
+    type: S
+    form: stun
+_id: 9ULkSI4RV9MrtMSC
+_key: '!items!9ULkSI4RV9MrtMSC'

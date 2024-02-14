@@ -1,0 +1,43 @@
+name: Colt M23
+type: weapon
+img: /systems/sr6/assets/items/rifle_assault.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: RIFLE_ASSAULT
+  skillUse:
+    skill: firearms
+    specialization: rifles
+    attribute: agility
+  costFormula: '2100'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 2
+  matrix: null
+  attackRatings:
+    closeFormula: '5'
+    nearFormula: '8'
+    mediumFormula: '8'
+    farFormula: '8'
+    extremeFormula: '1'
+  damageData:
+    damageFormula: '4'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+    - FA
+  description: >-
+    40(c)
+
+    CheaPhysical, mass-produced, and infinitely adaptable, the M23 finds its
+    ways to the hands of everyone from gangbangers to pirates to delta-level
+    government operators. The M23 can accept two additional underbarrel
+    accessories for a total of three.
+_id: A10kKEYJl9gH1LIu
+_key: '!items!A10kKEYJl9gH1LIu'

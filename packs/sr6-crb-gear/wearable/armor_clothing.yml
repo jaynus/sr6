@@ -1,0 +1,24 @@
+name: Armor Clothing
+type: wearable
+img: /systems/sr6/assets/items/armor_body.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: armor
+  skillUse: null
+  costFormula: '500'
+  capacity: 4
+  slots:
+    - armor
+  formulas:
+    defenseRatingFormula: '2'
+  availability:
+    illegal: false
+    rating: 2
+  description: >-
+    Lightweight ballistic weave makes these garments almost impossible to detect
+    as armor. It doesn’t provide as much protection as real armor, but it comes
+    in just about any style you desire.
+_id: RafNSHvEDxjBereV
+_key: '!items!RafNSHvEDxjBereV'

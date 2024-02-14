@@ -1,0 +1,33 @@
+name: Counterspell
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    Counterspelling is the equal and opposite reaction to spellcasting.
+    Magicians give benefits through spells, while other magicians use their
+    gifts to take them the hell away. Counterspelling is a spellcaster’s quick
+    reaction defense, and it comes in one of two forms: boosted defense and
+    dispelling.
+
+    Boosted Defense This is the pre-emptive defense, where spellcasters try to
+    block an incoming spell. To use it, characters take a Counterspell Major
+    Action and roll a Sorcery + Magic test. At its base, the action affects a
+    sphere in the caster’s LOS with a two-meter radius (the radius can be
+    increased by 1 meter per dram of reagents spent). Net hits on the test are
+    added to the dice pool of anyone in the area to defend against any spells.
+    This boost lasts for a number of combat rounds equal to the Magic of the
+    spellcaster.
+
+    Dispelling This is for use against spells that are sustained or otherwise
+    have ongoing effects. The character chooses the Counterspell action and then
+    rolls Sorcery + Magic vs. Drain Value of the spell x 2 (including any
+    adjustments made to the spell when it was cast). Net hits on this test
+    cancel net hits on the spell on a one-to-one basis; when net hits reach
+    zero, the spell is completely dispelled. 
+  category: magic
+  activation:
+    type: major
+    period: any
+_id: MubEI01O50EjRcto
+_key: '!items!MubEI01O50EjRcto'

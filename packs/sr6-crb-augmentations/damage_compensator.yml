@@ -1,0 +1,18 @@
+name: Damage Compensator
+type: augmentation
+img: /systems/sr6/assets/items/cyber_headware.webp
+effects: []
+system:
+  description: >-
+    Damage compensators are essentially cut-offs stored in the nervous pathways
+    that report pain from the body back to your brain. You ignore a number of
+    damage boxes (your choice of Physical, Stun, or a combination of the two)
+    equal to the compensator’s rating before determining your injury modifiers.
+  essenceCostFormula: '@rating * 0.1'
+  cost: '@rating * 2000'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 5
+_id: XaofOcBY54habwLr
+_key: '!items!XaofOcBY54habwLr'

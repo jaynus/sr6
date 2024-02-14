@@ -1,0 +1,23 @@
+name: Warming Heal
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    This spell has the same healing effect as the Heal spell (roll Sorcer y +
+    Magic [5   Essence], heal 1 box of Stun, Physical, or Overflow damage
+     per net hit). In addition, this variant of the spell adds a warming
+    elemen t that eliminates the Chilled status on the targeted individual.
+    Injuries ca n only be affected once by any healing spell.
+  type: P
+  formulas:
+    drain: '5'
+    soak: 5 - @essense
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: P
+    value: 0
+_id: 8l9FHFMn9P9KtKFe
+_key: '!items!8l9FHFMn9P9KtKFe'

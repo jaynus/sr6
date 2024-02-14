@@ -1,0 +1,14 @@
+name: Shift Perception
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character capable of Astral Perception may shif perception to or from
+    astral space as a Minor Action.
+  category: magic
+  activation:
+    type: minor
+    period: initiative
+_id: giq7DyQb5aCYnkvM
+_key: '!items!giq7DyQb5aCYnkvM'

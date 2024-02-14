@@ -1,0 +1,20 @@
+name: Spell Resistance
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    Spells have a tendency to bounce off you rather than affect you. Gain a
+    point of Edge when targeted by spells.
+  powerCost: 0.5
+  maxLevel: 1
+  activation:
+    type: passive
+  modifiers:
+    - class: EdgeModifier
+      data:
+        value: 1
+        attributes:
+          - SpellDefenseTest
+_id: lHP6YoKd73u74mT9
+_key: '!items!lHP6YoKd73u74mT9'

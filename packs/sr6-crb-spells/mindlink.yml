@@ -1,0 +1,26 @@
+name: Mindlink
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Commlinks and text messaging? So pass\xE9. Just throw your thought s into
+    someone elses mind for the ultimate in rapid communication! As lon g as you
+    get a hit on the Sorcery + Magic test, you have a link, and you can share
+    mental communication in whatever form makes sense to you and subject of thi
+    s spell. The caster and the subject must remain within range of each other
+    fo r the link to continue functioning; if they move out of sense range and
+    then com e back into it, they can pick up the communication again, as long
+    as the spel l was continuously sustained.
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: nDr05Xdpxyd2AOkU
+_key: '!items!nDr05Xdpxyd2AOkU'

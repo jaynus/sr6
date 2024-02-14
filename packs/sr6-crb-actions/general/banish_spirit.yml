@@ -1,0 +1,14 @@
+name: Banish Spirit
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    Any character may attempt a Banishing o n spirit as a Major Action (see
+    Banishing, p. 147).
+  category: magic
+  activation:
+    type: major
+    period: initiative
+_id: T9rqtlZfgzrLbbnQ
+_key: '!items!T9rqtlZfgzrLbbnQ'

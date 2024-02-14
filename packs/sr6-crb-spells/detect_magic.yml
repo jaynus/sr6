@@ -1,0 +1,26 @@
+name: Detect Magic
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    No one wants to sort through an entire landfill to find the magi c ring
+    sitting amid all the trash, but sometimes thats the job. Which i s why an
+    enterprising mage developed this spell, which alerts the caster to any forms
+    of active magic within the senses range. This includes foci, reagents, 
+    active spells, wards, alchemical preparations, spirits, and active rituals, 
+    but does not include Awakened people, critters, astral signatures, alchemica
+    l preparations that have been triggered or lost their potency, or the effect
+    s of permanent spells once they have become permanent.
+  type: M
+  formulas:
+    drain: '4'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: XZW4M0LR87xh397o
+_key: '!items!XZW4M0LR87xh397o'

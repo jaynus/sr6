@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+@mixin crossboxes($bg-color: #000000, $deco-color: #2a2a2a, $size: 64px) {
+	color: white;
+	background: rgba(0, 0, 0, 0.2);
+}

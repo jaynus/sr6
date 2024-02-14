@@ -1,0 +1,14 @@
+name: Use Skill
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may use an appropriate skill by using a Major Action (see
+    Skills, p. 92).
+  category: general
+  activation:
+    type: major
+    period: initiative
+_id: LKB3vRs4l09AUK1j
+_key: '!items!LKB3vRs4l09AUK1j'

@@ -1,0 +1,11 @@
+name: Credstick (Standard)
+type: credstick
+img: /systems/sr6/assets/yen.webp
+effects: []
+system:
+  rating: 1
+  nuyen: 0
+  sin: null
+  description: ''
+_id: qmHGxON5PwQw787v
+_key: '!items!qmHGxON5PwQw787v'

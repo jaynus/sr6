@@ -1,0 +1,19 @@
+name: Built Tough II
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects:
+  - name: Built Tough II
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.monitors.physical.max
+        value: '2'
+    _key: '!items.effects!ko4WMKBTF6feTh1u.d1iNuKq6Jlsu9LAY'
+    _id: d1iNuKq6Jlsu9LAY
+system:
+  description: >-
+    You’re built like a brick drekhouse. You’re pretty good at taking a few
+    extra hits before the lights go out. You have a number of additional boxes
+    on your Physical Condition Monitor equal to the rank of this quality. 
+_id: ko4WMKBTF6feTh1u
+_key: '!items!ko4WMKBTF6feTh1u'

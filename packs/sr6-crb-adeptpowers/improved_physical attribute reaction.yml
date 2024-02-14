@@ -1,0 +1,24 @@
+name: Improved Physical Attribute (Reaction)
+type: adeptpower
+img: icons/svg/aura.svg
+effects:
+  - name: Improved Physical Attribute (Reaction)
+    transfer: true
+    disabled: false
+    changes:
+      - mode: 2
+        key: system.attributes.reaction.mod
+        value: '@level'
+    _key: '!items.effects!07L9CjeAM7wQ7yLO.tV3TuRm7S56A1QDJ'
+    _id: tV3TuRm7S56A1QDJ
+system:
+  description: >-
+    Select a Physical attribute (Body, Agility, Reaction, or Strength) when
+    purchasing this skill. That attribute receives an ongoing boost equal to the
+    level of this power. The maximum boost to the attribute is 1.5 times the
+    current level or the augmented maximum, whichever is lower.
+  powerCost: 1
+  activation:
+    type: passive
+_id: 07L9CjeAM7wQ7yLO
+_key: '!items!07L9CjeAM7wQ7yLO'

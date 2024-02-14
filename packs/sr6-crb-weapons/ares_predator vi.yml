@@ -1,0 +1,47 @@
+name: Ares Predator VI
+type: weapon
+img: /systems/sr6/assets/items/pistols_heavy.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: PISTOLS_HEAVY
+  skillUse:
+    skill: firearms
+    specialization: pistols_heavy
+    attribute: agility
+  costFormula: '750'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 2
+  matrix: null
+  attackRatings:
+    closeFormula: '10'
+    nearFormula: '10'
+    mediumFormula: '8'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '3'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+  description: >-
+    15(c)The Predator V rode on the laurels of its name. The Predato r VI is
+    genuine innovation built into some classic styling. Built on the framing
+     of the original Predator, the VI comes with the standard smartgun
+    operation s but adds Burst Fire capability and a new variable ammunition
+    system that wil l make it king of the streets and warzones once again, even
+    if it comes wit h a price tag to match that innovation. The variable
+    ammunition system allow s a single specially designed magazine (30\xA5 per
+    spare) to be loaded with differen t ammo types. The smartgun is used to
+    select ammo types and cycles them to th e chamber in whatever quantity is
+    necessary and available. If there are n t enough rounds of a particular
+    kind, the ammo counter reads empty and the weapo n stops firing.
+_id: gLxAPIW264RcPlBg
+_key: '!items!gLxAPIW264RcPlBg'

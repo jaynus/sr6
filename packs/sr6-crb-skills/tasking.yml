@@ -1,0 +1,18 @@
+name: Tasking
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: matrix
+  description: ''
+  specializations:
+    - Compiling
+    - Decompiling
+    - Registering
+  attribute: resonance
+  canUntrained: false
+  points: 0
+  specialization: null
+  expertise: null
+_id: jLiEZ1ZyPNzqjrpK
+_key: '!items!jLiEZ1ZyPNzqjrpK'

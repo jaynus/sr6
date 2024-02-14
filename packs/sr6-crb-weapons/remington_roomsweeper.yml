@@ -1,0 +1,34 @@
+name: Remington Roomsweeper
+type: weapon
+img: /systems/sr6/assets/items/shotguns.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: SHOTGUNS
+  skillUse:
+    skill: firearms
+    specialization: shotguns
+    attribute: agility
+  costFormula: '325'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 2
+  matrix: null
+  attackRatings:
+    closeFormula: '9'
+    nearFormula: '8'
+    mediumFormula: '4'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '4'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+  description: null
+_id: MUPzrJtAJ5E5rnzo
+_key: '!items!MUPzrJtAJ5E5rnzo'

@@ -1,0 +1,14 @@
+name: Full Defense
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character can add their Willpower to all Defense tests until the end of
+    the combat round.
+  category: combat
+  activation:
+    type: major
+    period: any
+_id: qwVn9jMXDU9pyHgQ
+_key: '!items!qwVn9jMXDU9pyHgQ'

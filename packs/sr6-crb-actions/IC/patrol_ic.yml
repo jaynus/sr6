@@ -1,0 +1,26 @@
+name: Patrol IC
+type: matrix_ic
+img: /systems/sr6/assets/matrix/ic_patrol.webp
+effects: []
+system:
+  description: >-
+    Patrol IC is often the first line of defense in hosts, since it doesn’t
+    escalate any confrontations, but in stead gives the host’s owners a good
+    sense of what’s going on. When it is activated, make a Matrix Perception
+    roll for the Patrol IC; that serves as hits on Matrix Perception actions it
+    takes every in-game minute it is active. That means one of the Patrol IC’s
+    Minor Actions is always given over to Matrix Perception. Reroll the Matrix
+    Perception test once per minute.
+  type: ic
+  skillUse: null
+  limits:
+    activationType: major
+    activationPeriod: initiative
+  formulas:
+    attack: '@rating * 2'
+    defend: '@willpower + @persona.s'
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: jiq1bG3ftBQvD6bs
+_key: '!items!jiq1bG3ftBQvD6bs'

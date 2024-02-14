@@ -1,0 +1,14 @@
+name: Move
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character can use this Minor Action for 10 meters of movement. Only one
+    Move Action is allowed per player turn.
+  category: general
+  activation:
+    type: minor
+    period: initiative
+_id: b7LGULt03RoJgJU4
+_key: '!items!b7LGULt03RoJgJU4'

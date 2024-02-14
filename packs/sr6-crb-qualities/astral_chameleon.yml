@@ -1,0 +1,10 @@
+name: Astral Chameleon
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    Characters receive –2 dice on tests to recognize your aura or astral
+    signature. Your astral signature fades in half the normal time (see p. 159).
+_id: M8fBVjllid73SlU6
+_key: '!items!M8fBVjllid73SlU6'

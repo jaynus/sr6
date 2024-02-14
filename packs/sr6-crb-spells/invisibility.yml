@@ -1,0 +1,25 @@
+name: Invisibility
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Single-Sense: This spell affects only one sense. The target fade s from
+    view, becoming transparent so that they can move unnoticed. Invisibility
+    gives the targeted character the Invisible (#) status (p. 52), where the
+    numbe r after the status becomes the threshold on any tests to see the
+    character. Th e Invisible (Improved) spell gives the Improved Invisibility
+    (#) status, whic h is essentially the same but works against cameras and
+    other technology as wel l as against living entities.
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: jMRJ7uPb17tHhKkE
+_key: '!items!jMRJ7uPb17tHhKkE'

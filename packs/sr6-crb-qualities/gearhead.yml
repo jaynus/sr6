@@ -1,0 +1,10 @@
+name: Gearhead
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    You gain an Edge on Repair tests for any vehicle and can spend Edge during
+    downtime to make Extended Repair tests.
+_id: 8iVx8D9ph2hQ9ZCh
+_key: '!items!8iVx8D9ph2hQ9ZCh'

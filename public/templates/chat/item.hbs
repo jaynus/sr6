@@ -1,0 +1,46 @@
+
+<div class="item-card">
+	{{#unless (undefined actor) }}
+	<h3>
+		<div>
+			{{#unless (undefined actor.img)}}
+				<a class="click-actor" data-actor-id="{{actor.uuid}}">
+					<img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="24" width="24" />
+				</a>
+			{{/unless}}
+			<a class="click-actor" data-actor-id="{{actor.uuid}}">{{actor.name}}</a>
+		</div>
+	</h3>
+	<div class="imageAndName">
+		<img src="{{img}}" style="width: 32px; height: 32px" />
+		<span>{{ name }}</span>
+	</div>
+	{{/unless}}
+	{{#if (or (eq type "weapon") (eq type "gear")) }}
+		<div class="data-table">
+			<div><label class="balls1">Rating:</label> {{ system.rating }}</div>
+			<div><label class="balls1">Size:</label> {{ GearSizeToString system.size }}</div>
+			<div><label class="balls1">Cost:</label> {{ solveFormula system system.costFormula }}</div>
+			<div><label class="balls1">Availability:</label> {{ GearAvailabilityToString system.availability }}</div>
+			{{#unless (null system.matrix) }}
+				{{#unless (eq system.matrix.simModes.length 0) }}<div><label class="balls1">Sim Modes:</label>
+				{{#each system.matrix.simModes }}
+					{{ localize (concat "SR6.Matrix.SimType." this) }}
+				{{/each}}
+				</div>{{/unless}}
+				<div><label class="balls1">Program Slots:</label> </div>
+			{{/unless}}
+		</div>
+	{{/if}}
+
+	<div class="description">{{{ description }}}</div>
+
+	{{#if (eq type "gear") }}
+		<div class="details-grid">
+			<label class="balls1">Balls</label>
+			<label class="balls2">Balls</label>
+			<span class="balls1">asdfsdf</span>
+			<span class="balls2">asdfsdfasdf</span>
+		</div>
+	{{/if}}
+</div>

@@ -1,0 +1,24 @@
+name: Analyze Truth
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    The subject of the spell gains some sense if the target is tellin g the
+    truth or at least, if they believe they are. With at least 1 net hit,
+     you gain this understanding. Note that the subject of the spell has to
+    directl y hear the statement being uttered to evaluate it written
+    statements, recordings,  or audio/video transmissions cannot be used.
+    Because mana, thats why.
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: oyrUqeuG4vtS3P8w
+_key: '!items!oyrUqeuG4vtS3P8w'

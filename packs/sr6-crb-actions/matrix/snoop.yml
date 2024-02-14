@@ -1,0 +1,30 @@
+name: Snoop
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    This action lets you intercept Matrix traffic sent to and from your target
+    for as long as you have access. You can listen to, view, or read this data
+    live, or you can save it for later playback/viewing if you have something to
+    store it on (your deck or commlink will do).
+  type: decker
+  skillUse:
+    skill: Cracking
+    specialization: Electronic Warfare
+    attribute: logic
+  limits:
+    illegal: true
+    access_level:
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@logic + @persona.f'
+    deviceDefend: '@persona.d + @persona.f'
+    damage: null
+    soak: null
+_id: TFChnVg5ozQ3p2PQ
+_key: '!items!TFChnVg5ozQ3p2PQ'

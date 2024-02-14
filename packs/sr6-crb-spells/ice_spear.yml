@@ -1,0 +1,28 @@
+name: Ice Spear
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    When every corp security goon you run into starts wearing flame-retardant
+    underwear, its time to throw a changeup at them and hit them with the other
+    temperature extreme. These spells blast targets with freezing cold, doin g
+    Cold elemental damage (p. 110) along with the normal damage and imposing th
+    e Chilled status (p. 51) for a number of combat rounds equal to net hits on
+    th e Spellcasting test. Ice Spear targets individuals, while Ice Storm is an
+    are a spell.
+  type: P
+  formulas:
+    drain: '5'
+  range:
+    type: los
+    value: 0
+  duration:
+    type: I
+    value: 0
+  damage:
+    combat: indirect
+    type: P
+    form: cold
+_id: Ufu464fYgcycHbhZ
+_key: '!items!Ufu464fYgcycHbhZ'

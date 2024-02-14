@@ -1,0 +1,21 @@
+name: Armor
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Your magic fills the body of the target, hardening it and making i t better
+    able to absorb damage. Roll Sorcery + Magic and add net hits to the target s
+    Defense Rating.
+  type: P
+  formulas:
+    drain: '4'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: O4AmfoRRemxrJJVr
+_key: '!items!O4AmfoRRemxrJJVr'

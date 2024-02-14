@@ -1,0 +1,48 @@
+name: Control Device
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    This action allows extended remote control of a device. You maintain control
+    until you relin- quish command or are forced out of the system. While you
+    have control, you can use the device as if you were the owner using a
+    standard skill test, including turning the device off if you have Admin
+    access. If there is no test associated with the device you wish to use, use
+    Electronics + Logic vs. Firewall + Willpower. This test assumes you are
+    using the device directly, not command- ing a device to use another (such as
+    commanding a drone to fire its weapon). A Control Device action versus a
+    device currently “jumped into” by a rigger automatically fails.     When you
+    use Control Device, you may take any action that would normally require the
+    level of access you currently have. Hacking User access allows you to take
+    any action that would normally require legitimate User access. Actions that
+    nor- mally require legitimate Admin access will likewise require hacked
+    Admin access to perform. The Attributes you’ll use for Control Device Tests
+    may change based on whether you are in AR or VR while using it. If you are
+    using a device via Augmented Reality, and the de- vice requires a Physical
+    attribute, use your normal Physical attribute for this test. If you are
+    using this device via Virtual Reality, and the device requires a Physical
+    attribute, substi- tute the appropriate Mental attribute for this test.
+    (Body = Willpower, Agility = Logic, Reaction = Intuition, Strength =
+    Charisma).
+  type: decker
+  skillUse:
+    skill: Electronics
+    specialization: Software
+    attribute: logic
+  limits:
+    illegal: false
+    access_level:
+      - user
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@willpower + @persona.f'
+    deviceDefend: '@persona.f'
+    damage: null
+    soak: null
+_id: XNTu7b2IXrRhjyMB
+_key: '!items!XNTu7b2IXrRhjyMB'

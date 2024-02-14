@@ -1,0 +1,17 @@
+name: Traceless Walk
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    You don’t disturb the dust, dirt, snow, water, or anything else under your
+    feet as you move, so there is no evidence of your passing. You don’t trigger
+    tripwires, pressure pads, or other traps based on leg movement. Hearing
+    tests to listen for your passage and Outdoors tests to perceive your tracks
+    cannot gain or spend Edge.
+  powerCost: 0.5
+  maxLevel: 1
+  activation:
+    type: passive
+_id: jehUcSIRxuDSqGDd
+_key: '!items!jehUcSIRxuDSqGDd'

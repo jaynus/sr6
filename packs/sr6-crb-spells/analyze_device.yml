@@ -1,0 +1,26 @@
+name: Analyze Device
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Sure, you know what a commlink looks like, but that doesnt mea n you can
+    identify the function of the weird black box with a single input jack.  And
+    Ghost help you with a machine from the 50s or something. Analyze Device
+     provides information about the unknown device, based on the number of net
+    hit s (the devices Object Resistance is used in the Opposed Test). The firs
+    t time a character tries to use a device while sustaining this spell on it,
+    the y receive Edge equal to their net hits on this test (though the
+    customary limi t of gaining no more than 2 Edge in a combat round applies).
+  type: P
+  formulas:
+    drain: '2'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: g1mkOGHLCUJEA2fK
+_key: '!items!g1mkOGHLCUJEA2fK'

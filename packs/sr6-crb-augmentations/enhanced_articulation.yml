@@ -1,0 +1,18 @@
+name: Enhanced Articulation
+type: augmentation
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A number of procedures like joint-surface coating, re-lubrication, and
+    tendon and ligament augmentation lead to more fluid muscle and joint action.
+    Enhanced articulation provides you with a +1 Agility and a bonus Edge when
+    trying to move through cramped or confining spaces.
+  essenceCostFormula: '0.2'
+  cost: '30000'
+  availability:
+    illegal: false
+    rating: 4
+    requiresLicense: false
+_id: UViRHipLXUskicG1
+_key: '!items!UViRHipLXUskicG1'

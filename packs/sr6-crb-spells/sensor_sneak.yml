@@ -1,0 +1,25 @@
+name: Sensor Sneak
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Multi-Sense: This spell affects multiple senses simultaneously. Improved
+    Invisibility and Physical Mask and the like are great when you want to hide
+    from both prying eyes and technology, but what about when there are no
+     living beings around, only cameras, sensors, and the like? Sensor Sneak is
+    th e spell for that. It gives the target a version of the Invisible
+    (Improved) (#)  status, but it has no effect on living and sentient beings,
+    only technology-base d sensors.
+  type: P
+  formulas:
+    drain: '2'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: r9P1ezjZDfuXhaVv
+_key: '!items!r9P1ezjZDfuXhaVv'

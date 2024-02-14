@@ -1,0 +1,16 @@
+name: Enhanced Perception
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    Your senses are keenly honed, giving you information in enough time for you
+    to figure out what to do about it. Gain an Edge when Observing in Detail or
+    making a Perception test to find something hidden or listen to something
+    you’re not supposed to hear.
+  powerCost: 0.5
+  maxLevel: 1
+  activation:
+    type: passive
+_id: qy3rc05ba9TO5fDv
+_key: '!items!qy3rc05ba9TO5fDv'

@@ -1,0 +1,12 @@
+name: Browse
+type: program
+img: /systems/sr6/assets/matrix/program.webp
+effects: []
+system:
+  type: basic
+  source: CRB p.185
+  description: >-
+    When doing Matrix searches, gain 1 Edge that is either spent immediately on
+    thataction or disappears.
+_id: GJlAe4J2Aia2cnT8
+_key: '!items!GJlAe4J2Aia2cnT8'

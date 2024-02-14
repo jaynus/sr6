@@ -1,0 +1,33 @@
+name: Sword
+type: weapon
+img: /systems/sr6/assets/items/blades.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: BLADES
+  skillUse:
+    skill: close_combat
+    specialization: blades
+    attribute: agility
+  costFormula: '320'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '9'
+    nearFormula: '0'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '3'
+    damageType: P
+  description: >-
+    A heavy blade on a one-handed grip that comes in a variety of styles. The
+    world s dominant combat weapon for thousands of years until the firearm came
+    along.
+_id: 1uYxoVpvnu3gDzff
+_key: '!items!1uYxoVpvnu3gDzff'

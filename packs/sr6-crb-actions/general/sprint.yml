@@ -1,0 +1,16 @@
+name: Sprint
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may move at a Sprint with this Majo Action. Movement starts at
+    15 meters and is increase by 1 meter per hit on an Athletics + Agility Test.
+    Onl one Sprint Action is allowed per player turn, and i cannot be performed
+    in the same turn as a Move action or Avoid Incoming action.
+  category: general
+  activation:
+    type: major
+    period: initiative
+_id: CGQej5o79E7DcjmA
+_key: '!items!CGQej5o79E7DcjmA'

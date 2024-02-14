@@ -1,0 +1,18 @@
+name: Exceptional Willpower
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects:
+  - name: Exceptional Willpower
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.attributes.willpower.max
+        value: '1'
+    _key: '!items.effects!ridEWJ9QAGTS92JU.b2d18KLZHtj9AjWf'
+    _id: b2d18KLZHtj9AjWf
+system:
+  description: >-
+    That attribute's maximum (but not current) rank increases by 1. This quality
+    can only be purchased once per attribute.
+_id: ridEWJ9QAGTS92JU
+_key: '!items!ridEWJ9QAGTS92JU'

@@ -1,0 +1,41 @@
+name: Stoner-Ares M202
+type: weapon
+img: /systems/sr6/assets/items/mmg.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: LMG
+  skillUse:
+    skill: firearms
+    specialization: assault_cannons
+    attribute: agility
+  costFormula: '6900'
+  availability:
+    illegal: true
+    requiresLicense: true
+    rating: 4
+  matrix: null
+  attackRatings:
+    closeFormula: '1'
+    nearFormula: '10'
+    mediumFormula: '11'
+    farFormula: '7'
+    extremeFormula: '6'
+  damageData:
+    damageFormula: '5'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+    - FA
+  description: >-
+    50(c) or 100(belt)This medium machine gun packs a tremendous punc h and is
+    often found in the hands of trolls with no concept of subtlety. I t s a
+    brutally simple weapon, but accessorizing is always an option for those wit
+    h a taste for more complexity.
+_id: b0LwCZ3DLBW8E8Pr
+_key: '!items!b0LwCZ3DLBW8E8Pr'

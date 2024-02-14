@@ -1,0 +1,23 @@
+name: Detect Enemies
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    This spell lets the subject know if anyone within the sense s range has
+    hostile intentions toward them. It only works on people not things,  and it
+    only detects people who have hostility specifically to the subject, not
+    generalized anger at all metahumanity (if it did, everyone in the barrens
+    woul d light up). Great for detecting ambushes!
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: trJqmomi3NNxgiBN
+_key: '!items!trJqmomi3NNxgiBN'

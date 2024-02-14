@@ -1,0 +1,20 @@
+name: Danger Sense
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    You have a sixth sense for danger, instinctively knowing when it’s nearby
+    and preparing for it. Gain an Edge before making Surprise tests.
+  powerCost: 0.5
+  maxLevel: 1
+  activation:
+    type: passive
+  modifiers:
+    - class: EdgeModifier
+      data:
+        value: 1
+        testClasses:
+          - SurpriseTest
+_id: 1mCGWKhoz6J9mn26
+_key: '!items!1mCGWKhoz6J9mn26'

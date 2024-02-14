@@ -1,0 +1,25 @@
+name: Physical Barrier
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Sometimes you want to keep magic away from you, and other times you want to
+    keep absolutely everything you can away. Physical Barrier builds a wall
+    where you want it to be, with a Structure rating equal to (Magic + hits on a
+    Sorcery + Magic test). The base spell casts a barrier that is two meters by
+    two meters, two centimeters thick. The Increase Area effect can be applied
+    to add up to two meters in length and width (but not depth) for each time
+    the effect is chosen.
+  type: P
+  formulas:
+    drain: '6'
+    soak: ''
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: Tx4BxRTotRdLHjaY
+_key: '!items!Tx4BxRTotRdLHjaY'

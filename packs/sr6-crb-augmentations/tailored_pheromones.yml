@@ -1,0 +1,29 @@
+name: Tailored Pheromones
+type: augmentation
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    These pheromones are specially tailored to subtly influence others and can
+    be released at will. Tailored pheromones increase your Charisma attribute by
+    their Rating for Con and Influence tests, but only when the person you’re
+    using them on is within a comfortable conversation range—if they can’t smell
+    you, the pheromones don’t work. Tailored pheromones have no effect on
+    magical abilities and tests.
+  essenceCostFormula: '@rating * 0.2'
+  cost: '@rating * 31000'
+  availability:
+    illegal: false
+    rating: 4
+    requiresLicense: true
+  modifiers:
+    - class: PoolModifier
+      data:
+        valueFormula: '@rating'
+        testClasses:
+          - SkillTest
+        skills:
+          - Con
+          - Influence
+_id: MC6ztAsCGp6N3HqH
+_key: '!items!MC6ztAsCGp6N3HqH'

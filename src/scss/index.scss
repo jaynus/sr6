@@ -1,0 +1,82 @@
+@use 'vars/colors';
+
+@import 'chat/chat-message';
+@import 'chat/rolls';
+@import 'combat-tracker';
+@import 'nav';
+@import 'tooltip';
+@import 'sheets';
+
+@import 'augmented.css';
+
+.flex-break {
+	flex-basis: 100%;
+	height: 0;
+}
+
+.window-app {
+	.window-title {
+		color: colors.$purple;
+	}
+	.window-content {
+		color: white;
+		background: var(--window-background);
+	}
+}
+
+.app {
+	background: var(--sidebar-background);
+}
+
+select {
+	color: #ffffff;
+	background: transparent;
+}
+option,
+optgroup {
+	color: #ffffff;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+	background: var(--input-background);
+}
+
+textarea {
+	color: white;
+	background: var(--input-background);
+}
+
+#chat-controls .roll-type-select {
+	background: var(--input-background);
+}
+
+table tr:nth-child(even) {
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.prompt-dialog {
+	background: rgba(0, 0, 0, 1);
+	.dialog-content {
+		color: white;
+	}
+}
+
+button {
+	color: colors.$purple;
+	background: rgba(20, 20, 20, 1);
+	font-family: var(--font-header);
+}
+button:active,
+button:hover {
+	color: colors.$red;
+	box-shadow: inset 0 0 10px colors.$red;
+}
+
+.dialog-button {
+	color: colors.$purple;
+	background: rgba(20, 20, 20, 1);
+	font-family: var(--font-header);
+}
+.dialog-button:active,
+.dialog-button:hover {
+	color: colors.$red;
+	box-shadow: inset 0 0 10px colors.$red;
+}

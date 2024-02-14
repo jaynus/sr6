@@ -1,0 +1,20 @@
+name: Muscle Augmentation
+type: augmentation
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    This biological weaving treatment enhances existing muscle tissue, rather
+    than replacing it with vat-grown muscles. Specially grown muscle cables are
+    woven into existing muscle fibers, enhancing muscle mass and brute strength
+    while providing a bulkier look. Muscle augmentation adds its rating to your
+    Strength attribute. This bioware is incompatible with augmentations that
+    increase Strength, including the muscle replacement cyberware.
+  essenceCostFormula: '@rating * 0.2'
+  cost: '@rating * 31000'
+  availability:
+    illegal: false
+    rating: 4
+    requiresLicense: true
+_id: ZIUj4hNK1Ps7Pd2B
+_key: '!items!ZIUj4hNK1Ps7Pd2B'

@@ -1,0 +1,16 @@
+name: Drop Object
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may drop an object they are holding in their hand or hands as a
+    single Minor Action. The objects fall to the ground and may suffe damage or
+    ill effects if the gamemaster so chooses depending on the distance of the
+    fall and the landing spot.
+  category: general
+  activation:
+    type: minor
+    period: any
+_id: SIaNtwD8FON5LpIk
+_key: '!items!SIaNtwD8FON5LpIk'

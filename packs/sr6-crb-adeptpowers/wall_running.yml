@@ -1,0 +1,17 @@
+name: Wall Running
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    Running horizontally is so pedestrian (get it?). Running up a wall is how
+    you show you’re special. When using this power, you can use a Sprint action
+    (see p. 44) to run up a vertical surface. You cannot use this power for two
+    actions in a row; you have to spend at least one turn moving across a
+    horizontal surface before using this power again. So if you run up a wall
+    and don’t find a good foot or handhold, you’ll be falling right back down.
+  powerCost: 0.5
+  activation:
+    type: minor
+_id: njCDpMxyzY0ohiic
+_key: '!items!njCDpMxyzY0ohiic'

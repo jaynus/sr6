@@ -1,0 +1,27 @@
+name: Agony
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    This spell brings pain but not actual damage. Roll Sorcery + Magi c vs.
+    Willpower + Logic; each net hit acts like an additional box of damage in
+    both the Physical and Stun Condition Monitors for the purposes of determinin
+    g penalties due to injuries. If one or both Condition Monitors are completel
+    y filled, the targeted individual stays conscious but is so wracked with pai
+    n that they cannot act. Once the spell is dropped, there is no ongoing effec
+    t from the pain. The base spell affects only an individual, but the Increas
+    e Area effect can be applied to make it an area spell (starting at 2m radius
+    fo r +1 DV).
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: 7PQGC0EbhB9iOBi8
+_key: '!items!7PQGC0EbhB9iOBi8'

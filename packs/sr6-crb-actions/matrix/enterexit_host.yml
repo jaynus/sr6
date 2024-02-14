@@ -1,0 +1,29 @@
+name: Enter/Exit Host
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    You enter or leave a host. No test is required, but different hosts have
+    different access levels, so you must have the appropriate access to enter.
+    Leaving can be done without any particular access level, because the Matrix
+    is always happy to see interlopers leave.
+  type: any
+  skillUse: null
+  limits:
+    illegal: false
+    access_level:
+      - outsider
+      - user
+      - admin
+  activation:
+    type: minor
+    period: initiative
+  formulas:
+    attack: null
+    defend: null
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: 49idh8Lwqmm40VZO
+_key: '!items!49idh8Lwqmm40VZO'

@@ -1,0 +1,17 @@
+name: Astral Projection
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character capable of Astral Projection (ful magician or aspected magician)
+    may shift thei consciousness to or from the astral plane as a Major Action.
+    The process is complete the momen the action is declared and therefore
+    places the on the astral plane immediately, including for th remainder of
+    the current combat round.
+  category: magic
+  activation:
+    type: major
+    period: initiative
+_id: uzFPmywyiQ5XAw5l
+_key: '!items!uzFPmywyiQ5XAw5l'

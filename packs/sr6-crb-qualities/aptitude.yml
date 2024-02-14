@@ -1,0 +1,10 @@
+name: Aptitude
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    Your skill maximum for the selected skill is 10, instead of 9, and your
+    maximum starting rank is 7, instead of 6.
+_id: fOagnIEWoajR0WDu
+_key: '!items!fOagnIEWoajR0WDu'

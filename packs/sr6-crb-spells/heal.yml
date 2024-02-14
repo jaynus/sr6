@@ -1,0 +1,24 @@
+name: Heal
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Shadowrunning comes with bumps, bruises, and bullet wounds, and magi c is
+    perhaps the quickest and most effective way to repair it. When casting this
+     spell, roll Sorcery + Magic with a threshold of (5   Essence). Heal 1
+    bo x of Stun, Physical, or Overflow damage per net hit. Injuries can only be
+    affecte d once by any Heal spell (including Cleansing Heal, Cooling Heal,
+    and Warmin g Heal).
+  type: P
+  formulas:
+    drain: '3'
+    soak: 5 - @essense
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: ONkDYlCtOlfz5wQ1
+_key: '!items!ONkDYlCtOlfz5wQ1'

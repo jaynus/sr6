@@ -1,0 +1,16 @@
+name: Called Shot (Vitals)
+type: edge_action
+img: /systems/sr6/assets/edge.webp
+effects: []
+system:
+  description: >-
+    The attack goes for the vitals, adding 3 extra damage if it hits (along with
+    net hits, as usual).
+  edgeCostFormula: '5'
+  testClasses:
+    - RangedAttackTest
+    - MeleeAttackTest
+  scripts:
+    prepareTest: console.log("Called Shot (Vitals) hello world", test);
+_id: WbSScZeFgPaD6zdv
+_key: '!items!WbSScZeFgPaD6zdv'

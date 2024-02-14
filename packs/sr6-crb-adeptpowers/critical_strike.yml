@@ -1,0 +1,20 @@
+name: Critical Strike
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    Increase the DV of your melee attacks by 1 per level of this power. This
+    power is compatible with other enhancements from weapons and adept powers
+    unless otherwise prohibited.
+  powerCost: 1
+  activation:
+    type: passive
+  modifiers:
+    - class: DamageModifier
+      data:
+        valueFormula: '@level'
+        testClasses:
+          - MeleeAttackTest
+_id: RATQIyFB5vdG28KW
+_key: '!items!RATQIyFB5vdG28KW'

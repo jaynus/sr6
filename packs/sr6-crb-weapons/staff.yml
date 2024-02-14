@@ -1,0 +1,32 @@
+name: Staff
+type: weapon
+img: /systems/sr6/assets/items/clubs.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: CLUBS
+  skillUse:
+    skill: close_combat
+    specialization: clubs
+    attribute: agility
+  costFormula: '150'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '8'
+    nearFormula: '0'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '4'
+    damageType: S
+  description: >-
+    Speak softly and carry a big stick. This is that big stick. Available in
+    composite, hardwood, high-carbon steel, and other materials.
+_id: AGy96lZ1sJgB49YI
+_key: '!items!AGy96lZ1sJgB49YI'

@@ -1,0 +1,16 @@
+name: Command Drone
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may issue a command to a drone they control. If multiple drones
+    are controlled through a rigger command console (RCC), th same command can
+    be issued to every drone. I a different command is desired for each drone, i
+    requires multiple Minor Actions.
+  category: general
+  activation:
+    type: minor
+    period: initiative
+_id: YnaMnSsoQHPA4IYt
+_key: '!items!YnaMnSsoQHPA4IYt'

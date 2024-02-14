@@ -1,0 +1,12 @@
+name: Holdout/Light/Machine Pistol Ammo (Regular)
+type: ammo
+img: /systems/sr6/assets/items/ammo.webp
+effects: []
+system:
+  description: ''
+  costFormula: '0.5'
+  availability:
+    illegal: false
+    rating: 1
+_id: a7RnPero7c5791fM
+_key: '!items!a7RnPero7c5791fM'

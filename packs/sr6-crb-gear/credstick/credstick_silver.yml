@@ -1,0 +1,11 @@
+name: Credstick (Silver)
+type: credstick
+img: /systems/sr6/assets/yen.webp
+effects: []
+system:
+  rating: 2
+  nuyen: 0
+  sin: null
+  description: ''
+_id: O8BM15I8MhVby58Y
+_key: '!items!O8BM15I8MhVby58Y'

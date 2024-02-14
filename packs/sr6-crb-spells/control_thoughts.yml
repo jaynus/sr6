@@ -1,0 +1,35 @@
+name: Control Thoughts
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Similar to Control Actions but more insidious, this puts the spellcaster
+    inside the head of the target, making them think what the spellcaster wants
+     them to. Roll Sorcery + Magic vs. Willpower + Logic; net hits give the
+    maximum duration of the spell in minutes. Unlike Control Actions, the target
+    s awareness of Control Thoughts being used on them is uncertain. The closer
+    th e thoughts are to the targets normal thoughts, the less likely they ar e
+    to notice the intrusion. At the gamemasters discretion, they can hav e the
+    target make a Logic + Intuition test after the spell wears off to recognize
+    the spells effect on them with a threshold based on how different fro m
+    normal their thoughts were made to be. While the spellcaster plays a
+    powerful role in shaping the individuals thoughts, certain instincts are
+    very difficult to override. Thoughts lik e I should jump off this building
+     o r I should attack my best friend/spouse/partner are generally going to
+    b e resisted. With thoughts such as these, the gamemaster can have the
+    target rol l another Willpower + Logic test to resist the suggestion, and
+    they may gain Edg e before the test if the thought is too far outside their
+    normal thought proces s or if it violates their basic instincts.
+  type: M
+  formulas:
+    drain: '4'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: L
+    value: 0
+_id: 1IT91ffjCTKSnHOa
+_key: '!items!1IT91ffjCTKSnHOa'

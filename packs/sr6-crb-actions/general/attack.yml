@@ -1,0 +1,14 @@
+name: Attack
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may perform one of a variety o forms of attack with this Major
+    Action. See th Combat chapter (p. 104) for more details.
+  category: combat
+  activation:
+    type: major
+    period: initiative
+_id: zQTndSZ3WmxffBFx
+_key: '!items!zQTndSZ3WmxffBFx'

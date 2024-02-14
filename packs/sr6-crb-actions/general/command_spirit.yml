@@ -1,0 +1,15 @@
+name: Command Spirit
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may issue a service command t o single spirit or group of
+    spirits under their control, or dismiss them. The service must be th same.
+    If multiple services are desired, multipl Minor Actions must be used.
+  category: magic
+  activation:
+    type: minor
+    period: initiative
+_id: 86oiHqpCrAMxqyU9
+_key: '!items!86oiHqpCrAMxqyU9'

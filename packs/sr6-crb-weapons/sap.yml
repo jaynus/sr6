@@ -1,0 +1,34 @@
+name: Sap
+type: weapon
+img: /systems/sr6/assets/items/clubs.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: CLUBS
+  skillUse:
+    skill: close_combat
+    specialization: clubs
+    attribute: agility
+  costFormula: '75'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '6'
+    nearFormula: '0'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '2'
+    damageType: S
+  description: >-
+    Also known as a blackjack, this is a short, flexible club or a
+    leather-wrapped iron, lead, or sand filled sack for thumping heads. It s
+    designed to be concealable, often fitting in the palm of the hand
+    (Concealability threshold 4).
+_id: 8rrRnJJqD5qaN2hz
+_key: '!items!8rrRnJJqD5qaN2hz'

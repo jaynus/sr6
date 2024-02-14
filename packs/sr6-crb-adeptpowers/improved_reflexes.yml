@@ -1,0 +1,31 @@
+name: Improved Reflexes
+type: adeptpower
+img: icons/svg/aura.svg
+effects:
+  - name: Improved Reflexes
+    transfer: true
+    disabled: false
+    changes:
+      - mode: 2
+        key: system.attributes.reaction.mod
+        value: '@level'
+    _key: '!items.effects!LKM8NINqFkv0xVzN.d4XwVw1AVPpGDPEt'
+    _id: d4XwVw1AVPpGDPEt
+system:
+  description: >-
+    This power gives you quick reflexes and anticipation, allowing you to act
+    and react much faster than the normies. For each level of this power, add an
+    Initiative Die and increase your Reactionby 1. The maximum level of this
+    power is 4, and it cannot be combined with any other Initiative or Reaction
+    boosts.
+  powerCost: 1
+  maxLevel: 4
+  activation:
+    type: passive
+  modifiers:
+    - class: InitiativeModifier
+      data:
+        type: physical
+        diceFormula: '@level'
+_id: LKM8NINqFkv0xVzN
+_key: '!items!LKM8NINqFkv0xVzN'

@@ -1,0 +1,30 @@
+name: Silencer
+type: gear
+img: /systems/sr6/assets/items/laser.webp
+effects: []
+system:
+  description: >-
+    A barrel-mounted accessory for reducing the sound and flash of firing a
+    weapon; not compatible with revolvers or shotguns. It increases the
+    threshold on Perception tests by 2 to notice the weapon’s use or locate the
+    weapon’s firer. Attaching or removing a silencer takes a Major Action.
+  rating: 1
+  size: 5
+  category:
+    type: accessory
+    subtype: null
+  skillUse: null
+  costFormula: '125'
+  availability:
+    illegal: false
+    rating: 1
+  monitors: null
+  matrix:
+    active: false
+    wirelessBonus:
+      description: >-
+        The silencer features systems and simple software that alerts you via AR
+        if someone nearby moves quickly in response to the sound of the silenced
+        weapon.
+_id: WoJp0YUNFQABxNTj
+_key: '!items!WoJp0YUNFQABxNTj'

@@ -1,0 +1,23 @@
+name: Powerball
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    The harsher version of Clout, Powerbolt smacks targets with Physical damage;
+    Powerball does the same as an area effect.
+  type: P
+  formulas:
+    drain: '5'
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: I
+    value: 0
+  damage:
+    combat: direct
+    type: P
+    form: air
+_id: fjEBQuSQUaI1KKQm
+_key: '!items!fjEBQuSQUaI1KKQm'

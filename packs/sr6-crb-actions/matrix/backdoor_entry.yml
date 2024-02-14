@@ -1,0 +1,38 @@
+name: Backdoor Entry
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    This action is linked to the Sleaze Attribute. You attempt to use a backdoor
+    you have put in place to gain illicit entry into a host, device, or other
+    Matrix area. This action can only be used if you have previously used Probe
+    on the target suc- cessfully; net hits from that successful Probe count as a
+    dice-pool bonus on this test. If the test is suc- cessful, you gain Admin
+    access to the target, and it does not count as illegal Admin access (though
+    taking illegal Matrix Actions will still increase your Overwatch Score). If
+    this test fails, the back- door you have made was detected and removed, and
+    you cannot attempt Backdoor Entry again with the same host until a new
+    backdoor is made through the Probe Action. Failing this test does not
+    immediately set off alarms, but the character’s OS increases as normal.
+  type: decker
+  skillUse:
+    skill: Cracking
+    specialization: Hacking
+    attribute: logic
+  linkedAttribute: s
+  limits:
+    illegal: true
+    access_level:
+      - outsider
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@willpower + @persona.f'
+    deviceDefend: '@persona.f'
+    damage: null
+    soak: null
+_id: K2DmYLKiJU96zk2D
+_key: '!items!K2DmYLKiJU96zk2D'

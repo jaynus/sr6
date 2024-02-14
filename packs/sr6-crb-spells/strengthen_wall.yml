@@ -1,0 +1,27 @@
+name: Strengthen Wall
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Whether youre trying to solidify a wall that your opponent s are trying to
+    breach or cut down the noise from the people that are roller skatin g or
+    something in the apartment above yours, making an existing wall a little
+    stronger can be useful. Roll Sorcery + Magic vs. Object Resistance for the
+    wal l you are trying to affect; net hits increase the Structure rating by 1
+    per ne t hit. You can affect four square meters of wall with the base
+    version of thi s spell; using the Increase Area effect increases this by
+    four square meters pe r point of DV added. The Shift Area effect can be used
+    for this spell.
+  type: P
+  formulas:
+    drain: '4'
+    soak: ''
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: koBW0dkHNw7YI2UF
+_key: '!items!koBW0dkHNw7YI2UF'

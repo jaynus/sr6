@@ -1,0 +1,24 @@
+name: Armor Jacket
+type: wearable
+img: /systems/sr6/assets/items/armor_body.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: armor
+  skillUse: null
+  costFormula: '1000'
+  capacity: 8
+  slots:
+    - armor
+  formulas:
+    defenseRatingFormula: '4'
+  availability:
+    illegal: false
+    rating: 2
+  description: >-
+    Available in all manner of styles, it offers good protection without
+    catching too much attention. But dont think of wearing one to a social event
+    or government building.
+_id: KpV6ZXpAjrz3yPB8
+_key: '!items!KpV6ZXpAjrz3yPB8'

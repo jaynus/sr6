@@ -1,0 +1,15 @@
+name: Call a Shot
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    Edge allows for some specific called shots without dice penalty or with
+    reduced penalty, but yo can increase the damage by 2 by taking a –4 dic pool
+    penalty. This must be combined with the Attack action.
+  category: combat
+  activation:
+    type: minor
+    period: initiative
+_id: pyYGkC25kMc0464X
+_key: '!items!pyYGkC25kMc0464X'

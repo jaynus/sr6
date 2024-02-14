@@ -1,0 +1,19 @@
+name: Con
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: social
+  description: ''
+  specializations:
+    - Acting
+    - Disguise
+    - Impersonation
+    - Performance
+  attribute: charisma
+  canUntrained: true
+  points: 0
+  specialization: null
+  expertise: null
+_id: TOcFQ4uxm9i5inVX
+_key: '!items!TOcFQ4uxm9i5inVX'

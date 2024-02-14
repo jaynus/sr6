@@ -1,0 +1,28 @@
+name: Control Actions
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    The spellcaster acts as master puppeteer, taking control of anothe r person
+    and making them dance to their tune. Roll Sorcery + Magic vs. Willpowe r +
+    Logic; net hits give the maximum duration of the spell in minutes. The targe
+    t is aware of what is happening to them but can do little about it. The
+    caste r uses the same actions to command the individual as the action they
+    are tellin g them to take, so that having them move is a Minor Action, but
+    having them attac k is a Major Action. This spell can be made into an area
+    spell by using th e Increase Area adjustment. Once the spell is cast, the
+    effect stays with individual s who did not resist the spell, even if they
+    move out of the initial area.
+  type: M
+  formulas:
+    drain: '4'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: L
+    value: 0
+_id: QIk5ASWGpK2lGRfF
+_key: '!items!QIk5ASWGpK2lGRfF'

@@ -1,0 +1,31 @@
+name: Send Message
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    You send a text or audio message the length of a short sentence, an image,
+    or a file via the Matrix to a user whose commcode you have. If you’re using
+    the Matrix through a DNI, even if you’re in AR, you can send longer and more
+    complicated messages, about a paragraph worth of text. You can also use this
+    action to open a live feed to one or more recipients, using any digital
+    recording devices you have.
+  type: decker
+  skillUse: null
+  limits:
+    illegal: false
+    access_level:
+      - outsider
+      - user
+      - admin
+  activation:
+    type: minor
+    period: initiative
+  formulas:
+    attack: null
+    defend: null
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: 18FrqQG5eKdbahJI
+_key: '!items!18FrqQG5eKdbahJI'

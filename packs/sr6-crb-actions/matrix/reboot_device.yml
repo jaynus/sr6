@@ -1,0 +1,30 @@
+name: Reboot Device
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    The target device, persona, or PAN goes offline and comes back online at the
+    end of the following combat round. The target’s Overwatch Score and any
+    access achieved on or by the target is reset. No dumpshock occurs from
+    rebooting. You cannot reboot if you are link-locked.
+  type: decker
+  skillUse:
+    skill: Electronics
+    specialization: Software
+    attribute: logic
+  limits:
+    illegal: false
+    access_level:
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@willpower + @persona.f'
+    deviceDefend: '@persona.f * 2'
+    damage: null
+    soak: null
+_id: Orw70F9H61Up7yNv
+_key: '!items!Orw70F9H61Up7yNv'

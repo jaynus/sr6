@@ -1,0 +1,19 @@
+name: Electronics
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: matrix
+  description: ''
+  specializations:
+    - Computer
+    - Hardware
+    - Software
+    - Complex Forms
+  attribute: logic
+  canUntrained: true
+  points: 0
+  specialization: null
+  expertise: null
+_id: gXPoq9ga39CJoUz3
+_key: '!items!gXPoq9ga39CJoUz3'

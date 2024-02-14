@@ -1,0 +1,33 @@
+name: Synaptic Booster
+type: augmentation
+img: /systems/sr6/assets/items/cyber_headware.webp
+effects:
+  - name: Synaptic Booster
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.attributes.reaction.mod
+        value: '@rating'
+      - mode: 2
+        key: system.initiatives.physical.dice
+        value: '@rating'
+    _key: '!items.effects!c2xpY8s94lg9t2Ef.z2PmXzi6IfyJiD6t'
+    _id: z2PmXzi6IfyJiD6t
+system:
+  description: >-
+    The nerve cells making up the spinal cord are both broadened and replicated
+    with this bioware, allowing for more neural bandwidth. The result is a much
+    faster reaction time. The booster confers a bonus of +1 Reaction (with
+    accompanying bonus to your Initiative Score) and 1 additional Initiative Die
+    (with accompanying Minor Action). The synaptic booster cannot be combined
+    with any other form of Reaction or Initiative enhancement. Unlike other
+    enhancements, this cannot be turned off, leaving the user in a perpetual
+    state of being surrounded by slow motion.
+  essenceCostFormula: '@rating * 0.5'
+  cost: '@rating * 95000'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 5
+_id: c2xpY8s94lg9t2Ef
+_key: '!items!c2xpY8s94lg9t2Ef'

@@ -1,0 +1,22 @@
+name: Antidote
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    This spell sends mana coursing through the body to find and purge toxins.
+    Roll a Sorcery + Magic test. Each hit reduces the toxin power by one. The
+    mage may spend consecutive major actions to roll again without recasting. If
+    the power hits zero, any ongoing effects of the toxin are eliminated.
+  type: P
+  formulas:
+    drain: '5'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: u9DvCf3KMy69By89
+_key: '!items!u9DvCf3KMy69By89'

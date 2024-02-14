@@ -1,0 +1,18 @@
+name: Close Combat
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: combat
+  description: ''
+  specializations:
+    - Blades
+    - Clubs
+    - Unarmed
+  attribute: agility
+  canUntrained: true
+  points: 0
+  specialization: null
+  expertise: null
+_id: xj4Itc4d09RcYRUK
+_key: '!items!xj4Itc4d09RcYRUK'

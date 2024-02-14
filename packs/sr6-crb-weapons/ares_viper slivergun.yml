@@ -1,0 +1,42 @@
+name: Ares Viper Slivergun
+type: weapon
+img: /systems/sr6/assets/items/pistols_heavy.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: PISTOLS_HEAVY
+  skillUse:
+    skill: firearms
+    specialization: pistols_heavy
+    attribute: agility
+  costFormula: '610'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 4
+  matrix: null
+  attackRatings:
+    closeFormula: '12'
+    nearFormula: '8'
+    mediumFormula: '6'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '4'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+  description: >-
+    30(c)The unique Slivergun hangs out in the Heavy Pistol class,  but it s a
+    creature all its own. The Slivergun fires metal slivers tha t count as
+    flechette ammunition and are bought as such, but they aren t interchangeabl
+    e with any other flechette weapon. The weapon remains capable of Burst Fire
+    an d has a silencer integrated into the barrel, and the large ammo capacity
+    make s it a terror on the streets.
+_id: zLwBxxnaHlHMsH6Z
+_key: '!items!zLwBxxnaHlHMsH6Z'

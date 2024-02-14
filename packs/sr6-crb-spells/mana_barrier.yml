@@ -1,0 +1,32 @@
+name: Mana Barrier
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Want a spirit-free room? Want a way to enforce your ba r s no foc i policy?
+    Then a mana barrier is the way to go. This invisible wal l (visible only on
+    the astral) will let people and non-magical objects throug h with no
+    noticeable effect, but spirits, foci, dual-natured beings, alchemical
+    preparations, reagents, and spells cant get through. Astrally projecting
+    mages cant get through, either (though they can always try to go around).
+    Unless they fight their way through, which they sometimes do, but it s good
+    to make them struggle sometimes. To cast a mana barrier, roll Sorcery +
+    Magic; (net hits + casters Magic) is the Structure rating of the astral wall
+    you create. At the basic level, the spell creates a two-meterby- two-mete r
+    barrier. The Increase Area effect can be added to add up to two meters in
+    lengt h and width (but not depth) for each time the effect is chosen The
+    barrier ca n be shaped as desired by the caster. For more information on
+    mana barriers, se e p. 161.
+  type: M
+  formulas:
+    drain: '5'
+    soak: ''
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: GWsw7Z1Ii7aZijTD
+_key: '!items!GWsw7Z1Ii7aZijTD'

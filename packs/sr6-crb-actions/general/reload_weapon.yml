@@ -1,0 +1,16 @@
+name: Reload Weapon
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    Weapons without a smartlink, or weapon where the smartlink is currently
+    disengaged, requir a Major Action to reload. Reloading a weapon refills the
+    weapon to its maximum capacity as long a the character has sufficient
+    ammunition to do so.
+  category: combat
+  activation:
+    type: major
+    period: initiative
+_id: OwnFBoT4CmJZH5wU
+_key: '!items!OwnFBoT4CmJZH5wU'

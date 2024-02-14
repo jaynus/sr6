@@ -1,0 +1,18 @@
+name: Killing Hands
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    Your hands become lethal and magical, useful both in shadowrunning and
+    cheesy pickup lines. When fighting unarmed, you can choose to deal Stun or
+    Physical damage. Killing Hands can be combined with other powers affecting
+    unarmed combat. Attacks made with Killing Hands are considered magical,
+    meaning they bypass protections against normal weapons and can be made
+    against astral beings.
+  powerCost: 0.5
+  maxLevel: 1
+  activation:
+    type: minor
+_id: bt5XoPjqGEAUoMtH
+_key: '!items!bt5XoPjqGEAUoMtH'

@@ -1,0 +1,23 @@
+name: Engineering
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: other
+  description: ''
+  specializations:
+    - Aeronautics Mechanic
+    - Armorer
+    - Automotive Mechanic
+    - Demolitions
+    - Gunnery
+    - Industrial Mechanic
+    - Lockpicking
+    - Nautical Mechanic
+  attribute: logic
+  canUntrained: true
+  points: 0
+  specialization: null
+  expertise: null
+_id: 4QtpJAgQVlUKYVnE
+_key: '!items!4QtpJAgQVlUKYVnE'

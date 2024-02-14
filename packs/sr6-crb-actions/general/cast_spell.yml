@@ -1,0 +1,14 @@
+name: Cast Spell
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may cast a spell as a Major Action. For details on how, see
+    Spells (p. 130).
+  category: magic
+  activation:
+    type: major
+    period: initiative
+_id: A3yBlr0bIyIxrYKi
+_key: '!items!A3yBlr0bIyIxrYKi'

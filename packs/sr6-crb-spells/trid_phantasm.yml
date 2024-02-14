@@ -1,0 +1,28 @@
+name: Trid Phantasm
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Multi-Sense: This spell affects multiple senses simultaneously. With this
+    spell, the caster projects a particular image into the area of effect
+     (along with accompanying sounds and smells). Maybe its the image of an
+    attacking dragon, or a peaceful garden, or of a specific individual whateve
+    r it is, it has to be something the caster has seen before, and the phantasm
+    mus t stay in their line of sight. The spellcaster rolls Sorcery + Magic;
+    the ne t hits form the threshold of any Willpower + Intuition tests viewers
+    must mak e to see through the illusion. Phantasm affects every living being
+    that sees th e effect; Trid Phantasm affects cameras, microphones, and other
+    technology.
+  type: P
+  formulas:
+    drain: '4'
+    soak: ''
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: mGbZKkYP5zF5AIgM
+_key: '!items!mGbZKkYP5zF5AIgM'

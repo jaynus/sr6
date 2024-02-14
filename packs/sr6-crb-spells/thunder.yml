@@ -1,0 +1,27 @@
+name: Thunder
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    A big, loud distraction can be useful, and thats what this spel l offers. By
+    casting it, the magician shapes sound wages into a noise of thei r choice it
+    might sound like the spells namesake, or the roar of rush-hou r traffic, or
+    the distant babble of shouted voices, or some other such din. Th e basic
+    area affected by the spell is a two-meter-radius sphere; this can be expande
+    d with the Increase Area effect. For each hit on the Sorcery + Magic test,
+    th e noise continues for 1 combat round after the spell is dropped by the
+    caster.  Net hits serve as a negative dice pool modifier on those trying to
+    hear othe r noises in the area.
+  type: P
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: SHGowsks8lKxJVip
+_key: '!items!SHGowsks8lKxJVip'

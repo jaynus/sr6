@@ -1,0 +1,15 @@
+name: Summon Spirit
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character capable of summoning may us e Major Action to summon a spirit to
+    assist them.  spirit that is already summoned is controlled usin the Command
+    Spirit Minor Action.
+  category: magic
+  activation:
+    type: major
+    period: initiative
+_id: u6vQhiRZ8edq5RJY
+_key: '!items!u6vQhiRZ8edq5RJY'

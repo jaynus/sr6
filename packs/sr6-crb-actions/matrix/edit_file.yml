@@ -1,0 +1,40 @@
+name: Edit File
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    Edit File allows you to create, change, copy, delete, or protect any kind of
+    file. The defender is either the host holding the file or the owner of the
+    file (if it’s not on a host). Each action is enough to alter one detail of a
+    file—a short paragraph of text, a single detail of an image, or two or three
+    seconds of video or audio (you and your gamemaster can work out what exactly
+    “one detail” means). Your gamemaster may impose penalties on the test if
+    your edit is particularly intricate or tricky. If you want to perform a
+    continuous edit, such as removing your teammates from a video feed, you need
+    to perform this action once per combat round for as long as you want to keep
+    the edit going. If you use this action to copy a file, you are the new
+    file’s owner. If the file you want to copy has protection on it, this action
+    automatically fails. If the file has a Data Bomb, the Data Bomb goes off on
+    you (so try to remember to scan files before you open them).
+  type: decker
+  skillUse:
+    skill: Electronics
+    specialization: Computer
+    attribute: logic
+  limits:
+    illegal: false
+    access_level:
+      - user
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@intuition + @persona.f'
+    deviceDefend: '@persona.f + @persona.s'
+    damage: null
+    soak: null
+_id: qrwEgb47pbt9WRvF
+_key: '!items!qrwEgb47pbt9WRvF'

@@ -1,0 +1,20 @@
+name: Ready Weapon
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may ready a weapon by usin this action. This includes drawing
+    and readyin a firearm; pulling a melee weapon from a sheat or pocket; taking
+    out and readying a grenad or throwing knife; or any other kind of weapo
+    preparation. Almost all weapons require this action before they are ready
+    for use, though man times it occurs before combat even starts. Small weapons
+    such as throwing knives an shuriken can be readied in bunches, with a tota
+    number equal to the character’s Agility attribut pulled into the character’s
+    off-hand with a single Ready Weapon action.
+  category: combat
+  activation:
+    type: major
+    period: initiative
+_id: hcDiheCcY1xw7byb
+_key: '!items!hcDiheCcY1xw7byb'

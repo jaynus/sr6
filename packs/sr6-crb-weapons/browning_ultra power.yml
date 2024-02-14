@@ -1,0 +1,38 @@
+name: Browning Ultra Power
+type: weapon
+img: /systems/sr6/assets/items/pistols_heavy.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: PISTOLS_HEAVY
+  skillUse:
+    skill: firearms
+    specialization: pistols_heavy
+    attribute: agility
+  costFormula: '315'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 2
+  matrix: null
+  attackRatings:
+    closeFormula: '10'
+    nearFormula: '9'
+    mediumFormula: '6'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '3'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+  description: >-
+    10(c)Once the Predator s primary competition as the worl d s best heavy
+    pistol, the Ultra Power has ceded its claim to the title since i t has not
+    kept pace with the tech advances in the Pred-VI. The Browning is cheaper,
+    though, and offers a built-in top-mounted laser sight.
+_id: 8sgxAvdqPXiRQyI4
+_key: '!items!8sgxAvdqPXiRQyI4'

@@ -1,0 +1,27 @@
+name: Black IC
+type: matrix_ic
+img: /systems/sr6/assets/matrix/ic_black.webp
+effects: []
+system:
+  description: >-
+    Black IC means business. When a host tosses this out, it wants your brain
+    fried, plain and simple. If you see this coming at you, no one would blame
+    you for running. In cybercombat, Black IC does (host rating + net hits) in
+    both Matrix dam age and biofeedback damage.
+  type: ic
+  skillUse: null
+  limits:
+    activationType: major
+    activationPeriod: initiative
+  damage:
+    types:
+      - B
+      - M
+  formulas:
+    attack: '@rating * 2'
+    defend: '@intuition + @firewall'
+    deviceDefend: null
+    damage: '@rating + @net_hits'
+    soak: '@firewall'
+_id: wNxSuFW3Yzpop8ul
+_key: '!items!wNxSuFW3Yzpop8ul'

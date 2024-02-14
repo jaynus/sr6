@@ -1,0 +1,16 @@
+name: Direction Sense
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    You have a good sense of where you have been, where you’re going, and a few
+    of the obstacles in between. When making an Outdoors test related to
+    directions, you may gain an Edge point, provided you spend it immediately on
+    that test.
+  powerCost: 0.25
+  maxLevel: 1
+  activation:
+    type: passive
+_id: 5tgLGIyJY6lsnj0B
+_key: '!items!5tgLGIyJY6lsnj0B'

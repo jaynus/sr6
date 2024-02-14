@@ -1,0 +1,87 @@
+@use '@scss/vars/colors.scss';
+
+.dice {
+	position: relative;
+	width: 24px;
+	line-height: 24px;
+	float: left;
+	margin-right: 1px;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	font-size: 24px;
+	color: #000;
+	font-weight: bold;
+	text-align: center;
+
+	background-color: rgba(0,0,0, 0.75);
+
+	&[data-die='1'] {
+		background-image: url(/systems/sr6/assets/dice/D6_1.svg);
+	}
+	&[data-die='2'] {
+		background-image: url(/systems/sr6/assets/dice/D6_2.svg);
+	}
+	&[data-die='3'] {
+		background-image: url(/systems/sr6/assets/dice/D6_3.svg);
+	}
+	&[data-die='4'] {
+		background-image: url(/systems/sr6/assets/dice/D6_4.svg);
+	}
+	&[data-die='5'] {
+		background-image: url(/systems/sr6/assets/dice/D6_5.svg);
+	}
+	&[data-die='6'] {
+		background-image: url(/systems/sr6/assets/dice/D6_6.svg);
+	}
+
+	&[data-die='1_exploded'] {
+		background-image: url(/systems/sr6/assets/dice/D6_1_Plus.svg);
+	}
+	&[data-die='2_exploded'] {
+		background-image: url(/systems/sr6/assets/dice/D6_2_Plus.svg);
+	}
+	&[data-die='3_exploded'] {
+		background-image: url(/systems/sr6/assets/dice/D6_3_Plus.svg);
+	}
+	&[data-die='4_exploded'] {
+		background-image: url(/systems/sr6/assets/dice/D6_4_Plus.svg);
+	}
+	&[data-die='5_exploded'] {
+		background-image: url(/systems/sr6/assets/dice/D6_5_Plus.svg);
+	}
+	&[data-die='6_exploded'] {
+		background-image: url(/systems/sr6/assets/dice/D6_6_Plus.svg);
+	}
+
+	&[data-die='5_exploded_ignored'] {
+		background-image: url(/systems/sr6/assets/dice/D6_5_Plus_Minus.svg);
+	}
+
+	&[data-die='5_ignored'] {
+		background-image: url(/systems/sr6/assets/dice/D6_5_Minus.svg);
+	}
+
+	&[data-die='1_wild'] {
+		background-image: url(/systems/sr6/assets/dice/Wild_1.svg);
+	}
+
+	&[data-die='2_wild'] {
+		background-image: url(/systems/sr6/assets/dice/Wild_2.svg);
+	}
+
+	&[data-die='3_wild'] {
+		background-image: url(/systems/sr6/assets/dice/Wild_3.svg);
+	}
+
+	&[data-die='4_wild'] {
+		background-image: url(/systems/sr6/assets/dice/Wild_4.svg);
+	}
+
+	&[data-die='5_wild'] {
+		background-image: url(/systems/sr6/assets/dice/Wild_5.svg);
+	}
+
+	&[data-die='6_wild'] {
+		background-image: url(/systems/sr6/assets/dice/Wild_6.svg);
+	}
+}

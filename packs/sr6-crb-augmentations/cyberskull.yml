@@ -1,0 +1,15 @@
+name: Cyberskull
+type: augmentation
+img: icons/svg/item-bag.svg
+effects: []
+system:
+  description: >-
+    The skull replaces the bones and muscles of the head, face, and neck. Having
+    a cyberskull means you also have a cyberjaw that can deliver a powerful
+    bite.
+  essenceCostFormula: '1.0'
+  rating: 1
+  sourceGearIds:
+    - '@@sr6-crb-gear:Cyberjaw'
+_id: 1vL0SPYOZZzerZf4
+_key: '!items!1vL0SPYOZZzerZf4'

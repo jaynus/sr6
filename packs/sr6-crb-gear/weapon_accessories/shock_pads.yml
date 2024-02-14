@@ -1,0 +1,34 @@
+name: Shock Pads
+type: gear
+img: /systems/sr6/assets/items/laser.webp
+effects: []
+system:
+  description: >-
+    A shock-absorbing pad situated on the rigid stock of a rifle, shotgun, or
+    heavy weapon. It decreases the Semi-Auto and Burst Fire Attack Rating
+    modifiers by 1.
+  rating: 1
+  size: 5
+  category:
+    type: accessory
+    subtype: null
+  skillUse: null
+  costFormula: '125'
+  availability:
+    illegal: false
+    rating: 1
+  monitors: null
+  modifiers:
+    - class: AttackRatingModifier
+      description: Decreases the Semi-Auto and Burst Fire Attack Rating modifiers by 1.
+      target: item
+      data:
+        value: 1
+        testClasses:
+          - RangedAttackTest
+        firemodes:
+          - SA
+          - BF_narrow
+          - BF_wide
+_id: RtRb8naWEVIR5Ayk
+_key: '!items!RtRb8naWEVIR5Ayk'

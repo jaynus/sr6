@@ -1,0 +1,27 @@
+name: Hush
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Single-Sense: This spell affects only one sense. Silence descend s on that
+    target, making them unable to make a noise even if they tried. Thi s can be
+    great for people trying to sneak by a target, or a good way to throw
+     disruption among people depending on vocal communication. Hush gives
+    target s the Silent (#) status (see p. 53), with the number equaling the net
+    hits o n the Sorcery + Magic test. That number acts as a threshold for any
+    attempts t o hear the character. Silence acts the same, but it gives the
+    Silent (Improved)  (#) status, so that microphones and other technology also
+    will not hear th e targeted character.
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: sxxc5Ku6HchyGACs
+_key: '!items!sxxc5Ku6HchyGACs'

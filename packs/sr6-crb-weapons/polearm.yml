@@ -1,0 +1,35 @@
+name: Polearm
+type: weapon
+img: /systems/sr6/assets/items/blades.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: BLADES
+  skillUse:
+    skill: close_combat
+    specialization: blades
+    attribute: agility
+  costFormula: '210'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '8'
+    nearFormula: '0'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '4'
+    damageType: P
+  description: >-
+    Take a long stick, add any of a dozen varieties of blades to the head, and
+    you ve got a polearm. Designed to keep distance between attacker and
+    defender or strike at a mounted target, the y re not common street weapons.
+    They re nearly impossible to conceal, even for a troll, but they re great at
+    keeping problems at a safe distance.
+_id: NFo8mYG0d8Cf8waq
+_key: '!items!NFo8mYG0d8Cf8waq'

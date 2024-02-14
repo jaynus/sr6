@@ -1,0 +1,11 @@
+name: Home Ground
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    Select a neighborhood or Matrix host each time you take this quality.
+    Outdoors and Perception tests made in your Home Ground gain an Edge for use
+    on that test; if you do not use the Edge on that test, it goes away. 
+_id: 3C1BPb4Ewv0N7j8F
+_key: '!items!3C1BPb4Ewv0N7j8F'

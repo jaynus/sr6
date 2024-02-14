@@ -1,0 +1,41 @@
+name: AK-97
+type: weapon
+img: /systems/sr6/assets/items/rifle_assault.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: RIFLE_ASSAULT
+  skillUse:
+    skill: firearms
+    specialization: rifles
+    attribute: agility
+  costFormula: '2100'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 2
+  matrix: null
+  attackRatings:
+    closeFormula: '4'
+    nearFormula: '11'
+    mediumFormula: '9'
+    farFormula: '7'
+    extremeFormula: '1'
+  damageData:
+    damageFormula: '5'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+    - FA
+  description: >-
+    38(c)The AK-97 will never go out of style, especially since i t still looks
+    like its mid-twentieth-century predecessor. Built for reliability and
+    endurance, it s not the prettiest girl at the dance, but it can sure shake a
+    tailfeather.
+_id: HdmEP9jwmJGv8DFe
+_key: '!items!HdmEP9jwmJGv8DFe'

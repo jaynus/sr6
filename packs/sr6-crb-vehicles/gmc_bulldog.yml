@@ -1,0 +1,32 @@
+name: GMC Bulldog
+type: vehicle
+img: /systems/sr6/assets/items/vehicle.webp
+effects: []
+items: []
+system:
+  description: >-
+    The Bulldog is everywhere. As one of the best-selling delivery vans around
+    the world, thanks to the protection of built-in armor, this van is also a
+    staple of runners who enjoy the protection and anonymity of this abundant
+    hauler. It has plenty of space for gear, drones, packages, or a few trolls.
+    With the right paint job, it can blend in anywhere.
+  costFormula: '35000'
+  availability:
+    illegal: false
+    rating: 1
+  stats:
+    handling:
+      onRoad: 5
+      offRoad: 7
+    acceleration: 10
+    speedInterval: 10
+    maxSpeed: 140
+    body: 16
+    armor: 12
+    pilot: 2
+    sensor: 3
+  seats:
+    front: 2
+    back: 10
+_id: pnsFu9XdXobWwgRK
+_key: '!items!pnsFu9XdXobWwgRK'

@@ -1,0 +1,12 @@
+name: Configurator
+type: program
+img: /systems/sr6/assets/matrix/program.webp
+effects: []
+system:
+  type: basic
+  source: CRB p.185
+  description: >-
+    Store alternate deck configuration, swap to it instead of changing two
+    attributes.
+_id: Wo4nV23ZldzcTvIg
+_key: '!items!Wo4nV23ZldzcTvIg'

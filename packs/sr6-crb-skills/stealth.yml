@@ -1,0 +1,19 @@
+name: Stealth
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: other
+  description: ''
+  specializations:
+    - Disguise
+    - Palming
+    - Sneaking
+    - Camouflage
+  attribute: agility
+  canUntrained: true
+  points: 0
+  specialization: null
+  expertise: null
+_id: KdNBorOox1Q3Hh8a
+_key: '!items!KdNBorOox1Q3Hh8a'

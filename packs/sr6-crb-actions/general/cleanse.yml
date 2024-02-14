@@ -1,0 +1,14 @@
+name: Cleanse
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    Awakened characters use this action to eras traces of their magic activity
+    (see p. 160).
+  category: magic
+  activation:
+    type: major
+    period: initiative
+_id: PEREyL0Rc6fn4Wwt
+_key: '!items!PEREyL0Rc6fn4Wwt'

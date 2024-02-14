@@ -1,0 +1,32 @@
+name: Crash Program
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    You overload part of your target’s memory and scramble one of its running
+    programs. You need to specify which program you’re trying to crash; you can
+    learn what your target is running either with a Matrix Perception action or
+    by observing the program in action. If you succeed, the program is
+    scrambled: it ends and cannot be restarted until the device it was running
+    on is rebooted.
+  type: decker
+  skillUse:
+    skill: Cracking
+    specialization: Cybercombat
+    attribute: logic
+  limits:
+    illegal: true
+    access_level:
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@persona.d + @persona.device.rating'
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: H53swZLz1Pzhg5d2
+_key: '!items!H53swZLz1Pzhg5d2'

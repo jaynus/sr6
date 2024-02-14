@@ -1,0 +1,21 @@
+name: Enhanced Accuracy
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    Weapons are more accurate and deadly in your hands than in those of normal
+    people. Increase the Attack Rating of any weapon you wield by 2.
+  powerCost: 0.5
+  maxLevel: 1
+  activation:
+    type: passive
+  modifiers:
+    - class: AttackRatingModifier
+      data:
+        value: 2
+        testClasses:
+          - RangedAttackTest
+          - MeleeAttackTest
+_id: Eb6Plm7aoIBBE00Y
+_key: '!items!Eb6Plm7aoIBBE00Y'

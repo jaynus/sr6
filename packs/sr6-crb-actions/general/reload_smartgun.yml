@@ -1,0 +1,15 @@
+name: Reload Smartgun
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character linked to a ready smartgun may us a mental command to eject the
+    weapon’s clip whil sliding a new one in with one deft motion, assuming that
+    the new ammo is readily available.
+  category: combat
+  activation:
+    type: minor
+    period: initiative
+_id: En4iw89JsDehP5nM
+_key: '!items!En4iw89JsDehP5nM'

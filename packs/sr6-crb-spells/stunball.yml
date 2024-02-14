@@ -1,0 +1,24 @@
+name: Stunball
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Cant sleep? Are the constant police sirens and gang shoot-out s keeping you
+    up? Try a little a knockout to quiet the neighborhood. Need an extra-strengt
+    h dose for those insomniac rockers? Stunball is there when you need it.
+  type: M
+  formulas:
+    drain: '4'
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: I
+    value: 0
+  damage:
+    combat: direct
+    type: S
+    form: stun
+_id: hbinfMgwO1AF7W2D
+_key: '!items!hbinfMgwO1AF7W2D'

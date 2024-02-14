@@ -1,0 +1,28 @@
+name: Chaos
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Multi-Sense: This spell affects multiple senses simultaneously. Confusion
+    hits the target with a swirl of images and emotions that leave the m
+    disoriented and, well, confused. Roll Sorcery + Magic vs. Willpower +
+    Logic;  the target gains the Confused (#) status, with the number equaling
+    the net hit s on the test. The target experiences a dice pool penalty equal
+    to that numbe r on all tests besides Damage Resistance tests. Chaos has the
+    same effect, excep t it also affects cameras, microphones, and other forms
+    of technology. The bas e spell affects only an individual, but the Increase
+    Area effect can be applie d to make it an area spell (starting with a 2m
+    radius). When it is an area spell,  the Shift Area effect can be used.
+  type: P
+  formulas:
+    drain: '4'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: HXqSP1fXCo5uvnPH
+_key: '!items!HXqSP1fXCo5uvnPH'

@@ -1,0 +1,27 @@
+name: Mask
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Multi-Sense: This spell affects multiple senses simultaneously. Sometimes
+    you dont want to be seen; other times, you want to be seen as someone you
+    are not. Mask is for the latter. The spell changes the critical
+     characteristics of the person their appearance, their sound, their
+    scent,  and so forth. Roll Sorcery + Magic and record the number of hits;
+    those hit s are used as a threshold when people try to see through the
+    illusion, which require s an Willpower + Intuition test. Mask affects only
+    living, sentient beings; Physica l Mask affects cameras, microphones, and
+    other technology.
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: wbudDHkbKH4vKUtf
+_key: '!items!wbudDHkbKH4vKUtf'

@@ -1,0 +1,53 @@
+name: Adrenaline pump
+type: augmentation
+img: /systems/sr6/assets/items/cyber_headware.webp
+effects:
+  - name: Pain Editor
+    transfer: true
+    disabled: true
+    changes:
+      - mode: 2
+        key: system.attributes.strength.mod
+        value: '@rating'
+      - mode: 2
+        key: system.attributes.agility.mod
+        value: '@rating'
+      - mode: 2
+        key: system.attributes.reaction.mod
+        value: '@rating'
+      - mode: 2
+        key: system.attributes.willpower.mod
+        value: '@rating'
+    _key: '!items.effects!ZBD1bmku8C2cWXVy.tdKIDHGXEcXX39FF'
+    _id: tdKIDHGXEcXX39FF
+system:
+  description: >-
+    This enhanced gland is implanted in the lower abdomen, connected to both
+    supradrenal glands. When dormant, the pump is merely a reservoir for
+    adrenaline. When activated, a small muscular sac contracts, sending a surge
+    of concentrated adrenaline into the blood stream. Physical and emotional
+    stress can force your pump to activate if you fail a Composure test (p. 67);
+    otherwise you can trigger it as a Minor Action. While the pump is active,
+    you ignore injury modifiers, don’t fall unconscious even if your Stun
+    Condition Monitor is filled, you can’t rest, and the adrenaline pump’s
+    rating is added to your Strength, Agility, Reaction, and Willpower
+    attributes. The pump works for (rating x 1D6) combat rounds, and it can’t be
+    switched off early. When time’s up, you crash and take Stun damage equal to
+    one half, rounded up, of the number of combat rounds the pump was active
+    (use unaugmented Body to resist the damage). After the effect’s end, your
+    attribute values return to normal and you stop ignoring injury modifiers or
+    unconsciousness from Stun damage. After use, the pump requires one hour to
+    regenerate its supply. During that time, it cannot be activated. 
+  essenceCostFormula: '@rating * 0.75'
+  cost: '@rating * 55000'
+  hasActivate: true
+  modifiers:
+    - name: Adrenaline Pump (Ignore Pain)
+      class: PainEditorModifier
+  activation:
+    type: minor
+  availability:
+    illegal: true
+    rating: 5
+_id: ZBD1bmku8C2cWXVy
+_key: '!items!ZBD1bmku8C2cWXVy'

@@ -1,0 +1,36 @@
+name: Tarpit
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    Sometimes you want to deliver as much hurt as possible; sometimes you want
+    to deliver a little pain and a little slowness, in order to make the rest of
+    your blows land easier. If you succeed in making this attack, do (1 + net
+    hits) damage to the icon you attacked while also reducing their Data
+    Processing rating by the same amount. If a device’s Data Processing rating
+    is reduced to 0, the user cannot perform a Matrix action until it is 1 or
+    more. The Data Processing rating recovers at a rate of 1 point per combat
+    round.
+  type: decker
+  skillUse:
+    skill: Cracking
+    specialization: Cybercombat
+    attribute: logic
+  limits:
+    illegal: true
+    access_level:
+      - outsider
+      - user
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@persona.d + @persona.f'
+    deviceDefend: '@persona.d + @persona.f'
+    damage: null
+    soak: null
+_id: ZVPi1iEDUE8kZRg3
+_key: '!items!ZVPi1iEDUE8kZRg3'

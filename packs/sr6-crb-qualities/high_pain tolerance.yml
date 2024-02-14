@@ -1,0 +1,12 @@
+name: High Pain Tolerance
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: When wounded, reduce your wound penalty by one (to a minimum of 0).
+  modifiers:
+    - class: PainEditorModifier
+      data:
+        value: 1
+_id: ua6fcnp03qcdk3Ji
+_key: '!items!ua6fcnp03qcdk3Ji'

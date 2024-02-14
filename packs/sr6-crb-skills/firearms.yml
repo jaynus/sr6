@@ -1,0 +1,24 @@
+name: Firearms
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: combat
+  description: ''
+  specializations:
+    - Tasers
+    - Holdouts
+    - Pistols Light
+    - Pistols Heavy
+    - Machine Pistols
+    - Submachine Guns
+    - Rifles
+    - Shotguns
+    - Assault Cannons
+  attribute: agility
+  canUntrained: true
+  points: 0
+  specialization: null
+  expertise: null
+_id: 7KhJFs0GFEU8udEZ
+_key: '!items!7KhJFs0GFEU8udEZ'

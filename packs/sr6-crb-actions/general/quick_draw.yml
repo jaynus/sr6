@@ -1,0 +1,17 @@
+name: Quick Draw
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may quick draw a pistol, pistol-sized weapon, or small throwing
+    weapon an immediately attack with this Minor Action. Th Attack action must
+    be used in conjunction wit this action. They must have the appropriate gear
+    augmentation, or quality to be allowed this action—if they don’t have
+    something that allows thi action, they can’t take it.
+  category: combat
+  activation:
+    type: minor
+    period: initiative
+_id: 6qFdt9QeSzjM1hDK
+_key: '!items!6qFdt9QeSzjM1hDK'

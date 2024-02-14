@@ -1,0 +1,18 @@
+name: Use Simple Device
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character can use any simple device wit h Major Action. Simple devices are
+    those that are activated with a simple movement like a thumb trigger
+    pressing a single key, or tapping a single icon. It takes longer to interact
+    with more comple devices, with required time being up to the gamemaster or
+    listed with the description of specific gear.Remember, a device connected
+    via a DNI-enabled system uses the Minor Action.
+  category: general
+  activation:
+    type: major
+    period: initiative
+_id: 9Fk22eL4PqFh1MKk
+_key: '!items!9Fk22eL4PqFh1MKk'

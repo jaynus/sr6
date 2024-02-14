@@ -1,0 +1,25 @@
+name: Increase Reflexes
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    The reaction time and speed of the target increase, making them better able
+    to anticipate and respond to others. The caster rolls a Sorcery + Magi c
+    (5   Essence) test. They can select how many net hits they actually appl y
+    to the target to increase both their Reaction score and the number of
+    Initiativ e Dice, at a rate of 1 point of increase and 1 Initiative Die per
+    net hit; fo r each net hit applied beyond the first, the Drain Value of the
+    spell increase s by 1.
+  type: P
+  formulas:
+    drain: '5'
+    soak: 5 - @essense
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: E5lpQ1JVnIqn220F
+_key: '!items!E5lpQ1JVnIqn220F'

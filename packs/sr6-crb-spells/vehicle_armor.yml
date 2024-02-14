@@ -1,0 +1,22 @@
+name: Vehicle Armor
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Many shadowrunners learn only too late that car doors are not impenetrable
+    shields against bullets. But with this spell, they can be! Roll Sorcery +
+    Magic vs. Object Resistance of the vehicle; the vehicle gains 1 point of
+    Hardened Armor per net hit.
+  type: P
+  formulas:
+    drain: '6'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: FxukJkSOfUnG8obO
+_key: '!items!FxukJkSOfUnG8obO'

@@ -1,0 +1,24 @@
+name: Improved Physical Attribute (Agility)
+type: adeptpower
+img: icons/svg/aura.svg
+effects:
+  - name: Improved Physical Attribute (Agility)
+    transfer: true
+    disabled: false
+    changes:
+      - mode: 2
+        key: system.attributes.agility.mod
+        value: '@level'
+    _key: '!items.effects!N1kYsURePRa7SHVr.1dTh2FuOEM5GpxpK'
+    _id: 1dTh2FuOEM5GpxpK
+system:
+  description: >-
+    Select a Physical attribute (Body, Agility, Reaction, or Strength) when
+    purchasing this skill. That attribute receives an ongoing boost equal to the
+    level of this power. The maximum boost to the attribute is 1.5 times the
+    current level or the augmented maximum, whichever is lower.
+  powerCost: 1
+  activation:
+    type: passive
+_id: N1kYsURePRa7SHVr
+_key: '!items!N1kYsURePRa7SHVr'

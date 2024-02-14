@@ -1,0 +1,40 @@
+name: Fichetti Security 600
+type: weapon
+img: /systems/sr6/assets/items/pistols_light.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: PISTOLS_LIGHT
+  skillUse:
+    skill: firearms
+    specialization: pistols_light
+    attribute: agility
+  costFormula: '390'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 3
+  matrix: null
+  attackRatings:
+    closeFormula: '10'
+    nearFormula: '9'
+    mediumFormula: '6'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '2'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+  description: >-
+    30(c)
+
+    Designed as a light sidearm for security forces, the thirty-round magazine
+    allows them to miss a ton and not worry about running out of ammo. This also
+    makes it great for deckers. The Security 600 comes with a detachable folding
+    stock and laser sight.
+_id: QKUbCU0fcCsoNrmc
+_key: '!items!QKUbCU0fcCsoNrmc'

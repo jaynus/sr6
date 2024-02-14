@@ -1,0 +1,31 @@
+name: Matrix Search
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    Search the publicly accessible grid for information. The number of hits
+    generated gives you more information regarding the subject. Use the Legwork
+    Results table (p. 50) as a general guideline for what is uncovered.
+  type: decker
+  skillUse:
+    skill: Electronics
+    specialization: Computer
+    attribute: intuition
+  limits:
+    illegal: false
+    access_level:
+      - outsider
+      - user
+      - admin
+  activation:
+    type: extended
+    period: 10minute
+  formulas:
+    attack: null
+    defend: null
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: 9Pvs92P8iBdnAL4K
+_key: '!items!9Pvs92P8iBdnAL4K'

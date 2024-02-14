@@ -1,0 +1,21 @@
+name: Detect Life
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Are there people hiding in that pile of rubble? Or in the forest? This spell
+    will point them out for you. Despite its broad-sounding name, it does not
+    detect every living thing, but rather focuses on sentient beings.
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: dCYDNz8tZZeAajN3
+_key: '!items!dCYDNz8tZZeAajN3'

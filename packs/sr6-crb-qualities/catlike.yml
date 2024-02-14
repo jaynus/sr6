@@ -1,0 +1,10 @@
+name: Catlike
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    You gain a bonus Edge on all tests for balance, falling, and landing safely.
+    Note the rules in the Preventing Edge Abuse section, p. 45.
+_id: 77VV85adCj2oluWi
+_key: '!items!77VV85adCj2oluWi'

@@ -1,0 +1,27 @@
+name: Overclock
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Magic does not always get along with tech, but sometimes they fin d a way to
+    combine forces. With this spell, a mage can briefly amp up an electronic
+     devices power, making it run better and faster. Roll Sorcery + Magic vs.
+     Object Resistance. For each net hit, you can increase an attribute of the
+    devic e (Device Rating, Attack, Data Processing, Firewall, or Sleaze) by 1.
+    The caste r can decide to not use some net hits if they want to reduce wear
+    and tear o n the device. This use of magic strains the device. After the
+    spell is dropped,  the device takes Matrix Damage equal to the net hits
+    used, resisted by Firewall.
+  type: M
+  formulas:
+    drain: '4'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: bvWEUHtZHIPkOMzo
+_key: '!items!bvWEUHtZHIPkOMzo'

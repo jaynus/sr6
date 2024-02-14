@@ -1,0 +1,24 @@
+name: Synthleather Jacket
+type: wearable
+img: /systems/sr6/assets/items/armor_body.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: armor
+  skillUse: null
+  costFormula: '300'
+  capacity: 3
+  slots:
+    - armor
+  formulas:
+    defenseRatingFormula: '1'
+  availability:
+    illegal: false
+    rating: 1
+  description: >-
+    Synthleather is the norm for street types, and this type of jacket
+    (waist-length to duster) never goes out of style. It even offers a modicum
+    of protection.
+_id: sl3vXmef4EevCydc
+_key: '!items!sl3vXmef4EevCydc'

@@ -1,0 +1,21 @@
+name: Outdoors
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: other
+  description: ''
+  specializations:
+    - Navigation
+    - Survival
+    - Tracking Woods
+    - Tracking Desert
+    - Tracking Urban
+    - Tracking Other
+  attribute: intuition
+  canUntrained: true
+  points: 0
+  specialization: null
+  expertise: null
+_id: X8La8PxZGZGQvdcG
+_key: '!items!X8La8PxZGZGQvdcG'

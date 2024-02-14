@@ -1,0 +1,10 @@
+name: Guts
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    You gain an Edge when resisting Intimidation or effects that cause the
+    Frightened status. 
+_id: UMVIFRH4WJkPKSwY
+_key: '!items!UMVIFRH4WJkPKSwY'

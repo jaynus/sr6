@@ -1,0 +1,19 @@
+name: Biotech
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: other
+  description: ''
+  specializations:
+    - Biotechnology
+    - Cybertechnology
+    - First Aid
+    - Medicine
+  attribute: logic
+  canUntrained: false
+  points: 0
+  specialization: null
+  expertise: null
+_id: HXfkhMVt2jTS3ghF
+_key: '!items!HXfkhMVt2jTS3ghF'

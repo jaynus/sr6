@@ -1,0 +1,24 @@
+name: Light
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    These spells are two sides of the same coin, changing the light level of
+    your environment to suit you. For each net hit, you can raise (using Light)
+    or lower (using Darkness) the light level of the surrounding area, which may
+    help gain when it comes to determing Edge based on Environment and
+    Visibility (p. 118). These are area spells, and they can be adjusted using
+    Increase Area and Shift Area.
+  type: P
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: losa
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: 906FCMiqhM5kj3hv
+_key: '!items!906FCMiqhM5kj3hv'

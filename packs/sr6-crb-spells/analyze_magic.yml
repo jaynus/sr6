@@ -1,0 +1,22 @@
+name: Analyze Magic
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Sometimes you want to know what magic does without going astral. Treat this
+    spell as if you are assensing (see p. 159). The Opposed test uses 2 x total
+    hits on the original skill test (Conjuring, Enchanting, or Sorcery) that
+    created the magical effect being analyzed.
+  type: P
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: aQaDPtQFvVuRmus5
+_key: '!items!aQaDPtQFvVuRmus5'

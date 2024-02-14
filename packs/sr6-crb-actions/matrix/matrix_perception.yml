@@ -1,0 +1,36 @@
+name: Matrix Perception
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    A successful test gives you information about the target. With a tie, you
+    can perceive the item’s icon. A single net hit will give you basic
+    information, such as device rating, or whatever name the device or icon
+    calls itself. Two net hits will give you more specific information,
+    including individual attribute ratings, and what programs it is currently
+    running. Additional hits will give you more information based on what the
+    gamemaster wishes to reveal. This test can also be used to attempt to spot
+    any icons in the vicinity that are running silent.
+  type: decker
+  skillUse:
+    skill: Electronics
+    specialization: Computer
+    attribute: intuition
+  limits:
+    illegal: false
+    access_level:
+      - outsider
+      - user
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@willpower + @persona.s'
+    deviceDefend: '@persona.s'
+    damage: null
+    soak: null
+_id: 0OtMJvAUFd169ep2
+_key: '!items!0OtMJvAUFd169ep2'

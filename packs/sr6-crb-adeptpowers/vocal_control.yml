@@ -1,0 +1,17 @@
+name: Vocal Control
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    You can control the pitch and modulation of your voice to make it sound the
+    way you want - loud, quiet, resonant, or like some person you want to
+    imitate. Gain Edge when attempting a Con or Influence test that somehow
+    involves your voice. Only one point of Edge may be earned per encounter with
+    this power.
+  powerCost: 0.5
+  maxLevel: 1
+  activation:
+    type: passive
+_id: opqwIdrzalIjboyW
+_key: '!items!opqwIdrzalIjboyW'

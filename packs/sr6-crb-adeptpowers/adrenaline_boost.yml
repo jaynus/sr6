@@ -1,0 +1,20 @@
+name: Adrenaline Boost
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    You get a surge of energy so you can get the jump on others. For each level
+    of the power, add 2 to your initiative score for (Magic) combat rounds. At
+    the the end of those combat rounds, experience drain equal to the level of
+    the power, which you can resist as normal.
+  powerCost: 0.25
+  activation:
+    type: minor
+  modifiers:
+    - class: InitiativeModifier
+      data:
+        type: physical
+        scoreFormula: '@level * 2'
+_id: 85cdfXoisldWRyC4
+_key: '!items!85cdfXoisldWRyC4'

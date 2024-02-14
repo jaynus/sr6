@@ -1,0 +1,27 @@
+name: Crack File
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: You remove the protection from a file, making it readable.
+  type: decker
+  skillUse:
+    skill: Cracking
+    specialization: Hacking
+    attribute: logic
+  limits:
+    illegal: true
+    access_level:
+      - user
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@rating * 2'
+    deviceDefend: '@rating * 2'
+    damage: null
+    soak: null
+_id: iv0Ps54JfmM2F84w
+_key: '!items!iv0Ps54JfmM2F84w'

@@ -1,0 +1,33 @@
+name: Animate Plastic
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    A chunk of material of the affected type comes to life, moving as commanded
+    by the spellcaster. Roll Sorcery + Magic vs. Object Resistance of
+     the item/material being animated. Net hits on the Spellcasting test
+    determin e the duration of the spell, as well as the volume of the material
+    (1/2 cubi c meter per net hit). The material can move according to its form,
+    but generall y it should not be faster than 5 meters per combat round unless
+    it is a wheele d vehicle or something else with innate speed. The object is
+    generally not capabl e of coordinated movements, so attacks from animated
+    objects are slow and easil y blocked. Still, it might be able to level a
+    blow at a motionless or unwary target,  doing 4P damage if its metal, 3P if
+    stone, 2S if wood, 1S if plastic.  Commanding the animated substance
+    requires a Minor Action. If someone is tryin g to keep the object from
+    following your commands, use Spellcasting net hits +  4 (for metal), 3 (for
+    stone), 2 (for wood), or 1 (for plastic) vs. opponent s Body + Strength to
+    see if the object is impeded from acting on the command.
+  type: P
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: L
+    value: 0
+_id: V1tj3HSDey7fGu8L
+_key: '!items!V1tj3HSDey7fGu8L'

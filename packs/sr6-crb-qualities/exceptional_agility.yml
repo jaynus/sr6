@@ -1,0 +1,18 @@
+name: Exceptional Agility
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects:
+  - name: Exceptional Agility
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.attributes.agility.max
+        value: '1'
+    _key: '!items.effects!OlrtvUDBBmactred.Wh0PKqBEXDMeW1Ma'
+    _id: Wh0PKqBEXDMeW1Ma
+system:
+  description: >-
+    That attribute's maximum (but not current) rank increases by 1. This quality
+    can only be purchased once per attribute.
+_id: OlrtvUDBBmactred
+_key: '!items!OlrtvUDBBmactred'

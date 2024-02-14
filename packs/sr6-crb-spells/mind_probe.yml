@@ -1,0 +1,29 @@
+name: Mind Probe
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    The subject of this spell can dig into a targets mind, seein g how many of
+    their thoughts they can discern while also attempting to sor t what is true
+    from the lies they tell themselves. Roll Sorcery + Magic vs. Willpowe r +
+    Logic; net hits determine how much information the subject pulls out of the
+    targets head. The Mind Probe Results table shows the type of information
+    this spell delivers. 1 2 The subject can read the targets surface thoughts
+    only. 3 4 The subject can find out anything the target consciousl y knows
+    and view the targets recent memories (up to 72 hours). 5+ Th e subject can
+    probe the targets subconscious, gaining information the targe t may not even
+    be consciously aware of, like psychological quirks, deep fears,  or hidden
+    memories.
+  type: P
+  formulas:
+    drain: '5'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: 5v1TqNHmPUMpWN8b
+_key: '!items!5v1TqNHmPUMpWN8b'

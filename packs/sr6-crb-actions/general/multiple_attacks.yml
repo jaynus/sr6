@@ -1,0 +1,17 @@
+name: Multiple Attacks
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character can attack more than one opponent, assuming ammunition, reach,
+    and enem placement allow it. Split your dice pool evenl among all targets,
+    or if you are using two differen forms of attack, use half the dice pool for
+    each rounded down. This action must be used in conjunction with an Attack
+    Major Action.
+  category: combat
+  activation:
+    type: minor
+    period: initiative
+_id: t5KWnUUxf5b8Cfmb
+_key: '!items!t5KWnUUxf5b8Cfmb'

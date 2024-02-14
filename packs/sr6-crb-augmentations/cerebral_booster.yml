@@ -1,0 +1,24 @@
+name: Cerebral Booster
+type: augmentation
+img: /systems/sr6/assets/items/cyber_headware.webp
+effects:
+  - name: Cerebral Booster
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.attributes.logic.mod
+        value: '@rating'
+    _key: '!items.effects!MfatUzEBo2LzHJBt.o6bHXPLT0M0Uor13'
+    _id: o6bHXPLT0M0Uor13
+system:
+  description: >-
+    The convolutions and gyri of your cerebrum are augmented and amplified with
+    additional nervous tissue, improving overall brain function. Your cerebral
+    booster increases your Logic attribute by its rating.
+  essenceCostFormula: '@rating * 0.2'
+  cost: '@rating * 31500'
+  availability:
+    illegal: false
+    rating: 5
+_id: MfatUzEBo2LzHJBt
+_key: '!items!MfatUzEBo2LzHJBt'

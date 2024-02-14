@@ -1,0 +1,22 @@
+name: Resist Pain
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    While not providing healing, this spell allows the target to ignor e the
+    effects of damage, moving forward as if they did not have that pain. Roll
+    Sorcery + Magic (5   Essence); for each net hit, the target can reduce
+     dice-pool modifiers from damage by 1.
+  type: P
+  formulas:
+    drain: '3'
+    soak: 5 - @essense
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: 15mUlWWtbjv8vZ7C
+_key: '!items!15mUlWWtbjv8vZ7C'

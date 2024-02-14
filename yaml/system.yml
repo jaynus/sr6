@@ -1,0 +1,79 @@
+id: sr6
+title: SR6
+description: (ALPHA) Unofficial implementation of Shadowrun 6E Seattle City Edition
+version: 0.0.1
+compatibility:
+  minimum: 10
+  verified: 10
+  maximum: 11
+templateVersion: 1
+authors:
+  - name: jaynus
+scripts:
+  - scripts/container-query-polyfill/container-query-polyfill.modern.js
+esmodules:
+  - sr6.js
+styles:
+  - style.css
+languages:
+  - lang: en
+    name: English
+    path: lang/en.json
+packs:
+  - name: sr6-crb-qualities
+    label: Core Qualities
+    system: sr6
+    path: ./packs/sr6-crb-qualities.db
+    type: Item
+  - name: sr6-crb-skills
+    label: Core Skills
+    system: sr6
+    path: ./packs/sr6-crb-skills.db
+    type: Item
+  - name: sr6-crb-actions
+    label: Core Actions
+    system: sr6
+    path: ./packs/sr6-crb-actions.db
+    type: Item
+  - name: sr6-crb-spells
+    label: Core Spells
+    system: sr6
+    path: ./packs/sr6-crb-spells.db
+    type: Item
+  - name: sr6-crb-adeptpowers
+    label: Core Adept Powers
+    system: sr6
+    path: ./packs/sr6-crb-adeptpowers.db
+    type: Item
+  - name: sr6-crb-augmentations
+    label: Core Augmentations
+    system: sr6
+    path: ./packs/sr6-crb-augmentations.db
+    type: Item
+  - name: sr6-crb-weapons
+    label: Core Weapons
+    system: sr6
+    path: ./packs/sr6-crb-weapons.db
+    type: Item
+  - name: sr6-crb-gear
+    label: Core Gear
+    system: sr6
+    path: ./packs/sr6-crb-gear.db
+    type: Item
+  - name: sr6-crb-matrix-items
+    label: Core Matrix Items
+    system: sr6
+    path: ./packs/sr6-crb-matrix-items.db
+    type: Item
+  - name: sr6-crb-vehicles
+    label: Core Vehicles
+    system: sr6
+    path: ./packs/sr6-crb-vehicles.db
+    type: Actor
+socket: true
+url: https://github.com/jaynus/sr6
+bugs: https://github.com/jaynus/sr6/issues
+changelog: https://github.com/jaynus/sr6/blob/release/CHANGELOG.md
+license: https://github.com/jaynus/sr6/blob/main/LICENSE
+manifest: https://github.com/jaynus/sr6/releases/latest/download/manifest.json
+download: https://github.com/jaynus/sr6/releases/latest/download/sr6.zip

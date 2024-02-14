@@ -1,0 +1,8 @@
+name: Ambidextrous
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: No penalty for off-hand weapon use (see p. 110).
+_id: hg8nNGRsi4sJEb0t
+_key: '!items!hg8nNGRsi4sJEb0t'

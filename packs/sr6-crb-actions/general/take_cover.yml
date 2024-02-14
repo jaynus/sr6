@@ -1,0 +1,15 @@
+name: Take Cover
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    The character uses something in their area to provide protection, but they
+    also must operate from the constraints created by the cover. Taking cover
+    gives the player the Cover I, II, III, or IV status (see p. 52).
+  category: combat
+  activation:
+    type: minor
+    period: initiative
+_id: vqv0PNiFuGOY8UNn
+_key: '!items!vqv0PNiFuGOY8UNn'

@@ -1,0 +1,17 @@
+name: Trip
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    This action focuses more on bringing the target to the ground than on doing
+    damage. It can onl be done with a melee attack and must be combine with an
+    Attack Major Action. Decrease the bas damage of the attack by 2; if it hits,
+    target roll Athletics + Agility with a threshold of the adjuste DV of the
+    attack. If the target fails, they gain th Prone status.
+  category: combat
+  activation:
+    type: minor
+    period: initiative
+_id: 6M6SjGFvlMZhYlEM
+_key: '!items!6M6SjGFvlMZhYlEM'

@@ -1,0 +1,43 @@
+name: RPK HMG
+type: weapon
+img: /systems/sr6/assets/items/mmg.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: LMG
+  skillUse:
+    skill: firearms
+    specialization: assault_cannons
+    attribute: agility
+  costFormula: '8000'
+  availability:
+    illegal: true
+    requiresLicense: true
+    rating: 5
+  matrix: null
+  attackRatings:
+    closeFormula: '1'
+    nearFormula: '10'
+    mediumFormula: '12'
+    farFormula: '8'
+    extremeFormula: '7'
+  damageData:
+    damageFormula: '6'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+    - FA
+  description: >-
+    50(c) or 100(belt)
+
+    This heavy machine gun is used by militaries across eastern Europe and Asia.
+    Usually set up as a vehicle-mounted weapon, it comes standard with a
+    detachable tripod, as the RPK is best fired from a prone, sitting, or
+    kneeling position when not mounted on a vehicle.
+_id: emO3yv3qb56bRIBT
+_key: '!items!emO3yv3qb56bRIBT'

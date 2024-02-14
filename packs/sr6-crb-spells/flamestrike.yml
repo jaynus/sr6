@@ -1,0 +1,26 @@
+name: Flamestrike
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    A classic. When you think of hurting people with magic, the firs t thing
+    that comes to mind is making fire explode in their faces. These are the
+    spells thatll get that done. Flamestrike hits individuals, Fireball is area
+    effect. Both spells do Fire elemental damage (p. 110) and impose the Burnin
+    g status (p. 51) with a rating equal to net hits on the Spellcasting test.
+  type: P
+  formulas:
+    drain: '5'
+  range:
+    type: los
+    value: 0
+  duration:
+    type: I
+    value: 0
+  damage:
+    combat: indirect
+    type: P
+    form: fire
+_id: fCZdFzj1s40qDWxs
+_key: '!items!fCZdFzj1s40qDWxs'

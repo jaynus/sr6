@@ -1,0 +1,10 @@
+name: Ambidextrous
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    Cut the interval for any natural healing test (p. 120) in half, meaning you
+    can heal Stun Damage after half an hour and Physical Damage after half a day
+_id: pQubX69NzCIOoxLz
+_key: '!items!pQubX69NzCIOoxLz'

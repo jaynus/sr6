@@ -1,0 +1,35 @@
+name: Extendable baton
+type: weapon
+img: /systems/sr6/assets/items/clubs.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: CLUBS
+  skillUse:
+    skill: close_combat
+    specialization: clubs
+    attribute: agility
+  costFormula: '52'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '5'
+    nearFormula: '0'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '2'
+    damageType: S
+  description: >-
+    This telescoping club can be extended with a wrist flick or a wireless
+    signal. In its retracted form, it s easier to conceal (Concealability
+    threshold 4 when retracted, 2 when extended). Retracting or extending it is
+    a Minor Action. Wireless bonus: You gain a bonus Minor Action on a turn when
+    you retract or extend the baton.
+_id: IhS1M9dQnjppXM3e
+_key: '!items!IhS1M9dQnjppXM3e'

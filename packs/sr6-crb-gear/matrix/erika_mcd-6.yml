@@ -1,0 +1,40 @@
+name: Erika MCD-6
+type: gear
+img: /systems/sr6/assets/items/cyberdeck.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: electronics
+    subtype: matrixDevice
+  skillUse: null
+  costFormula: '24750'
+  availability:
+    illegal: true
+    rating: 3
+  monitors:
+    matrix:
+      formula: 8 + ceil(@rating / 2)
+  matrix:
+    active: false
+    availableSlotsFormula: '2'
+    simModes:
+      - ar
+      - vrcold
+      - vrhot
+    attributes:
+      attack: 4
+      sleaze: 3
+  description: >-
+    When the corps cracked down on the Matrix, working hard to prevent illicit
+    use of their pretty new system, the cyberdeck re-emerged as the tool for
+    messing with innards of the Matrix. They are powerful devices in the hands
+    of a skilled decker. The newest models look something like medieval bracers,
+    only less bulky. They’re worn on the wrist and can project keyboards (or
+    whatever interface the user prefers) onto the user’s arm, a nearby sur-
+    face, or just the air around them. Some models have screens; most don’t.
+    They tend to look like a block with a series of ports, though many deckers
+    connect to their deck wirelessly. For more infor- mation about them, see
+    Devices, p. 174. All cyber- decks include hot-sim modules. 
+_id: Lw2LMfOe45jxnnfh
+_key: '!items!Lw2LMfOe45jxnnfh'

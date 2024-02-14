@@ -1,0 +1,28 @@
+name: Check OS
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: If your test is successful, you are informed ofyour current Overwatch Score.
+  type: decker
+  skillUse:
+    skill: Cracking
+    specialization: Hacking
+    attribute: logic
+  limits:
+    illegal: true
+    access_level:
+      - outsider
+      - user
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: null
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: obEOZHBczFsPaMv5
+_key: '!items!obEOZHBczFsPaMv5'

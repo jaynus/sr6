@@ -1,0 +1,26 @@
+name: Increase Attribute
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    The touch of the mage strengthens, speeds, or enlightens the target,
+    temporarily raising one of their attributes. The caster decides which
+    attribut e to target before casting the spell. The caster rolls a Sorcery +
+    Magic (5    Essence) test. They can select how many net hits they actually
+    apply to th e target to increase the selected attribute, at a rate of 1
+    point of increas e per net hit (maximum bonus +4); for each net hit applied
+    beyond the first, th e Drain Value of the spell increases by 1. The spell
+    cannot affect Edge, Essence,  Magic, or Resonance.
+  type: P
+  formulas:
+    drain: '3'
+    soak: 5 - @essense
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: JQUlbt1yyLftZ5xy
+_key: '!items!JQUlbt1yyLftZ5xy'

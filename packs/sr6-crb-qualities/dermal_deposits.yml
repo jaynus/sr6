@@ -1,0 +1,10 @@
+name: Dermal Deposits
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    You gain 1 level of natural Armor. Your Unarmed Melee attacks inflict
+    Physical damage. 
+_id: Mz1vOeHirQDZzE5u
+_key: '!items!Mz1vOeHirQDZzE5u'

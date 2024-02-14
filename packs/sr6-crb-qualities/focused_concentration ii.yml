@@ -1,0 +1,12 @@
+name: Focused Concentration II
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    You can sustain multiple spells or complex forms without penalty. For each
+    level, you can sustain 1 additional spell or complex form without suffering
+    the associated penalty. The spell cannot have a modified Drain Value of 7 or
+    greater.
+_id: gsPCH6R23PYsnATP
+_key: '!items!gsPCH6R23PYsnATP'

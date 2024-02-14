@@ -1,0 +1,10 @@
+name: First Impression
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    You gain 2 Edge for Social Tests during your first meeting with anyone, and
+    both your Heat and Reputation are ignored for this first encounter.
+_id: VjOY5rkBTYbaUdTU
+_key: '!items!VjOY5rkBTYbaUdTU'

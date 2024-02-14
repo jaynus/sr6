@@ -1,0 +1,19 @@
+name: Intercept
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    If an opponent comes within Close attack range you may go out of Initiative
+    order and make an Attack action as long as you have both a Minor an d Major
+    Action still available in this round (becaus block exampl Caboose and
+    Whitney are taking on a couple of gan enforcers. They’re both built for
+    speed, so they both g before the enforcers. Caboose decides to Move, Quic
+    Draw a weapon, Take Aim, Call a Shot, and Attack, usin up his full allotment
+    of actions for this combat round.
+  category: combat
+  activation:
+    type: minor
+    period: any
+_id: 3It5V0QdtgoYVZMW
+_key: '!items!3It5V0QdtgoYVZMW'

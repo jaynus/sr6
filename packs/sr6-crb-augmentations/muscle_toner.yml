@@ -1,0 +1,28 @@
+name: Muscle Toner
+type: augmentation
+img: /systems/sr6/assets/items/fist.webp
+effects:
+  - name: Muscle Toner
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.attributes.agility.mod
+        value: '@rating'
+    _key: '!items.effects!bGFltKiIjZt2HPE4.2RfgmBisIjb7B0EI'
+    _id: 2RfgmBisIjb7B0EI
+system:
+  description: >-
+    This treatment increases muscle-fiber elasticity in existing muscle tension,
+    resulting in increased muscle tension and flexibility while providing a
+    smooth and ropy physique. Muscle toner adds its rating to your Agility
+    attribute. This bioware is incompatible with augmentations that increase
+    Agility, including the muscle replacement cyberware and enhanced
+    articulation bioware.
+  essenceCostFormula: '@rating * 0.2'
+  cost: '@rating * 32000'
+  availability:
+    illegal: false
+    rating: 4
+    requiresLicense: true
+_id: bGFltKiIjZt2HPE4
+_key: '!items!bGFltKiIjZt2HPE4'

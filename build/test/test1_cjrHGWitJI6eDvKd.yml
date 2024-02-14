@@ -1,0 +1,67 @@
+folder: H5El9RRipVo0eRaS
+name: test1
+type: gear
+_id: cjrHGWitJI6eDvKd
+img: icons/svg/item-bag.svg
+system:
+  description: ''
+  modifiers: []
+  activation:
+    type: passive
+    period: any
+    mode: manual
+    status: false
+  isProxy: false
+  category:
+    subtype: ''
+  rating: 1
+  costFormula: '0'
+  availability:
+    illegal: false
+    requiresLicense: false
+    rating: 1
+  size: 0
+  monitors:
+    matrix: null
+    physical:
+      damage: 0
+      max: 0
+      formula: 8 + ceil(@rating / 2)
+  matrix: null
+  skillUse: null
+effects:
+  - name: test1
+    origin: Compendium.world.test.Item.
+    disabled: false
+    transfer: false
+    _id: 6fR1ginbYtMPKp3W
+    changes: []
+    duration:
+      startTime: null
+      seconds: null
+      combat: null
+      rounds: null
+      turns: null
+      startRound: null
+      startTurn: null
+    description: ''
+    statuses: []
+    flags:
+      sr6:
+        modifiers:
+          modifiers: []
+    _key: '!items.effects!cjrHGWitJI6eDvKd.6fR1ginbYtMPKp3W'
+sort: 0
+ownership:
+  default: 0
+  icSv7B07DKtiLQXg: 3
+flags: {}
+_stats:
+  systemId: sr6
+  systemVersion: 0.0.1
+  coreVersion: '11.315'
+  createdTime: 1707854469472
+  modifiedTime: 1707854469517
+  lastModifiedBy: icSv7B07DKtiLQXg
+_key: '!items!cjrHGWitJI6eDvKd'
+

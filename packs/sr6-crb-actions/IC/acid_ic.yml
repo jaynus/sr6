@@ -1,0 +1,31 @@
+name: Acid IC
+type: matrix_ic
+img: /systems/sr6/assets/matrix/ic_acid.webp
+effects: []
+system:
+  description: >-
+    Acid IC is about wearing down the defenses of intruders so that the other IC
+    can finish it off. When Acid IC hits in cybercombat, the target’s Firewall
+    attribute is reduced by 1 per net hit, reducing the effective defenses. Lost
+    points are restored after leaving the host, at a rate of 1 point per minute.
+  type: ic
+  skillUse: null
+  limits:
+    activationType: major
+    activationPeriod: initiative
+  formulas:
+    attack: '@rating * 2'
+    defend: '@willpower + @firewall'
+    deviceDefend: null
+    damage: null
+    soak: null
+  effects:
+    - target: target
+      when: onhit
+      duplicates: true
+      effect:
+        name: Acid IC
+        icon: /systems/sr6/assets/matrix/ic_acid.webp
+        description: Reduces firewall by 1 per net hit
+_id: M4xXg3DY7jvZoSDJ
+_key: '!items!M4xXg3DY7jvZoSDJ'

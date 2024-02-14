@@ -1,0 +1,22 @@
+name: Athletics
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: other
+  description: ''
+  specializations:
+    - Climbing
+    - Flying
+    - Gymnastics
+    - Sprinting
+    - Swimming
+    - Throwing
+    - Archery
+  attribute: agility
+  canUntrained: true
+  points: 0
+  specialization: null
+  expertise: null
+_id: jZX5NX0vXu2fqOgH
+_key: '!items!jZX5NX0vXu2fqOgH'

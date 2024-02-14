@@ -1,0 +1,413 @@
+TYPES:
+  Actor:
+    character: Character
+    matrix_host: Marix Host
+  Item:
+    gear: Gear
+    weapon: Weapon
+    skill: Skill
+    contact: Contact
+    sin: SIN
+    lifestyle: Lifestyle
+    quality: Quality
+    augmentation: Augmentation
+    spell: Spell
+    adeptpower: Adept Power
+    complexform: Complex Form
+    matrix_action: Matrix Action
+    matrix_persona: Matrix Persona
+    matrix_ic: Matrix Intrusion Countermeasure
+    general_action: General Action
+    condition: Condition
+
+# SR6
+SR6:
+  # System Strings
+  System:
+    Name: Shadowrun6
+
+  # System Settings
+  Settings:
+    SkillsCompendium: Skills Compendium
+    SkillsCompendiumHint: An Item compendium containing all of the skills that should be applied to new characters. Changing this value will have no impact on existing characters.
+
+  # Dialog shit for overlays
+  DialogGroups:
+    Item:
+      Character: Character
+      Gear: Gear
+      Matrix: Matrix
+      Other: Other
+
+  # Tooltips
+  Tooltips:
+    NoDescription: No Description Available
+
+  # Sheet Tab names
+  Tabs:
+    Basics: Basics
+    Skills: Skills
+    Inventory: Inventory
+    Combat: Combat
+    Matrix: Matrix
+    Magic: Magic
+    Details: Details
+    Effects: Effects
+    Duration: Duration
+    Description: Description
+    Data: Data
+    Personal: Personal
+
+  Labels:
+    Tradition: Tradition
+    Skills: Skills
+    CharacterName: Name
+    Edit: Edit
+    Add: Add
+    Remove: Remove
+    Delete: Delete
+    Attribute: Attribute
+    Roll: Roll
+    Success: Success
+    Failure: Failure
+    Glitch: Glitch
+    CriticalGlitch: Critical Glitch
+    Source: Rulebook Source
+    Description: Description
+    Specialization: Specialization
+    Expertise: Expertise
+    Type: Type
+    Targets: Targets
+    Legality: Legality
+    Illegal: Illegal
+    Legal: Legal
+    Formulas: Formulas
+    Attack: Attack
+    Defend: Defend
+    Damage: Damage
+    Soak: Soak
+    Base: Base
+    Mod: Modifier
+    Category: Category
+    SubCategory: Sub Type
+    Pool: Pool
+    Value: Value
+    Skill: Skill
+    Information: Information
+    Drain: Drain
+    Rating: Rating
+    Size: Size
+
+  Gear:
+    Sizes:
+      Large: Large
+      Bulky: Bulky
+      Tuckable: Tuckable
+      Pocket: Pocket
+      Hand: Hand
+      Slim: Slim
+      Palmable: Palmable
+      Small: Small
+      Mini: Mini
+      Fine: Fine
+      Microscopic: Microscopic
+    Types:
+      Accessory: Accessory
+      Armor: Armor
+      Clothing: Clothing
+      Bioware: Bioware
+      Cyberware: Cyberware
+      Tools: Tools
+      Electronics: Electronics
+      Nanoware: Nanoware
+      Genetics: Genetics
+      Weapon: Weapon
+      Ammunition: Ammunition
+      Chemicals: Chemicals
+      Software: Software
+      Survival: Survival
+      Biology: Biology
+      Magical: Magical
+
+  Combat:
+    Damage: Damage
+    AttackRating: Attack Rating
+    DefenseRating: Defense Rating
+    FireMode: Fire Mode
+    FireModes:
+      SS:
+        Name: Single Shot
+        Description: You fire a single bullet. There are no changes to a weapon’s attributes with a single shot.
+      SA:
+        Name: Semi Auto
+        Description: You fire a single bullet. There are no changes to a weapon’s attributes with a single shot.
+      BFNarrow:
+        Name: Burst Fire (Narrow)
+        Description: You can fire four rounds in an attack, which decreases the Attack Rating by 4 and increases damage by 2. Not Enough Rounds! If you don’t have enough rounds to complete the full four-round narrow burst, reduce the effects accordingly, with Attack Rating adjustment matching the number of rounds fired and the Damage Value dropping to a +1 as long as at least 2 rounds were fired.
+      BFWide:
+        Name: Burst Fire (Wide)
+        Description: You can fire four rounds in an attack, which make a wide burst and split your dice pool between two targets and count each as a SA-mode shot. You may use Anticipation (p. 47) with a wide burst without spending Multiple Attacks action (p. 42). Not Enough Rounds! If you don’t have enough rounds to complete the full four-round narrow burst, reduce the effects accordingly, with Attack Rating adjustment matching the number of rounds fired and the Damage Value dropping to a +1 as long as at least 2 rounds were fired.
+      FA:
+        Name: Full Auto
+        Description: This mode allows making an attack against every valid target within a 1-meter-radius area. One attack roll is made, but each defender rolls individually. This attack decreases the Attack Rating by 6 and consumes ten rounds. The area can be expanded multiple times by 1 meter by reducing an additional 2 from the Attack Rating, but only if this modification would result in an Attack Rating above 0.
+    Distance: Distance
+    Distances:
+      close: Close
+      near: Near
+      medium: Medium
+      far: Far
+      extreme: Extreme
+    DistanceDescriptions:
+      close: 0-3 meters
+      near: 4-50 meters
+      medium: 51-250 meters
+      far: 251-500 meters
+      extreme: 500+ meters
+    DamageTypes:
+      P: Physical
+      S: Stun
+
+  RollPrompt:
+    Title: Configure Roll
+    PoolModifier: Pool Modifier
+    Conditions: Conditions Modifying
+    ConsumeAction: Consume Action
+    ConsumeEdge: Consume Edge
+    EdgeGained: Edge Gained?
+
+  Attributes:
+    body:
+      Name: Body
+      Description: This represents the general sturdiness, integrity, and health of the individual. It sometimes is correlated to size- trolls (see p. 56) tend to have high Body ratings—but this is not a perfect correlation, as dwarfs tend to have higher Body ratings than humans. Body’s uses include resisting damage and toxins.
+    agility:
+      Name: Agility
+      Description: This represents nimbleness, speed, flexibility, and hand-eye coordination. It is the key attribute for combat, as well as many athletic activities.
+    reaction:
+      Name: Reaction
+      Description: While Agility may be speed, Reaction is quickness, the ability to respond with alacrity. Reaction is one of the key defensive attributes, and it is also used in piloting and controlling vehicles and drones.
+    strength:
+      Name: Strength
+      Description: This is raw muscle power, the ability to lift, carry, and punch with great force. It comes up in some Athletics tests and is important in unarmed combat.
+    willpower:
+      Name: Willpower
+      Description: This represents the character’s ability to persevere through hardship, pushing through pain, deception, and many other obstacles the Sixth World throws at them. It is very important for magic-based characters, who use it to maintain their energy through the work of channeling mana, and it also is important for resisting some attacks and illusions.
+    logic:
+      Name: Logic
+      Description: This is the coldly calculating part of the mind, the rational, analytical, puzzle-solving aspect. Deckers and technomancers use it frequently, and it can be useful to anyone in pattern recognition and other tasks.
+    intuition:
+      Name: Intuition
+      Description: The yin to Logic’s yang (or, probably, the other way around), Intuition is your gut instinct, your sudden inspiration, your flash of insight that doesn’t seem to make any sense but still works. Intuition helps characters react to danger, perceive threats, and resist some magic threats.
+    charisma:
+      Name: Charisma
+      Description: This is the pull you exert on other people. Whether you are using your looks, your speaking ability, your fashion sense, your sheer power, or some combination of any of the above, Charisma shows how powerful you can be in persuading others to a course of action. Faces thrive on Charisma.
+    magic:
+      Name: Magic
+      Description: Not all characters have this attribute; it is only for magic-using characters, who are generally referred to as Awakened characters. It measures their strength in channeling mana into spectacular effects.
+    resonance:
+      Name: Resonance
+      Description: Like Magic, not all characters have this attribute—it is exclusive to technomancers, characters who access and interact with the Matrix through the power of their mind only. This attribute measures their strength in manipulating the Matrix.
+    essence:
+      Name: Essence
+      Description: All characters have this attribute, starting at 6. It is a measure of how many augmentations characters can hold. The metahuman body can only contain so much ’ware before it loses the small spark that separates a living being from a machine. This attribute primarily exists due to the degrees of difference between biology and technology—it simply does not flow well through technology and becomes limited as your Essence declines (specifically, anytime your Essence goes below any whole integer, you lose a corresponding point of Magic or Resonance). Also, some magic, particularly healing magic, has less of an effect on you as you gain more augmentations. Finally, if your Essence ever reaches 0, you die.
+    edge:
+      Name: Edge
+      Description: This critical statistic measures the undefinable, putting it on tricky ground right at the outset. It is that combination of guts, risk, and heedless ignorance of danger and good sense that lets shadowrunners survive where others do not. Edge is detailed and important enough to have its own section (p. 44).
+
+  ActiveEffects:
+    Modes:
+      POOL_MODIFIER: Pool Modifier
+    Passive: Passive Effects
+    Temporary: Temporary Effects
+    Suppressed: Inactive Effects
+    Source: Source
+    Duration: Duration
+    Activation: Activation
+    Activations:
+      Always: Always
+      OnHit: On Hit
+      OnUse: On Use
+    Types:
+      ModifyAttribute: Modify Attribute
+      ModifyStat: Modify Stat
+      ModifySkill: Modify Skill
+      ModifyDicePool: Modify Dice Pool
+
+  Matrix:
+    Decker: Decker
+    IC: IC
+    Usage: Usage
+    SimType:
+      AR: AR
+      VRCold: VR (Cold)
+      VRHot: VR (Hot)
+
+  Enums:
+    MatrixAccessLevel: Access Level
+    MatrixAccessLevels:
+      Outsider: Outsider
+      User: User
+      Admin: Admin
+    ActivationType: Activation Type
+    ActivationTypes:
+      Major: Major
+      Minor: Minor
+      Passive: Passive
+    ActivationPeriod: Activation Period
+    ActivationPeriods:
+      Any: Anytime
+      Initiative: Initiative
+      PreRoll: Pre-roll
+      PostRoll: Post-roll
+
+  Effect:
+    Cover1: Cover I
+    Cover2: Cover II
+    Cover3: Cover III
+    Cover4: Cover IV
+    Blind1: Blind I
+    Blind2: Blind II
+    Blind3: Blind III
+    Chilled: Chilled
+
+  Magic:
+    Drain: Drain
+    Traditions:
+      Shamanism: Shamanism
+      Hermeticism: Hermeticism
+      Technomancer: Technomancer
+    SpellAdjustments:
+      AmpUp:
+        Name: Amp Up
+        Description: This is for Combat spells only. For each point of base damage the caster wants to add to a Combat spell, increase the drain of that casting by 2.
+      IncreaseArea:
+        Name: Increase Area
+        Description: Area-effect spells have a base ef- fect of a sphere with a two-meter radius. For each increase of 2 meters in the radius of the area of effect, increase the drain of the casting by 1.
+      ShiftArea:
+        Name: Shift Area
+        Description: This can only be done with certain area-effect spells. The caster can shift the area a sustained spell is affecting to another area within spell range. Spells that can have the area shifted are noted in the spell description. This requires a Minor Action and can be done any time. It does not cause drain.
+    Spell:
+      Types:
+        M: Mana
+        P: Physical
+      CombatTypes:
+        direct: Direct
+        indirect: Indirect
+      DamageForms:
+        force: Force
+        stun: Stun
+        fire: Fire
+        acid: Acid
+        electric: Electric
+        air: Air
+        cold: Cold
+      Durations:
+        I: Instantaneous
+        S: Sustained
+        P: Permanent
+        L: Limited
+      Ranges:
+        touch: Touch
+        los: Line of Sight
+        losa: Line of Sight (Area)
+        perceived: Perceived
+
+  Items:
+    Credstick:
+      Name: Credstick
+      Plural: Credsticks
+      Ratings:
+        Standard: Standard
+        Silver: Silver
+        Gold: Gold
+        Platinum: Platinum
+        Ebony: Ebony
+        BankAccount: Bank Account
+
+  Tests:
+    AttributeTest:
+      Name: Attribute
+    RangedAttackTest:
+      Name: Ranged Attack
+    OpposedTest:
+      Name: Defense
+
+  Edge:
+    EdgeBoost: Edge Boost
+    EdgeAction: Edge Action
+    Boosts:
+# 1 edge
+      Action:
+        Name: Edge Action
+        Description: Perform an Edge Action
+      RerollOne:
+        Name: Reroll One Dice
+        Description: Pick any die and reroll it. It can be yours or your opponent’s, but the result stands no matter what you roll. This is done after all rolls have been made.
+      AddInitiative:
+        Name: Add 3 to Initiative Score
+        Description: This one kicks in before combat even starts. You can choose to spend one point of Edge to increase your Initiative Score by 3. It can also be used during the fight if you want to move up in the order on the next Initiative Cycle.
+# 2 Edge
+      PlusOneSingleDice:
+        Name: +1 to Single Dice
+        Description: You get to add 1 to a single die. Maybe that’s making a 4 a 5 to get another hit, or making 1 a 2 to avoid a glitch.
+      GrantAllyEdge:
+          Name: Give ally 1 Edge
+          Description: You do something that offers an advantage for another member of your team. Take away two of your own Edge, and give one to a teammate.
+      NegateFoeEdge:
+          Name: Negate 1 Edge of a foe
+          Description: No sense in letting the bad guys get the best of you if you don’t need to. You spend two of your own Edge, but one vanishes from the opponent of your choice.
+# 3 edge
+      BuyHit:
+        Name: Buy Automatic Hit
+        Description: You get an automatic hit. This one adds on to the total hits you roll. This isn’t an automatic success at whatever test you’re attempting, just another hit to add to your total.
+      HealOneStun:
+        Name: Heal 1 Stun Damage
+        Description: You catch a second wind and clear a box from your Stun Condition Monitor.
+# 4 edge
+      AddEdgeExplode:
+        Name: Add Edge + Explode
+        Description: Add your Edge as a dice pool bonus to your roll, and make 6s explode. “Exploding” means that 6s count as a hit and can be rerolled in an attempt to get an additional hit. If another hit is scored, tack it on; if another 6 is rolled, tack on a hit and roll it again. Keep the hits coming! If a 1  is rolled after a 6, it does not count toward your total for calculating glitches.
+      RerollFailures:
+        Name: Reroll all Failed Dice
+        Description: Pretty much what it says—after a roll is made, you can reroll all failed dice. This Edge Boost cannot be used if a glitch or critical glitch is rolled.
+      HealOnePhysical:
+        Name: Heal 1 Physical Damage
+        Description: You take off a single box of damage from your Physical Condition Monitor—your advantage over your opponents means they didn’t hit you quite as hard as they first thought.
+# 5 Edge
+      CountTwoGlitchesOpposed:
+        Name: Count 2s as glitches for Target
+        Description: Time to get counteroffensive! When an opponent rolls, both 1s and 2s count in their total to determine if they glitch or critical glitch.
+      CreateSpecialEffect:
+        Name: Create Special Effect
+        Description: Bring your creativity to the table! You spend this Edge and something fortuitous happens. It’s up to you and your gamemaster to determine what it is, but it should certainly turn the tides slightly in your favor. Burst pipes, approaching sirens, incoming DocWagon, an angry spirit, something that adds a little more oomph to your side or puts a little stress on the enemy.
+
+  Modifiers:
+    NoiseModifier:
+      Name: Noise Modifier
+      Description: Distance and signal degradation cause a pool penalty for noise on matrix actions.
+    PhysicalWoundModifier:
+      Name: Wound Modifier (Physical)
+      Description: You suffer a -1 dice pool penalty for every 3 boxes of damage to your physical condition monitor.
+    StunWoundModifier:
+      Name: Wound Modifier (Stun)
+      Description: You suffer a -1 dice pool penalty for every 3 boxes of damage to your stun condition monitor.
+    PainEditorModifier:
+      Name: Pain Editor
+      Description: This cluster of specialized nervous tissue is designed to filter sensory stimuli. If the pain editor is active, this allows you to ignore all injury modifiers, and you even stay conscious when your Stun Condition Monitor is completely full. You feel no pain—you’re blissfully, dangerously, recklessly unaware of the extent of damage you’ve taken without either performing a self-examination (Observe in Detail action) or being informed by a biomonitor (p. 281). While active, the pain editor increases your Willpower by 1 and decreases your Intuition by 1; additionally, all tactile Perception tests you make have their threshold increased by 1.
+
+  SimpleTests:
+    LiftCarry:
+      Name: Lift/Carry Test
+      Description: As any professional powerlifter or crossfit champ will tell you, it’s not all in the muscles. You need the will to persevere in order to pull that little extra bit for the big efforts. Whether it’s pulling a comrade out of danger or flipping a car to cover your getaway, this is going to be the roll when there’s a question on whether or not it can be done. Characters can lift [(Strength x Strength) x 10] kilograms naturally; if they need to raise the weight over their head, the multiplier drops to 5. Making a Lift/Carry test increases your effective Strength by 1 per net hit. It also does 1 Stun damage, resisted by Body. The damage increase by +1 each combat round you continue holding or carrying the weight.
+    JudgeIntentions:
+      Name: Judge Intentions Test
+      Description: Sometimes you just need a roll to get a read on someone. The Judge Intentions test is just that. Once you’ve had enough time to get a read on someone (as judged by the gamemaster), you can make a roll to help fill in your basic attitude and feelings toward the target. Just remember that a good part of Mr. Johnson’s training is dedicated to getting you to trust them when you shouldn’t.
+    Composure:
+      Name: Composure Test
+      Description: When the stress is running hot, the gamemaster can call for a test to see if you keep your cool. The gamemaster sets the threshold, and the player makes the roll to see if they stay engaged or start freaking out. Note that repeated exposure to certain types of situations reduces the need for Composure tests in those situations.
+    Memory:
+      Name: Memory Test
+      Description: Most of us don’t remember our lives with one hundred percent clarity. We’re influenced by the mood at the time we formed a memory, the current mood, the presence or absence of memorable stimuli, or even slight oddities in the details. Then you have the tricks our mind plays in distorting memories to make us the heroes of our own story, and things get really weird. When it’s time to make a withdrawal from the memory bank, the gamemaster sets a threshold based on the age and complexity of the information, and you can roll to determine whether or not you recall the information you want. It may be about remembering a face, recalling a critical piece of information, pulling up a detail from the past that will help you understand what’s happening in front of you right now, or some other mental feat.
+
+  Vision:
+    Matrix: Matrix Vision
+    AstralPerception: Astral Perception

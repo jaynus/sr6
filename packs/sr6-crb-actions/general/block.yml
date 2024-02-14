@@ -1,0 +1,15 @@
+name: Block
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character can add their Close Combat skill to a single Defense test in
+    melee. The roll must happen in the same player turn in which the action is
+    used.
+  category: combat
+  activation:
+    type: minor
+    period: any
+_id: 1gzOST9f4GzR8KVy
+_key: '!items!1gzOST9f4GzR8KVy'

@@ -1,0 +1,17 @@
+name: Kinesics
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    our command of body language and nonverbal communication is, well, magical,
+    and it helps you be incredibly difficult to read. When you are resisting
+    Social tests and tests to read your emotions, judge your intentions, or
+    gauge your truthfulness, you gain an Edge point. Only one such Edge point
+    can be gained per encounter.
+  maxLevel: 1
+  powerCost: 0.25
+  activation:
+    type: passive
+_id: lc8hg2pQXsmHAgv0
+_key: '!items!lc8hg2pQXsmHAgv0'

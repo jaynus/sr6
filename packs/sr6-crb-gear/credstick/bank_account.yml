@@ -1,0 +1,11 @@
+name: Bank Account
+type: credstick
+img: /systems/sr6/assets/yen.webp
+effects: []
+system:
+  rating: 6
+  nuyen: 0
+  sin: null
+  description: ''
+_id: oRtqmDfwo52GU5Ns
+_key: '!items!oRtqmDfwo52GU5Ns'

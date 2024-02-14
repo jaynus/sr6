@@ -1,0 +1,32 @@
+name: Knife
+type: weapon
+img: /systems/sr6/assets/items/blades.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: BLADES
+  skillUse:
+    skill: close_combat
+    specialization: blades
+    attribute: agility
+  costFormula: '20'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '6'
+    nearFormula: '1'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '2'
+    damageType: P
+  description: >-
+    Max Range 20m. A catchall term for a variety of different deadly fighting
+    blades. The style is up to you, but the stats are all the same.
+_id: tyfRdXsCbtNMGqRE
+_key: '!items!tyfRdXsCbtNMGqRE'

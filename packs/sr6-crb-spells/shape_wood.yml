@@ -1,0 +1,28 @@
+name: Shape Wood
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    These spells give you the ability to make the selected material malleable
+    putty in your (mental) hands, essentially. You can shape the material as lon
+    g as the spell is sustained; when the spell is dropped, the material retains
+    whateve r form you gave it. Roll Sorcery + Magic vs. Object Resistance; the
+    amount o f material you can shape is determined by net hits on that test.
+    You can shap e 1 cubic meter of material per net hit (see the Volume
+    Reference table, p. 139,  for information on just how much that is). In
+    order to use this on an object,  the object does not have to be entirely
+    made out of the selected material, bu t it should be predominantly made out
+    of the material.
+  type: P
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: pobbwEDySGMEY88G
+_key: '!items!pobbwEDySGMEY88G'

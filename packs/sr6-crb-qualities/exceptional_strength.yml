@@ -1,0 +1,18 @@
+name: Exceptional Strength
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects:
+  - name: Exceptional Strength
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.attributes.strength.max
+        value: '1'
+    _key: '!items.effects!OYK13Qbispikm2wE.8FBq1aLzk61vafvm'
+    _id: 8FBq1aLzk61vafvm
+system:
+  description: >-
+    That attribute's maximum (but not current) rank increases by 1. This quality
+    can only be purchased once per attribute.
+_id: OYK13Qbispikm2wE
+_key: '!items!OYK13Qbispikm2wE'

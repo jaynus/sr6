@@ -1,0 +1,14 @@
+name: Manifest
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    Characters who are astrally projecting use thi action to appear as a ghostly
+    form (see p. 160).
+  category: magic
+  activation:
+    type: major
+    period: initiative
+_id: eUd0bZqFP6iilwtQ
+_key: '!items!eUd0bZqFP6iilwtQ'

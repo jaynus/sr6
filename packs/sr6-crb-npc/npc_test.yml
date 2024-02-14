@@ -1,0 +1,44 @@
+name: NPC Test
+type: character
+img: icons/svg/item-bag.svg
+system:
+  description: ''
+  attributes:
+    body:
+      base: 3
+    agility:
+      base: 2
+    reaction:
+      base: 2
+    strength:
+      base: 2
+    willpower:
+      base: 2
+    logic:
+      base: 2
+    intuition:
+      base: 3
+    charisma:
+      base: 1
+    magic:
+      base: 0
+    resonance:
+      base: 0
+  magicTradition: null
+  magicAwakened: mundane
+  karma: 0
+  equipped: {}
+prototypeToken:
+  displayName: 30
+  actorLink: true
+  displayBars: 50
+  bar1:
+    attribute: monitors.physical
+  bar2:
+    attribute: monitors.stun
+  sight:
+    enabled: true
+items: []
+effects: []
+_id: Rmd2MyGKAhqaqdS0
+_key: '!items!Rmd2MyGKAhqaqdS0'

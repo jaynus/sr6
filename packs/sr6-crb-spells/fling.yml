@@ -1,0 +1,27 @@
+name: Fling
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    If you ever thought, If I had magic powers, I definitely would catapult
+    objects into the sky, only without a catapult,  then you re our sort of
+    person, and this spell is for you. Roll Sorcery + Magic vs. Object
+    Resistance. For each net hit, you can fling half a kilogram of material int
+    o the air, and net hits also act as a threshold for a Reaction + Intuition
+    tes t for targets to avoid the object. The flung object has the following
+    Attack Ratings: Close (Magic), Near: (Magic + 2), Medium (Magic + 1), Far:
+    (Magic 2), Extreme:  , and it does Stun damage equal to kilograms of weight,
+    rounded up.
+  type: P
+  formulas:
+    drain: '5'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: I
+    value: 0
+_id: i2pj55G7lrPzv757
+_key: '!items!i2pj55G7lrPzv757'

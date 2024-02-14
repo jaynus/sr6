@@ -1,0 +1,27 @@
+name: Pain Resistance
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    Pain hurts, but you gain an elevated ability to ignore it. For each level of
+    this power, the negative modifiers from damage move one box farther down the
+    Condition Monitor—for example, at level 1, you don’t suffer the –1 penalty
+    until 4 boxes are filled on a Condition Monitor, rather than 3. It works for
+    both Stun and Physical Condition Monitors.
+  powerCost: 0.25
+  activation:
+    type: passive
+  modifiers:
+    - name: Pain Resistance
+      description: >-
+        Pain hurts, but you gain an elevated ability to ignore it. For each
+        level of this power, the negative modifiers from damage move one box
+        farther down the Condition Monitor—for example, at level 1, you don’t
+        suffer the –1 penalty until 4 boxes are filled on a Condition Monitor,
+        rather than 3. It works for both Stun and Physical Condition Monitors.
+      class: PainEditorModifier
+      data:
+        offset: 1
+_id: HprDN085bFs7WHEL
+_key: '!items!HprDN085bFs7WHEL'

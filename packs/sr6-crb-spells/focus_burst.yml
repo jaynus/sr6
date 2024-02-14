@@ -1,0 +1,25 @@
+name: Focus Burst
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Foci can be powerful aids for magicians, but who hasnt foun d themselves
+    wanting to eke out a little more power from them every now and then?  With
+    Focus Burst, you can get a little more out of your focus or give someone
+    else a boost. Roll Sorcery + Magic vs. focus Force x 2. If you get any net
+    hits,  increase the effective rating of the focus by 1 for (net hits)
+    minutes. A critica l glitch on the Spellcasting test permanently reduces the
+    Force of the focus b y 2.
+  type: M
+  formulas:
+    drain: '7'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: L
+    value: 0
+_id: YCUQeFV0l1R9yXQ5
+_key: '!items!YCUQeFV0l1R9yXQ5'

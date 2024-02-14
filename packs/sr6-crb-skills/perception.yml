@@ -1,0 +1,24 @@
+name: Perception
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: other
+  description: ''
+  specializations:
+    - Visual
+    - Aural
+    - Tactile
+    - Scent
+    - Taste
+    - Perception Woods
+    - Perception Desert
+    - Perception Urban
+    - Perception Other
+  attribute: intuition
+  canUntrained: true
+  points: 0
+  specialization: null
+  expertise: null
+_id: MMmgWe8pq3qHkr28
+_key: '!items!MMmgWe8pq3qHkr28'

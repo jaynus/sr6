@@ -1,0 +1,39 @@
+name: Steyr TMPhysical
+type: weapon
+img: /systems/sr6/assets/items/pistols_heavy.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: MACHINE_PISTOLS
+  skillUse:
+    skill: firearms
+    specialization: machine_pistols
+    attribute: agility
+  costFormula: '690'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 3
+  matrix: null
+  attackRatings:
+    closeFormula: '9'
+    nearFormula: '8'
+    mediumFormula: '6'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '2'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - FA
+  description: >-
+    30(c)A lightweight polymer-frame and full autofire capabilit y are not an
+    ideal design combo, but spraying enough lead to make everyone duc k for
+    cover is the goal with the TMP. A top-mounted laser sight comes standard to
+    make users think they ll be aiming.
+_id: LDbxqNQIGfF5pQi6
+_key: '!items!LDbxqNQIGfF5pQi6'

@@ -1,0 +1,19 @@
+name: Astral
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: magic
+  description: ''
+  specializations:
+    - Astral Combat
+    - Astral Signatures
+    - Emotional States
+    - Spirit Types
+  attribute: intuition
+  canUntrained: false
+  points: 0
+  specialization: null
+  expertise: null
+_id: oOrICazXuRdXKaeQ
+_key: '!items!oOrICazXuRdXKaeQ'

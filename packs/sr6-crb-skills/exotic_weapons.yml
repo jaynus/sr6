@@ -1,0 +1,15 @@
+name: Exotic Weapons
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: combat
+  description: ''
+  specializations: []
+  attribute: agility
+  canUntrained: false
+  points: 0
+  specialization: null
+  expertise: null
+_id: paV2IdKDTjGZQYHz
+_key: '!items!paV2IdKDTjGZQYHz'

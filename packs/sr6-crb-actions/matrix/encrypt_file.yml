@@ -1,0 +1,29 @@
+name: Encrypt File
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    The hits on the Encrypt File test establish an Encryption Rating that’s used
+    to oppose future Crack File attempts.
+  type: decker
+  skillUse:
+    skill: Electronics
+    specialization: Computer
+    attribute: logic
+  limits:
+    illegal: false
+    access_level:
+      - user
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: null
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: WNQspLq4ZvcMT2qV
+_key: '!items!WNQspLq4ZvcMT2qV'

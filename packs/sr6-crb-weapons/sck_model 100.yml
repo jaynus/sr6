@@ -1,0 +1,42 @@
+name: SCK Model 100
+type: weapon
+img: /systems/sr6/assets/items/smg.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: SUBMACHINE_GUNS
+  skillUse:
+    skill: firearms
+    specialization: submachine_guns
+    attribute: agility
+  costFormula: '725'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 3
+  matrix: null
+  attackRatings:
+    closeFormula: '10'
+    nearFormula: '10'
+    mediumFormula: '7'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '3'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+  description: >-
+    30(c)
+
+    Shin Chou Kyogo has made the Model 100 the corp-suit equivalent of the
+    Smartgun with the help of the elite Red Samurai. Across the Japanacorps,
+    their security forces are issued the SCK 100. The Model 100 feature an
+    internal smartgun system and a folding stock.
+_id: S8iAuao9rZoNzFpu
+_key: '!items!S8iAuao9rZoNzFpu'

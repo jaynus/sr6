@@ -1,0 +1,16 @@
+name: Manipulate Object
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character may pick up an object within reac or put down one that they were
+    holding as a Major Action. This action means care is taken to put th object
+    down or pick it up. If the picked-up objec is a weapon, this counts as
+    readying the weapon.
+  category: general
+  activation:
+    type: major
+    period: initiative
+_id: cglqKIp6fEsunSwg
+_key: '!items!cglqKIp6fEsunSwg'

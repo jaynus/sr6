@@ -1,0 +1,27 @@
+name: Elemental Armor
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    This works the same as the Armor spell (above), though it provide s an added
+    bonus. When casting the spell, you choose one element to protect the
+     target from. They still may be damaged by a weapon or spell that does the
+    typ e of damage from which you are protected for example, if you have coolin
+    g armor, you still may be damaged by a Fireball blast if the initial attack
+    rol l is successful and you do not soak all the damage, but you would not
+    gain th e Burning status afterward.Cooling armor - prevents
+    Burning.Grounding armo r - prevents Zapped.Neutralizing armor - prevents
+    Corroded.Warming armor -  prevents Chilled.
+  type: M
+  formulas:
+    drain: '5'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: MQxFDQz4qqTORlmt
+_key: '!items!MQxFDQz4qqTORlmt'

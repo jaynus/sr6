@@ -1,0 +1,31 @@
+name: Spoof Command
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    You send a signal to a device with a command the target perceives as coming
+    from its owner. The device then automatically attempts to perform the action
+    as its next available major action.
+  type: decker
+  skillUse:
+    skill: Cracking
+    specialization: Hacking
+    attribute: logic
+  limits:
+    illegal: true
+    access_level:
+      - outsider
+      - user
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@logic + @persona.d'
+    deviceDefend: max(@device.d, @skill.piloting + @persona.f)
+    damage: null
+    soak: null
+_id: sSuN0SNbUA3qTto0
+_key: '!items!sSuN0SNbUA3qTto0'

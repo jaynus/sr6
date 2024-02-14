@@ -1,0 +1,14 @@
+name: Rapid Healing
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    The magic that flows through you helps knit your bones and regrow your
+    flesh, making you heal quickly. Add one hit per level on Healing tests
+    performed to heal you.
+  powerCost: 0.5
+  activation:
+    type: passive
+_id: 6fi0VqJJxdEmFSU8
+_key: '!items!6fi0VqJJxdEmFSU8'

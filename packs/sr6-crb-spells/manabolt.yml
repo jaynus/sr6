@@ -1,0 +1,23 @@
+name: Manabolt
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    Essential spellcasting, shaping mana to crack skulls. Who can argue with
+    this purity? Manabolt targets individuals, while Manaball is area effect.
+  type: M
+  formulas:
+    drain: '4'
+  range:
+    type: los
+    value: 0
+  duration:
+    type: I
+    value: 0
+  damage:
+    combat: direct
+    type: P
+    form: force
+_id: 28nJHrSx04V3UqO3
+_key: '!items!28nJHrSx04V3UqO3'

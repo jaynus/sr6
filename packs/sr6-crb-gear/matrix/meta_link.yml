@@ -1,0 +1,37 @@
+name: Meta Link
+type: gear
+img: /systems/sr6/assets/items/commlink.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: electronics
+    subtype: matrixDevice
+  skillUse: null
+  costFormula: '100'
+  availability:
+    illegal: false
+    rating: 2
+  monitors:
+    matrix:
+      formula: 8 + ceil(@rating / 2)
+  matrix:
+    active: false
+    availableSlotsFormula: '0'
+    simModes:
+      - ar
+    attributes:
+      dataProcessing: 1
+      firewall: 0
+  description: >-
+    Commlinks are universal communication devices used by virtually everyone all
+    the time. They come in a variety of shapes and styles, with some included in
+    augmentations and articles of clothing. Even the most basic of them include
+    AR Matrix browsing capability, telephone, vidphone, text, music players,
+    micro trid-projectors, touchscreen displays, high-resolution video and
+    still-image cameras, image/text and RFID tag scanners, built-in GPS guidance
+    systems, chip players, credstick readers, retractable earbuds, voice access,
+    and text to-speech and speech-to-text technologies. They also offer plenty
+    of other add-on features. 
+_id: 8sDHWeEpCeHIuEv3
+_key: '!items!8sDHWeEpCeHIuEv3'

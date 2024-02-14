@@ -1,0 +1,27 @@
+name: Reconfigure Attribute
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    Swap the base ratings of two non-zero attributes of your Matrix Persona,
+    even if the numbers are rooted in different devices. See Personas and
+    Attributes (p. 174) for more information on Matrix Attributes, and the
+    Matrix Attribute Adjustments sidebar (p. 178) for an example
+  type: decker
+  skillUse: null
+  limits:
+    illegal: false
+    access_level:
+      - admin
+  activation:
+    type: minor
+    period: initiative
+  formulas:
+    attack: null
+    defend: null
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: jLvx0hnqrflYjKHG
+_key: '!items!jLvx0hnqrflYjKHG'

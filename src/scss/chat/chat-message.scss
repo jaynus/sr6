@@ -1,0 +1,210 @@
+@use '@scss/mixins/backgrounds.scss';
+@use '@scss/vars/colors.scss';
+
+.chat-message {
+	color: white;
+	background: var(--section-background);
+
+	.chat-message-body {
+		.chat-head {
+			font-weight: bold;
+			border-bottom: 1px solid colors.$purple;
+		}
+		.float-collapse {
+			min-width: 100%;
+			position: absolute;
+			background-color: rgba(0,0,0, 0.75);
+		}
+
+		.collapse-container {
+			position: relative;
+		}
+
+		.dice-details {
+			@extend .float-collapse;
+			height: 24px;
+		}
+
+		.roll-information:hover,
+		.roll-information:active {
+			box-shadow: inset 0 0 10px colors.$red;
+		}
+
+		.roll-information {
+			border-top: 1px solid;
+			border-bottom: 1px solid;
+
+			%result-text {
+				font-weight: bold;
+				font-size: 14px;
+				white-space: nowrap;
+			}
+
+			.hits {
+			}
+
+			.failure {
+				@extend %result-text;
+				color: colors.$failure;
+			}
+
+			.success {
+				@extend %result-text;
+				color: colors.$success;
+			}
+
+			.glitch {
+				@extend %result-text;
+				color: colors.$glitch;
+			}
+
+			.critical-glitch {
+				@extend %result-text;
+				font-size: 20px;
+				color: colors.$critical-glitch;
+			}
+		}
+
+		.bold {
+			font-weight: bold;
+		}
+
+		.formula {
+			font-style: italic;
+			font-size: 11px;
+		}
+
+		.dv {
+			font-size: 16px;
+			font-weight: bold;
+			color: colors.$failure;
+		}
+
+		.data-value {
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		.chat-target-box {
+			//background-color: colors.$light-green;
+			display: grid;
+
+			grid-template-columns: minmax(90px, 10px) minmax(90px, 10px) minmax(90px, 10px);
+
+			//gap: 1rem;
+
+			div {
+				text-align: center;
+				background: rgba(100, 100, 100, 0.3);
+				padding: 0.2rem;
+				border: white solid 1px;
+				border-radius: 1rem;
+
+				&:hover {
+					background: colors.$red;
+					font-weight: bold;
+					text-shadow: 0 0 5px colors.$red;
+				}
+			}
+			padding: 3px;
+		}
+
+		.chat-roll-menu {
+			float: initial;
+			position: absolute;
+			display: none;
+			margin-top: -16px;
+
+			a {
+				width: 32px;
+				height: 16px;
+			}
+
+		}
+
+
+		.line {
+			min-width: 100%;
+		}
+	}
+
+	.message-header {
+		border-bottom: 1px dashed colors.$blue !important;
+		background: var(--section-background);
+	}
+
+	.message-sender {
+		color: colors.$purple;
+		font-family: var(--font-header);
+		font-size: 1.5em;
+		background: var(--section-background);
+	}
+
+	.message-content {
+		padding: 0.25em;
+		background: var(--section-background);
+	}
+
+	%details-card {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		gap: 0.25em;
+
+		.imageAndName {
+			display: grid;
+			grid-template-columns: 1.25em 1fr;
+			gap: 0.25em;
+
+			font-family: var(--font-primary);
+			font-size: 1.5em;
+			color: colors.$blue;
+
+			img {
+				border: none;
+				border-radius: 5px;
+			}
+		}
+
+		.description {
+			&:empty {
+				display: none;
+			}
+		}
+
+		label {
+			font-family: var(--font-header);
+			color: colors.$blue;
+		}
+
+		& > label {
+			font-size: 1.25em;
+		}
+
+		.details-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto auto;
+			align-items: center;
+			justify-items: center;
+
+			label {
+				grid-row: 1 / span 1;
+				font-size: 1.1em;
+			}
+
+			span {
+				grid-row: 2 / span 1;
+			}
+		}
+	}
+
+	.item-card {
+		@extend %details-card;
+
+		&.weapon .description,
+		&.armor .description {
+			border-bottom: 1px dashed colors.$gold;
+		}
+	}
+}

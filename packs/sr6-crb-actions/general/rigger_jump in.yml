@@ -1,0 +1,15 @@
+name: Rigger Jump In
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character with a vehicle control rig (VCR) an rigger-adapted vehicle or
+    drone or a rigger command console (RCC) may jump in to control th vehicle or
+    operate the RCC with a Major Action.
+  category: general
+  activation:
+    type: major
+    period: initiative
+_id: 2z67Z405bUF2u3S0
+_key: '!items!2z67Z405bUF2u3S0'

@@ -1,0 +1,11 @@
+name: Double-Jointed
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  description: >-
+    You gain a bonus Edge on all tests involving grappling, escaping bonds,
+    flexibility, or fitting into tight spaces. Note the rules on Preventing Edge
+    Abuse, p. 45.
+_id: 7QRudYgNMqRd3kDS
+_key: '!items!7QRudYgNMqRd3kDS'

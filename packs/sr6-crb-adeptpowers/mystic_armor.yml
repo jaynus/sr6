@@ -1,0 +1,22 @@
+name: Mystic Armor
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    Mana forms a shield around you, enhancing your protection. Gain 1 point of
+    Armor for each level of this power, cumulative with worn Armor, which also
+    increases your Defense Rating. Mystic Armor is also active on the astral
+    plane.
+  powerCost: 0.25
+  activation:
+    type: passive
+  modifiers:
+    - class: DefenseRatingModifier
+      data:
+        testClasses:
+          - MeleeAttackTest
+          - RangedAttackTest
+        valueFormula: '@level'
+_id: Ys2M5pTGZuch95RK
+_key: '!items!Ys2M5pTGZuch95RK'

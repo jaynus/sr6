@@ -1,0 +1,14 @@
+name: Assist
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    You can become a helper on a Teamwork test working to help one of your
+    teammates on some task (see Teamwork Tests, p. 36).
+  category: combat
+  activation:
+    type: major
+    period: any
+_id: JaNm1wruTXvfApNb
+_key: '!items!JaNm1wruTXvfApNb'

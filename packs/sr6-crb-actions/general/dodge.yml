@@ -1,0 +1,15 @@
+name: Dodge
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character can add their Athletics skill to a single Defense test in
+    combat. The roll must happe in the same player turn in which the action is
+    used.
+  category: combat
+  activation:
+    type: minor
+    period: any
+_id: fGzzcJOY5Lw0VMX2
+_key: '!items!fGzzcJOY5Lw0VMX2'

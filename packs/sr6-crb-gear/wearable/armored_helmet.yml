@@ -1,0 +1,29 @@
+name: Armored Helmet
+type: wearable
+img: /systems/sr6/assets/items/armor_body.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: armor
+  skillUse: null
+  costFormula: '500'
+  capacity: 6
+  slots:
+    - head
+  formulas:
+    defenseRatingFormula: '2'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 4
+  description: >-
+    This armor is worn by military and security personnel around the world for
+    heavy-duty jobs. It is styled for intimidation but includes an array of
+    tactical holsters, pouches, and webbing for deadly effi-ciency. It’s going
+    to draw attention, just so you know. The suit can be modified for
+    environmental adaptation (hot or cold environments) or chemically sealed to
+    completely protect the wearer from toxic environments and attacks. The suit
+    comes with a helmet with a Capacity of 6 for vision or audio enhancements.
+_id: aZQ1mqmp0aVSGrrt
+_key: '!items!aZQ1mqmp0aVSGrrt'

@@ -1,0 +1,15 @@
+name: Astral Perception
+type: adeptpower
+img: icons/svg/aura.svg
+effects: []
+system:
+  description: >-
+    You gain the ability to astrally perceive and follow the rules involved in
+    so doing (see p. 159). You are dual-natured while using this power and can
+    attack astral forms.
+  powerCost: 1
+  maxLevel: 1
+  activation:
+    type: minor
+_id: 06n6GXaCLds4XtVW
+_key: '!items!06n6GXaCLds4XtVW'

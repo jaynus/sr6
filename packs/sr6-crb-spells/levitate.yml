@@ -1,0 +1,30 @@
+name: Levitate
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    It may not be exactly the same as flight, but hey, its defyin g gravity, and
+    its a blast. Roll Sorcery + Magic; for each hit, you ca n levitate 50 kilos
+    worth of material or people. If its the latter and th e person is not
+    particularly interested in being levitated, they can make a Bod y + Strength
+    test, with each hit reducing your effective hits by 1. The target
+     has to stay in sight if you want them to stay in the air; the minute they
+    re out of sight, theyll be earthward bound. That, along with a sense of
+    caution about raising someone too high when spells can be interrupted, tend
+    s to put a cap on how high people are sent up into the air with this spell.
+    Th e target does not have to hover. They can be moved by the caster at a
+    rate o f (casters Magic rating) meters per turn. Moving them requires a
+    Minor Action.
+  type: P
+  formulas:
+    drain: '6'
+    soak: ''
+  range:
+    type: los
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: oEIEYAXnmF7CsETP
+_key: '!items!oEIEYAXnmF7CsETP'

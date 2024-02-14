@@ -1,0 +1,36 @@
+name: Cyberjack
+type: gear
+img: /systems/sr6/assets/items/commlink.webp
+effects: []
+system:
+  isProxy: true
+  rating: 1
+  category:
+    type: electronics
+    subtype: matrixDevice
+  skillUse: null
+  costFormula: '0'
+  availability:
+    illegal: false
+    rating: 2
+  monitors:
+    matrix:
+      formula: 8 + ceil(@rating / 2)
+  matrix:
+    active: false
+    availableSlotsFormula: '0'
+    attributes:
+      formulas:
+        dataProcessing: 3 + @rating
+        firewall: 2 + @rating
+    wirelessBonus:
+      description: When active, the cyberjack adds +2 to initiative dice.
+      modifiers:
+        - name: Cyberjack Active
+          class: InitiativeModifier
+          data:
+            type: matrix
+            diceFormula: ceil(@rating / 3)
+  description: ''
+_id: Tyf9sM59gJoOmPCs
+_key: '!items!Tyf9sM59gJoOmPCs'

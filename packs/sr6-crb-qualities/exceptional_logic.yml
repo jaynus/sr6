@@ -1,0 +1,18 @@
+name: Exceptional Logic
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects:
+  - name: Exceptional Logic
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.attributes.logic.max
+        value: '1'
+    _key: '!items.effects!dwlaT0MKz2lYSVZA.LbfMQ4DiNLRtPViJ'
+    _id: LbfMQ4DiNLRtPViJ
+system:
+  description: >-
+    That attribute's maximum (but not current) rank increases by 1. This quality
+    can only be purchased once per attribute.
+_id: dwlaT0MKz2lYSVZA
+_key: '!items!dwlaT0MKz2lYSVZA'

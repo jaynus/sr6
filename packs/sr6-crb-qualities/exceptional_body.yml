@@ -1,0 +1,18 @@
+name: Exceptional Body
+type: quality
+img: /systems/sr6/assets/brain.webp
+effects:
+  - name: Exceptional Body
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.attributes.body.max
+        value: '1'
+    _key: '!items.effects!MlgPmoX69Tt0XKCB.x6Ad1nYZ6XdRJy3Y'
+    _id: x6Ad1nYZ6XdRJy3Y
+system:
+  description: >-
+    That attribute's maximum (but not current) rank increases by 1. This quality
+    can only be purchased once per attribute.
+_id: MlgPmoX69Tt0XKCB
+_key: '!items!MlgPmoX69Tt0XKCB'

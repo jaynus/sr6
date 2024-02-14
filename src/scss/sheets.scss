@@ -1,0 +1,224 @@
+@use 'vars/colors';
+
+.fa {
+	color: colors.$icon;
+}
+.fa-regular {
+	color: colors.$icon;
+}
+
+.fa-solid {
+	color: colors.$icon;
+}
+
+.fas {
+	color: colors.$icon;
+}
+
+
+.roll-button {
+	font-size: 16px;
+	background: url(/systems/sr6/assets/dice/die_6.png) no-repeat;
+	background-size: 16px 16px;
+	width: 100%;
+	height: 100%;
+}
+
+.roll-disabled {
+	filter: grayscale(100%);
+	pointer-events: none;
+	cursor: default;
+	opacity: 0.6;
+}
+
+.field-table td {
+	margin: 0;
+	padding: 0;
+}
+.field-number {
+	width: 1.5em;
+}
+
+
+.section {
+	display: inline-block;
+	background: var(--section-background);
+	color: var(--section-foreground);
+	vertical-align: top;
+	border: solid var(--section-border) 1px;
+	border-radius: 6px;
+	padding: 4px;
+	margin: 5px;
+
+	.section-title {
+		display: flex;
+		flex-direction: row;
+		//justify-content: space-between;
+		align-items: center;
+		font-family: var(--font-header);
+		border-bottom: 1px solid var(--highlight-color);
+		margin: 0 0 0.5rem 0;
+		font-weight: bold;
+	}
+	.section-title h2 {
+		border-bottom: 0;
+		margin: 0;
+	}
+
+	.section-title-button {
+		margin-left: auto;
+		font-size: 10px;
+		font-weight: normal;
+	}
+
+
+	.section-title {
+		font-weight: bold;
+		font-family: var(--font-header);
+		font-size: 20px;
+		color: var(--highlight-color);
+	}
+
+	.actions {
+		white-space: nowrap;
+		padding-left: 5px;
+	}
+	.entry {
+		width: 99%;
+	}
+
+	select,
+	option {
+		width: 150px;
+	}
+
+	input[type='number'] {
+		width: 2em;
+	}
+
+	thead {
+		font-size: 12px;
+	}
+
+	.formula {
+		font-style: italic;
+		font-size: 11px;
+	}
+}
+
+.warning-box {
+	background-color: colors.$light-red;
+	font-size: 12px;
+	color: black;
+	.warning-title {
+		font-weight: bold;
+		font-size: 16px;
+	}
+}
+
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 28px;
+	height: 14px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #ccc;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: '';
+	height: 12px;
+	width: 12px;
+	left: 4px;
+	bottom: 1px;
+	background: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background: #2196f3;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(10px);
+	-ms-transform: translateX(10px);
+	transform: translateX(10px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 6px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+button.attack {
+	height: 1.5em;
+	margin: 0;
+	width: auto !important;
+	line-height: 1em;
+	padding: 2px;
+
+	background: colors.$purple;
+}
+
+.text-atop {
+	width: 48px;
+	height: 48px;
+	display: flex;
+	flex-flow: row nowrap;
+	position: relative;
+	flex: 0.48;
+	margin-right: 10px;
+}
+
+.text-atop img {
+	border: 0;
+	height: auto;
+	width: 48px;
+	z-index: 0;
+	position: absolute;
+	filter: drop-shadow(0 0 4px #000000);
+}
+.text-atop input {
+	width: 2em;
+	color: white;
+}
+
+.text-atop-value {
+	z-index: 1;
+	position: relative;
+	width: 48px;
+	top: 10px;
+	text-align: center;
+	font-size: large;
+	color: white;
+	font-weight: bold;
+}

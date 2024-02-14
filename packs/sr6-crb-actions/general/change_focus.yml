@@ -1,0 +1,14 @@
+name: Change Focus
+type: general_action
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  description: >-
+    A character can activate or deactivate a bonded focus that they are carrying
+    on their person with a Minor Action.
+  category: magic
+  activation:
+    type: minor
+    period: initiative
+_id: 6g3aLSdBhJ4TFMFl
+_key: '!items!6g3aLSdBhJ4TFMFl'

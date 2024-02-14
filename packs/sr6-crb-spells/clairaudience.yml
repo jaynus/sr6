@@ -1,0 +1,24 @@
+name: Clairaudience
+type: spell
+img: /systems/sr6/assets/items/bolt-spell-cast.webp
+effects: []
+system:
+  description: >-
+    The person on whom this is cast gains the ability to hear distant sounds.
+    The subject may select and move the spot; the size of the spot is determined
+    by normal area-of-effect rules and can be adjusted with Increase Area and
+    moved with Shift Area. The subject can only hear sounds in the target area
+    while this spell is in effect (as opposed to sounds near them), and any
+    hearing augmentations they have do not have any effect.
+  type: M
+  formulas:
+    drain: '3'
+    soak: ''
+  range:
+    type: touch
+    value: 0
+  duration:
+    type: S
+    value: 0
+_id: 9xS7FdIiqfbO2YJX
+_key: '!items!9xS7FdIiqfbO2YJX'

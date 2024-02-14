@@ -1,0 +1,17 @@
+name: Conjuring
+type: skill
+img: /systems/sr6/assets/brain.webp
+effects: []
+system:
+  category: magic
+  description: ''
+  specializations:
+    - Banishing
+    - Summoning
+  attribute: magic
+  canUntrained: false
+  points: 0
+  specialization: null
+  expertise: null
+_id: zlZQkL5MLyRjtQjP
+_key: '!items!zlZQkL5MLyRjtQjP'

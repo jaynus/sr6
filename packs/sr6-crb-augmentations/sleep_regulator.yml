@@ -1,0 +1,21 @@
+name: Sleep Regulator
+type: augmentation
+img: /systems/sr6/assets/items/cyber_headware.webp
+effects: []
+system:
+  description: >-
+    The sleep regulator is a modification to the hypothalamus, allowing for
+    longer periods of wakefulness, an incredibly useful advantage for anyone
+    with any profession, not just shadowrunners. You need less sleep per day,
+    and the sleep you get is deep and restful (and harder to wake you up from).
+    The sleep regulator lets you get by with three hours of sleep each night,
+    and you can stay awake for twice as long as normal without acquiring the
+    Fatigued status (p. 52). Resting hours for healing purposes are not
+    affected.
+  essenceCostFormula: '0.1'
+  cost: '@rating * 9000'
+  availability:
+    illegal: false
+    rating: 5
+_id: icSo8lWFXte00xqx
+_key: '!items!icSo8lWFXte00xqx'

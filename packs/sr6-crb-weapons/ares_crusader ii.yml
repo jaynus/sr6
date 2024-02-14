@@ -1,0 +1,42 @@
+name: Ares Crusader II
+type: weapon
+img: /systems/sr6/assets/items/pistols_heavy.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: MACHINE_PISTOLS
+  skillUse:
+    skill: firearms
+    specialization: machine_pistols
+    attribute: agility
+  costFormula: '520'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 4
+  matrix: null
+  attackRatings:
+    closeFormula: '9'
+    nearFormula: '9'
+    mediumFormula: '7'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '2'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+  description: >-
+    40(c)
+
+    High capacity and comfortable styling make the Ares Crusader II a standout
+    in its class. The Ares brand is synonymous with functionality, and the
+    Crusader II integrates a gas-vent recoil compensation system and comes
+    standard with smartgun systems and software preloaded.
+_id: 7VmAtmWgECBxf4IZ
+_key: '!items!7VmAtmWgECBxf4IZ'
