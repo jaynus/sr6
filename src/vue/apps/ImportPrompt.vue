@@ -1,16 +1,24 @@
 <script lang="ts" setup>
 import { ImportAction, ImportPromptContext } from '@/app/ImportPrompt';
 import { RootContext } from '@/vue/SheetContext';
-import { inject, toRaw } from 'vue';
+import { inject, ref, toRaw } from 'vue';
 
 const context = inject<ImportPromptContext>(RootContext)!;
 
+const path = ref<Maybe<string>>(context.app.actor?.systemData.source);
+
 async function click() {
 	await new FilePicker({
-		callback: async (path: string) => {
-			await toRaw(context.app)._onImportGenesisActor(path);
+		callback: async (newPath: string) => {
+			path.value = newPath;
 		},
 	}).render(true);
+}
+
+async function doImport() {
+	if (path.value) {
+		await toRaw(context.app)._onImportGenesisActor(toRaw(path.value));
+	}
 }
 
 function setGlobal(action: ImportAction) {
@@ -21,6 +29,7 @@ function setGlobal(action: ImportAction) {
 
 <template>
 	<div class="flexrow">
+		<div class="section-head">{{ context.app.actor?.name }}</div>
 		<div class="section flexcol" style="width: auto">
 			<div class="section-title">Global</div>
 			<input type="button" value="Skip" @click="setGlobal(ImportAction.Skip)" />
@@ -93,7 +102,11 @@ function setGlobal(action: ImportAction) {
 			</div>
 		</div>
 	</div>
-	<div>SR6 JSON: <input id="pick-file" type="button" value="Select File" @click.prevent="click()" /></div>
+	<div>
+		SR6 JSON: <input id="pick-file" type="button" value="Select File" @click.prevent="click()" />
+		<input type="text" v-model="path" />
+	</div>
+	<input class="dialog-button line" type="button" value="Import" @click.prevent="doImport" />
 </template>
 
 <style lang="scss" scoped></style>

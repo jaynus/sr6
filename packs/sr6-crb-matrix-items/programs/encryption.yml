@@ -6,6 +6,9 @@ system:
   type: basic
   source: CRB p.185
   description: +2 dice when doing Encrypt File action.
+  activation:
+    mode: manual
+    type: minor
   modifiers:
     - class: PoolModifier
       data:

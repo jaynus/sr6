@@ -8,6 +8,9 @@ system:
   description: >-
     Like Biofeedback, but Stun damage only. This program is linked to the
     At-tack attribute.
+  activation:
+    mode: manual
+    type: minor
 _id: NAKaX67FAmzHohJD
 _key: '!items!NAKaX67FAmzHohJD'
 folder: 6p0wiyAb0onQd68n

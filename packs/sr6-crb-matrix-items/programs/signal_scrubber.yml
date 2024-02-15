@@ -6,6 +6,9 @@ system:
   type: basic
   source: CRB p.185
   description: Reduce noise level by 2.
+  activation:
+    mode: manual
+    type: minor
 _id: xE9dsCWpMS7k4A8e
 _key: '!items!xE9dsCWpMS7k4A8e'
 folder: 6p0wiyAb0onQd68n

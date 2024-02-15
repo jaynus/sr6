@@ -91,8 +91,9 @@ export default class BaseModifier<
 					data,
 				}) as unknown as IModifier,
 			);
+		} else {
+			return Err(`Invalid modifier class: ${data.class}`);
 		}
-		throw '';
 	}
 
 	toJSON(): ModifierSourceData {

@@ -21,7 +21,7 @@ export default class SR6ActorSheet<
 
 		// Add actor sheets to teh combat apps so when combat updates, the character sheet does
 		if (game.combat) {
-			game.combat.apps[this.appId] = this;
+			game.combat!.apps[this.appId] = this;
 		}
 	}
 

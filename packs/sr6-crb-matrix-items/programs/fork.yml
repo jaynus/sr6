@@ -6,6 +6,9 @@ system:
   type: hacking
   source: CRB p.185
   description: Hit two targets with a single Matrix action without splitting dice pools.
+  activation:
+    mode: manual
+    type: minor
 _id: C5nPn9ANGb7brtcP
 _key: '!items!C5nPn9ANGb7brtcP'
 folder: 6p0wiyAb0onQd68n

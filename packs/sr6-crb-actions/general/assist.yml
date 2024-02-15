@@ -5,7 +5,7 @@ effects: []
 system:
   description: >-
     You can become a helper on a Teamwork test working to help one of your
-    teammates on some task (see Teamwork Tests, p. 36).
+    teammates on some task (see Teamwork Tests, p. 36)
   category: combat
   activation:
     type: major

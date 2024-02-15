@@ -15,6 +15,8 @@ system:
   availability:
     illegal: false
     rating: 4
-    requiresLicense: true
+    requiresLicense: true\
+  activation:
+    mode: always
 _id: ZIUj4hNK1Ps7Pd2B
 _key: '!items!ZIUj4hNK1Ps7Pd2B'

@@ -6,6 +6,9 @@ system:
   type: hacking
   source: CRB p.185
   description: Allow Device Rating or Body roll to soak Matrix damage.
+  activation:
+    mode: manual
+    type: minor
 _id: HVTJn5YzQ4MTDLS1
 _key: '!items!HVTJn5YzQ4MTDLS1'
 folder: 6p0wiyAb0onQd68n

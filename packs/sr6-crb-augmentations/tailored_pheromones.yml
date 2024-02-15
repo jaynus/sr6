@@ -16,6 +16,8 @@ system:
     illegal: false
     rating: 4
     requiresLicense: true
+  activation:
+    mode: always
   modifiers:
     - class: PoolModifier
       data:

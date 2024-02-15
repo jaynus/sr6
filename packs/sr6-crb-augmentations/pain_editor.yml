@@ -31,6 +31,7 @@ system:
   modifiers:
     - class: PainEditorModifier
   activation:
+    mode: manual
     type: minor
   availability:
     illegal: true

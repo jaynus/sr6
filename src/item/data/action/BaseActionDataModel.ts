@@ -1,61 +1,12 @@
 import SR6Actor from '@/actor/SR6Actor';
 import SR6Combat from '@/combat/SR6Combat';
 import { ActivationPeriod, ActivationType, TargetString } from '@/data';
+import { ActiveEffectDataModel } from '@/data/ActiveEffectDataModel';
 import BaseDataModel from '@/data/BaseDataModel';
 import SR6ActiveEffect, { EffectType } from '@/effect/SR6ActiveEffect';
 import BaseItemDataModel from '@/item/data/BaseItemDataModel';
 import SR6Item from '@/item/SR6Item';
 import { Err, Ok, Result } from 'ts-results';
-
-export abstract class ActiveEffectDataModel extends BaseDataModel {
-	abstract name: string | undefined;
-	abstract description: string | undefined;
-	abstract duration: foundry.data.EffectDurationSource;
-	abstract changes: foundry.data.EffectChangeSource[];
-	abstract disabled: boolean;
-	abstract icon: ImageFilePath;
-	abstract tint: string;
-	abstract origin: string | undefined;
-	abstract transfer: boolean;
-	abstract statuses: Set<string>;
-	abstract flags: Record<string, unknown>;
-
-	static defineSchema(): foundry.data.fields.DataSchema {
-		const fields = foundry.data.fields;
-
-		return {
-			name: new fields.StringField({ required: true, blank: false, label: 'EFFECT.Name' }),
-			changes: new fields.ArrayField(
-				new fields.SchemaField({
-					key: new fields.StringField({ required: true, label: 'EFFECT.ChangeKey' }),
-					value: new fields.StringField({ required: true, label: 'EFFECT.ChangeValue' }),
-					mode: new fields.NumberField({
-						integer: true,
-						initial: CONST.ACTIVE_EFFECT_MODES.ADD,
-						label: 'EFFECT.ChangeMode',
-					}),
-					priority: new fields.NumberField(),
-				}),
-			),
-			disabled: new fields.BooleanField(),
-			duration: new fields.SchemaField({
-				startTime: new fields.NumberField({ initial: null, label: 'EFFECT.StartTime' }),
-				seconds: new fields.NumberField({ integer: true, min: 0, label: 'EFFECT.DurationSecs' }),
-				rounds: new fields.NumberField({ integer: true, min: 0 }),
-				turns: new fields.NumberField({ integer: true, min: 0, label: 'EFFECT.DurationTurns' }),
-				startRound: new fields.NumberField({ integer: true, min: 0 }),
-				startTurn: new fields.NumberField({ integer: true, min: 0, label: 'EFFECT.StartTurns' }),
-			}),
-			description: new fields.HTMLField({ label: 'EFFECT.Description' }),
-			icon: new fields.FilePathField({ categories: ['IMAGE'], label: 'EFFECT.Icon' }),
-			origin: new fields.StringField({ nullable: true, blank: false, initial: null, label: 'EFFECT.Origin' }),
-			tint: new fields.ColorField({ label: 'EFFECT.IconTint' }),
-			transfer: new fields.BooleanField({ initial: false, label: 'EFFECT.Transfer' }),
-			statuses: new fields.SetField(new fields.StringField({ required: true, blank: false })),
-			flags: new fields.ObjectField(),
-		};
-	}
-}
 
 export abstract class ActionEffectDataModel extends BaseDataModel {
 	abstract target: TargetString;
@@ -91,29 +42,30 @@ export abstract class ActionEffectDataModel extends BaseDataModel {
 			origin = this.item || this.actor;
 		}
 
-		const effects: SR6ActiveEffect[] = [];
+		let effects: SR6ActiveEffect[] = [];
 		for (const target of targets!) {
 			// Dont re-apply the effect
 			if (!this.duplicates && this.hasEffect(target)) {
 				continue;
 			}
 
-			const data = (this.effect as foundry.abstract.DataModel).toObject();
+			const data = (this.effect as foundry.abstract.DataModel).toObject(false);
 			data.origin = origin?.uuid;
-			data.description = data.description || (this.parent as BaseActionDataModel).description;
 
-			effects.push(
-				(
-					await target!.createEmbeddedDocuments('ActiveEffect', [
-						{
-							data,
-						},
-					])
-				)[0] as SR6ActiveEffect,
-			);
+			const res = await target!.createEmbeddedDocuments('ActiveEffect', [data]);
+			effects = effects.concat(res as SR6ActiveEffect[]);
 		}
 
 		return Ok(effects);
+	}
+
+	override prepareBaseData(): void {
+		super.prepareBaseData();
+
+		this.effect.name = this.effect.name === '[No Name]' ? this.item!.name : this.effect.name;
+		this.effect.icon = this.effect.icon || this.item!.img;
+		this.effect.description =
+			this.effect.description === '' ? (this.parent as BaseActionDataModel).description : this.effect.description;
 	}
 
 	static defineSchema(): foundry.data.fields.DataSchema {
@@ -153,7 +105,7 @@ export default abstract class BaseActionDataModel extends BaseItemDataModel {
 			}
 
 			// Are we in this combat? If not, allow action
-			if (!combat.combatants.find((c) => c.uuid === this.actor!.uuid)) {
+			if (!combat.combatants.find((c) => c.actor.uuid === this.actor!.uuid)) {
 				return true;
 			}
 
@@ -186,9 +138,10 @@ export default abstract class BaseActionDataModel extends BaseItemDataModel {
 	}
 
 	async use(
-		_targets: Maybe<SR6Actor[]> = null,
+		targets: Maybe<SR6Actor[]> = null,
 		consumeAction: boolean = true,
 		sendToChat: boolean = true,
+		applyEffects: boolean = true,
 	): Promise<Result<null, string>> {
 		if (!this.actor) {
 			return Err('Applying action error!?');
@@ -226,6 +179,10 @@ export default abstract class BaseActionDataModel extends BaseItemDataModel {
 			await this.toMessage(this.actor!);
 		}
 
+		if (applyEffects) {
+			await this.applyEffects(EffectType.OnUse, targets, this.actor!);
+		}
+
 		return Ok(null);
 	}
 
@@ -246,6 +203,19 @@ export default abstract class BaseActionDataModel extends BaseItemDataModel {
 		}
 
 		return Ok(effects);
+	}
+
+	override prepareBaseData(): void {
+		super.prepareBaseData();
+		this.effects.forEach((effect) => effect.prepareBaseData());
+	}
+	override prepareData(): void {
+		super.prepareData();
+		this.effects.forEach((effect) => effect.prepareData());
+	}
+	override prepareDerivedData(): void {
+		super.prepareDerivedData();
+		this.effects.forEach((effect) => effect.prepareDerivedData());
 	}
 
 	static override defineSchema(): foundry.data.fields.DataSchema {

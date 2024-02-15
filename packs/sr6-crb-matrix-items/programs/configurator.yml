@@ -8,6 +8,9 @@ system:
   description: >-
     Store alternate deck configuration, swap to it instead of changing two
     attributes.
+  activation:
+    mode: manual
+    type: minor
 _id: Wo4nV23ZldzcTvIg
 _key: '!items!Wo4nV23ZldzcTvIg'
 folder: 6p0wiyAb0onQd68n

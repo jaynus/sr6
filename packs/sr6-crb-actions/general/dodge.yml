@@ -5,7 +5,7 @@ effects: []
 system:
   description: >-
     A character can add their Athletics skill to a single Defense test in
-    combat. The roll must happe in the same player turn in which the action is
+    combat. The roll must happen in the same player turn in which the action is
     used.
   category: combat
   activation:

@@ -15,7 +15,7 @@ const actionName = ref(props.test.opposedTest.spell.name);
 const actionDescription = ref(props.test.opposedTest.spell.systemData.description);
 
 emit('setText', {
-	title: `Matrix Defense (${actionName.value})`,
+	title: `Spell Defense (${actionName.value})`,
 	hint: ``,
 });
 </script>

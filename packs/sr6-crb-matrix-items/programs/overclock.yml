@@ -6,6 +6,7 @@ system:
   source: CRB p.185
   description: Add two dice to a Matrix action.
   activation:
+    mode: manual
     type: minor
   modifiers:
     - class: PoolModifier

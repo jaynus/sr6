@@ -29,5 +29,7 @@ system:
     illegal: false
     requiresLicense: true
     rating: 5
+  activation:
+    mode: always
 _id: c2xpY8s94lg9t2Ef
 _key: '!items!c2xpY8s94lg9t2Ef'

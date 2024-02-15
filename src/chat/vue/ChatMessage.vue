@@ -80,12 +80,8 @@ onBeforeMount(update);
 	<ChatHeader :actor="context.actor" :token="context.token" :text="text" />
 	<div class="chat-message-body" @mouseenter="showTestContextMenu = true" @mouseleave="showTestContextMenu = false">
 		<template v-if="context.message.isRoll">
-			<template v-if="context.test?.roll?.options?.initiativeRoll">
-				<div class="roll-formula">{{ context.test?.roll?.formula }}</div>
-				<div style="text-align: center; font-weight: bold">{{ context.test?.roll?.total }}</div>
-			</template>
-			<SR6Roll v-else-if="context.test && context.test.roll" :roll="context.test!.roll!" />
-			<SR6Roll v-else-if="context.roll" :roll="context.roll" />
+			<SR6Roll v-if="context.test && context.test.roll" :roll="context.test!.roll!" />
+			<SR6Roll v-else-if="context.roll" :roll="context.roll" @setText="setText" />
 
 			<template v-if="context.test">
 				<!-- Test Information -->

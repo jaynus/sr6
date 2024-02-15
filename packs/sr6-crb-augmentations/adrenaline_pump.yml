@@ -37,7 +37,7 @@ system:
     (use unaugmented Body to resist the damage). After the effect’s end, your
     attribute values return to normal and you stop ignoring injury modifiers or
     unconsciousness from Stun damage. After use, the pump requires one hour to
-    regenerate its supply. During that time, it cannot be activated. 
+    regenerate its supply. During that time, it cannot be activated.
   essenceCostFormula: '@rating * 0.75'
   cost: '@rating * 55000'
   hasActivate: true
@@ -45,6 +45,7 @@ system:
     - name: Adrenaline Pump (Ignore Pain)
       class: PainEditorModifier
   activation:
+    mode: manual
     type: minor
   availability:
     illegal: true

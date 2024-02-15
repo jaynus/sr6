@@ -10,13 +10,15 @@ system:
     when resisting physical damage. Your unarmed combat damage becomes Physical
     and your Damage Value and Attack Rating increase per the table below. Bone
     density augmentation is incompatible with other augmentations to bones,
-    including bone lacing cyberware. 
+    including bone lacing cyberware.
   essenceCostFormula: '@rating * 0.3'
   cost: '@rating * 5000'
   availability:
     illegal: false
     rating: 4
     requiresLicense: true
+  activation:
+    mode: always
   modifiers:
     - class: PoolModifier
       data:

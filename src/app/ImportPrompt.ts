@@ -33,6 +33,7 @@ import { ContextBase } from '@/vue/SheetContext';
 import VueSheet from '@/vue/VueSheet';
 import { Err, Ok, Result } from 'ts-results';
 import { Component } from 'vue';
+import { toRaw } from 'vue/dist/vue';
 
 export enum ImportAction {
 	Skip,
@@ -763,22 +764,8 @@ export class ImportPrompt extends VueSheet(Application) {
 			return;
 		}
 
-		// Clear out all freshes
-		//	Attributes: ImportAction = DefaultImportAction;
-		// 	Qualities: ImportAction = DefaultImportAction;
-		// 	AdeptPowers: ImportAction = DefaultImportAction;
-		// 	Augmentations: ImportAction = DefaultImportAction;
-		// 	Skills: ImportAction = DefaultImportAction;
-		//
-		// 	Gear: ImportAction = DefaultImportAction;
-		// 	Weapons: ImportAction = DefaultImportAction;
-		// 	GeneralActions: ImportAction = DefaultImportAction;
-		// 	MatrixActions: ImportAction = DefaultImportAction;
-		//
-		// 	Lifestyles: ImportAction = DefaultImportAction;
-		// 	Contacts: ImportAction = DefaultImportAction;
-		// 	SINs: ImportAction = DefaultImportAction;
-		// 	Spells: ImportAction = DefaultImportAction;
+		await this.actor.update({ ['system.source']: file });
+
 		if (this.settings.Qualities === ImportAction.Fresh) {
 			await this._removeItemType('quality');
 		}
@@ -790,10 +777,14 @@ export class ImportPrompt extends VueSheet(Application) {
 		}
 		if (this.settings.Skills === ImportAction.Fresh) {
 			await this._removeItemType('skill');
+			await this._removeItemType('language');
+			await this._removeItemType('knowledge');
 		}
 		if (this.settings.Gear === ImportAction.Fresh) {
 			await this._removeItemType('gear');
+			await this._removeItemType('wearable');
 		}
+
 		if (this.settings.Weapons === ImportAction.Fresh) {
 			await this._removeItemType('weapon');
 		}
@@ -802,7 +793,9 @@ export class ImportPrompt extends VueSheet(Application) {
 		}
 		if (this.settings.MatrixActions === ImportAction.Fresh) {
 			await this._removeItemType('matrix_action');
+			await this._removeItemType('program');
 		}
+
 		if (this.settings.Lifestyles === ImportAction.Fresh) {
 			await this._removeItemType('lifestyle');
 		}

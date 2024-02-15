@@ -11,6 +11,25 @@ system:
   activation:
     type: minor
     period: initiative
+  effects:
+    - target: self
+      when: onuse
+      duplicates: false
+      effect:
+        duration:
+          turns: 1
+        flags:
+          sr6:
+            modifiers:
+              modifiers:
+                - class: PoolModifier
+                  value: -4
+                  testClasses:
+                    - RangedAttackTest
+                - class: DamageModifier
+                  value: 2
+                  testClasses:
+                    - RangedAttackTest
 _id: pyYGkC25kMc0464X
 _key: '!items!pyYGkC25kMc0464X'
 folder: gno3EdoYY7EFX3TZ

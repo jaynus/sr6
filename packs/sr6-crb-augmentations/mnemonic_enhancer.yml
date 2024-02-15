@@ -22,5 +22,7 @@ system:
           - KnowledgeTest
           - MemoryTest
           - LanguageTest
+  activation:
+    mode: always
 _id: 7Nuvq604URzbvhuO
 _key: '!items!7Nuvq604URzbvhuO'

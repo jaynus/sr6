@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import CharacterDataModel from '@/actor/data/CharacterDataModel';
+import { ActivationMode } from '@/data';
 import AugmentationDataModel from '@/item/data/feature/AugmentationDataModel';
 import QualityDataModel from '@/item/data/feature/QualityDataModel';
 import CredstickDataModel, { CredstickRating } from '@/item/data/gear/CredstickDataModel';
@@ -6,13 +8,11 @@ import SR6Item from '@/item/SR6Item';
 import Localized from '@/vue/components/Localized.vue';
 import SelectItem from '@/vue/components/SelectItem.vue';
 import Switch from '@/vue/components/Switch.vue';
+import { createNewItem, deleteItem, updateItem } from '@/vue/directives';
+import { ActorSheetContext, RootContext } from '@/vue/SheetContext';
+import AttributesView from '@/vue/sheets/actor/character/AttributesView.vue';
 import ItemListView from '@/vue/views/ItemListView.vue';
 import { computed, inject, toRaw } from 'vue';
-
-import CharacterDataModel from '@/actor/data/CharacterDataModel';
-import AttributesView from '@/vue/sheets/actor/character/AttributesView.vue';
-import { ActorSheetContext, RootContext } from '@/vue/SheetContext';
-import { createNewItem, deleteItem, updateItem } from '@/vue/directives';
 
 const context = inject<ActorSheetContext<CharacterDataModel>>(RootContext)!;
 
@@ -103,7 +103,10 @@ const augmentations = computed(() =>
 				>
 					<template v-slot:customActions="slotProps">
 						<Switch
-							v-if="(slotProps.item.systemData as AugmentationDataModel).activation"
+							v-if="
+								(slotProps.item.systemData as AugmentationDataModel).activation.mode ===
+								ActivationMode.Manual
+							"
 							:checked="(slotProps.item.systemData as AugmentationDataModel).activation!.status"
 							@change="(slotProps.item.systemData as AugmentationDataModel).toggleActive()"
 					/></template>

@@ -7,8 +7,8 @@ export abstract class ActivationDataModel extends BaseDataModel {
 	abstract mode: ActivationMode;
 	abstract status: boolean;
 
-	override prepareBaseData(): void {
-		if (this.type === ActivationType.Passive) {
+	override prepareData(): void {
+		if (this.mode === ActivationMode.Always) {
 			this.status = true;
 		}
 	}
@@ -32,7 +32,7 @@ export abstract class ActivationDataModel extends BaseDataModel {
 				choices: Object.values(ActivationPeriod),
 			}),
 			mode: new fields.StringField({
-				initial: ActivationMode.Manual,
+				initial: ActivationMode.Always,
 				nullable: false,
 				required: true,
 				blank: false,

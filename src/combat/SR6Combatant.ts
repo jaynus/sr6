@@ -51,7 +51,7 @@ export default class SR6Combatant extends Combatant<SR6Combat, SR6Actor> {
 	}
 
 	async _setSystemData(data: CombatantFlagData): Promise<void> {
-		if (!game.user!.isGM) {
+		if (!game.user!.isOwner) {
 			ui.notifications.error('Cannot set combat data for unowned combatant');
 		}
 

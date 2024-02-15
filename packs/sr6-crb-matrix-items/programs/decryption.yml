@@ -6,6 +6,9 @@ system:
   type: hacking
   source: CRB p.185
   description: +2 dice on Crack File action.
+  activation:
+    mode: manual
+    type: minor
   modifiers:
     - class: PoolModifier
       data:

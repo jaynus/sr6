@@ -24,5 +24,7 @@ system:
     illegal: false
     rating: 4
     requiresLicense: true
+  activation:
+    mode: always
 _id: bGFltKiIjZt2HPE4
 _key: '!items!bGFltKiIjZt2HPE4'

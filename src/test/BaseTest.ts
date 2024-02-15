@@ -398,7 +398,7 @@ export default abstract class BaseTest<TData extends BaseTestData = BaseTestData
 
 		this._modifiers = this.actor.modifiers.getApplicable(this).map((modifier) => {
 			return {
-				disabled: modifier.isModifying(this),
+				disabled: !modifier.isModifying(this),
 				source: Target.Self,
 				modifier,
 			};

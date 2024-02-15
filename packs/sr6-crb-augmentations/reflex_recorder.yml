@@ -14,5 +14,7 @@ system:
   availability:
     illegal: false
     rating: 5
+  activation:
+    mode: always
 _id: yh6WWPLIQY1sxjSc
 _key: '!items!yh6WWPLIQY1sxjSc'

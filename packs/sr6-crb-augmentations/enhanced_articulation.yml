@@ -1,7 +1,15 @@
 name: Enhanced Articulation
 type: augmentation
 img: /systems/sr6/assets/items/fist.webp
-effects: []
+effects:
+  - name: Enhanced Articulation
+    transfer: true
+    changes:
+      - mode: 2
+        key: system.attributes.agility.mod
+        value: '@rating'
+    _id: ZEIauVB5XyfKfrOu
+    _key: '!items.effects!UViRHipLXUskicG1.ZEIauVB5XyfKfrOu'
 system:
   description: >-
     A number of procedures like joint-surface coating, re-lubrication, and
@@ -14,5 +22,7 @@ system:
     illegal: false
     rating: 4
     requiresLicense: false
+  activation:
+    mode: always
 _id: UViRHipLXUskicG1
 _key: '!items!UViRHipLXUskicG1'

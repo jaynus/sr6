@@ -34,7 +34,7 @@ interface EffectFlags {
 }
 
 export default class SR6ActiveEffect extends ActiveEffect implements IHasCombat {
-	modifiers: Modifiers<SR6ActiveEffect> = new Modifiers(this);
+	modifiers: Modifiers<SR6ActiveEffect>;
 
 	effects: BaseEffect[] = [];
 
@@ -106,6 +106,12 @@ export default class SR6ActiveEffect extends ActiveEffect implements IHasCombat 
 			return;
 		}
 
+		if (this.parent) {
+			if (this.parent instanceof SR6Item<BaseItemDataModel>) {
+				//this.disabled = this.parent.systemData.activation.status;
+			}
+		}
+
 		this.failedConditions = undefined;
 		if (this.conditions) {
 			const origin = fromUuidSync(this.origin) as ClientDocument | null;
@@ -169,6 +175,7 @@ export default class SR6ActiveEffect extends ActiveEffect implements IHasCombat 
 				this.description = originDescription;
 			}
 		}
+		this.modifiers = new Modifiers(this);
 	}
 
 	override get isSuppressed(): boolean {

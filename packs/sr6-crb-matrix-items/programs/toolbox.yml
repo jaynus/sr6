@@ -16,6 +16,9 @@ system:
   type: basic
   source: CRB p.185
   description: +1 to Data Processing.
+  activation:
+    mode: manual
+    type: minor
 _id: jaRqVVF54c4OaaNe
 _key: '!items!jaRqVVF54c4OaaNe'
 folder: 6p0wiyAb0onQd68n

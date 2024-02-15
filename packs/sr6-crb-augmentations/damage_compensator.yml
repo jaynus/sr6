@@ -14,5 +14,7 @@ system:
     illegal: false
     requiresLicense: true
     rating: 5
+  activation:
+    mode: always
 _id: XaofOcBY54habwLr
 _key: '!items!XaofOcBY54habwLr'

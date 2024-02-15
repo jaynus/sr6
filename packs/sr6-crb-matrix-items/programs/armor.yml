@@ -6,6 +6,9 @@ system:
   type: hacking
   source: CRB p.185
   description: +2 to Defense Rating
+  activation:
+    mode: manual
+    type: minor
   modifiers:
     - class: DefenseRatingModifier
       data:

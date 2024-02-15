@@ -20,6 +20,9 @@ system:
   description: >-
     2 extra program slots; take 1 extra box of unresisted Matrix damage when
     attacked.
+  activation:
+    mode: manual
+    type: minor
 _id: vZJBob7U2fa38Kix
 _key: '!items!vZJBob7U2fa38Kix'
 folder: 6p0wiyAb0onQd68n

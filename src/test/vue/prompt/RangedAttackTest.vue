@@ -87,7 +87,7 @@ function setEdgeGainTarget(): void {
 onMounted(setEdgeGainTarget);
 
 emit('setText', {
-	title: `Roll Attack (${weapon.value.name})`,
+	title: `Ranged Attack (${weapon.value.name})`,
 	hint: `${system.value.description}`,
 });
 </script>

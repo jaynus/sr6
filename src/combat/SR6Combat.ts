@@ -200,6 +200,11 @@ export function register(): void {
 				combat.debounceRender();
 
 				// Debounce any visible actor sheets as well
+				for (const windowId in ui.windows) {
+					if (ui.windows[windowId] instanceof ActorSheet) {
+						ui.windows[windowId].render(false);
+					}
+				}
 
 				break;
 		}

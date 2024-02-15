@@ -20,9 +20,10 @@ async function roll() {
 </script>
 
 <template>
+	<div class="section" style="width: 100%">{{ context.data.score }} + {{ context.data.dice }}d6</div>
+
 	<EdgeMenu
 		@setEdgeBoost="(boost) => (edgeBoost = boost as unknown as IEdgeBoost)"
-		:test="context.test"
 		:actor="context.actor as unknown as SR6Actor<BaseActorDataModel>"
 		:phase="ActivationPhase.Initiative"
 	/>

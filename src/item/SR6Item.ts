@@ -24,6 +24,7 @@ import { Modifiers, ModifiersSourceData, ModifierTarget } from '@/modifier';
 import FormulaRoll from '@/roll/FormulaRoll';
 import * as util from '@/util';
 import { Err, Result } from 'ts-results';
+import SR6Effect from '../../lib/effect/SR6Effect';
 
 export interface SR6ItemFlags {
 	modifiers?: ModifiersSourceData;
@@ -136,7 +137,7 @@ export default class SR6Item<ItemDataModel extends BaseDataModel = BaseDataModel
 	}
 
 	allApplicableEffects(): SR6ActiveEffect[] {
-		return this.effects.map((e) => e as SR6ActiveEffect);
+		return this.effects.filter((e) => !(e as SR6Effect).disabled).map((e) => e as SR6ActiveEffect);
 	}
 
 	async cleanLinks(): Promise<void> {

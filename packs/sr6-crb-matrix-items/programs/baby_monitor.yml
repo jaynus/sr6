@@ -6,6 +6,9 @@ system:
   type: basic
   source: CRB p.185
   description: Tells you your current Overwatch Score without needing an action
+  activation:
+    mode: manual
+    type: minor
 _id: ZqTC7StH5VTD31ur
 _key: '!items!ZqTC7StH5VTD31ur'
 folder: 6p0wiyAb0onQd68n

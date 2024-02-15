@@ -17,5 +17,7 @@ system:
   availability:
     illegal: false
     rating: 5
+  activation:
+    mode: always
 _id: icSo8lWFXte00xqx
 _key: '!items!icSo8lWFXte00xqx'

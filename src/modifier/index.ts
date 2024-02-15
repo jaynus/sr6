@@ -15,6 +15,7 @@ import {
 	TestFunctionModifier,
 	AttackRatingModifier,
 	DefenseRatingModifier,
+	DamageModifier,
 } from '@/modifier/TestModifiers';
 import { BlockActionModifier } from '@/modifier/impl/BlockActionModifier';
 import { CoverModifier } from '@/modifier/status/CoverModifier';
@@ -125,6 +126,8 @@ export class Modifiers<TDocument extends foundry.abstract.Document = foundry.abs
 				const mod = BaseModifier.fromData(modifierSourceData, this.parent);
 				if (mod.ok) {
 					this.all.push(mod.val);
+				} else {
+					console.error(mod.val);
 				}
 			});
 		}
@@ -157,6 +160,7 @@ export function config(): Record<string, unknown> {
 		PoolModifier: PoolModifier,
 		AttackRatingModifier: AttackRatingModifier,
 		DefenseRatingModifier: DefenseRatingModifier,
+		DamageModifier: DamageModifier,
 
 		TestFunctionModifier: TestFunctionModifier,
 

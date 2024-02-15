@@ -6,7 +6,7 @@
 
 import BaseActorDataModel from '@/actor/data/BaseActorDataModel';
 import SR6Actor from '@/actor/SR6Actor';
-import { ActivationType } from '@/data';
+import { ActivationMode } from '@/data';
 import { ActivationDataModel } from '@/data/ActivationDataModel';
 import BaseDataModel from '@/data/BaseDataModel';
 import { DocumentUUIDField } from '@/data/fields';
@@ -14,8 +14,8 @@ import { IHasOnDelete, IHasPostCreate, IHasPreCreate } from '@/data/interfaces';
 import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import QualityDataModel from '@/item/data/feature/QualityDataModel';
 import SR6Item from '@/item/SR6Item';
-import { ModifierDataModel } from '@/modifier/ModifierDataModel';
 import { createModifiers } from '@/modifier';
+import { ModifierDataModel } from '@/modifier/ModifierDataModel';
 import { getActorSync, getItemSync } from '@/util';
 
 /**
@@ -116,7 +116,7 @@ export default abstract class BaseItemDataModel
 					{
 						name: document.name,
 						origin: this.item!.uuid,
-						disabled: this.activation.type !== ActivationType.Passive,
+						disabled: this.activation.mode !== ActivationMode.Always,
 						transfer: false,
 					},
 				],
@@ -134,7 +134,7 @@ export default abstract class BaseItemDataModel
 
 	override prepareData(): void {
 		super.prepareData();
-		this.activation?.prepareData();
+		this.activation.prepareData();
 
 		this.modifiers.forEach((modifier) => {
 			if (!modifier.name) {
@@ -148,7 +148,7 @@ export default abstract class BaseItemDataModel
 
 	override prepareDerivedData(): void {
 		super.prepareDerivedData();
-		this.activation?.prepareDerivedData();
+		this.activation.prepareDerivedData();
 	}
 
 	override getRollData(): Record<string, unknown> {

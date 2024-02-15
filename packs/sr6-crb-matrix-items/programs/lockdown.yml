@@ -6,6 +6,9 @@ system:
   type: hacking
   source: CRB p.185
   description: Cause link-lock when you do Matrix damage.
+  activation:
+    mode: manual
+    type: minor
 _id: WTe2eC2eyMHEdaCq
 _key: '!items!WTe2eC2eyMHEdaCq'
 folder: 6p0wiyAb0onQd68n

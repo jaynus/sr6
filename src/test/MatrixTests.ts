@@ -113,7 +113,7 @@ export class MatrixActionTest extends BaseTest<MatrixActionTestData> {
 	}
 
 	protected override async _onUse(): Promise<void> {
-		await this.matrixAction.systemData.applyEffects(EffectType.OnUse, getAttackDataTargets(this.data));
+		await this.matrixAction.systemData.use(getAttackDataTargets(this.data));
 	}
 
 	constructor({

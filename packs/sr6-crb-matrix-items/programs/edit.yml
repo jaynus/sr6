@@ -8,6 +8,9 @@ system:
   description: >-
     When doing Edit File action, gain 1 Edge that must be immediately spent or
     else it vanishes.
+  activation:
+    mode: manual
+    type: minor
   modifiers:
     - class: EdgeModifier
       data:

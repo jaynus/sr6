@@ -4,7 +4,7 @@ img: /systems/sr6/assets/items/bolt-spell-cast.webp
 effects: []
 system:
   description: >-
-    Magic does not always get along with tech, but sometimes they fin d a way to
+    Magic does not always get along with tech, but sometimes they find a way to
     combine forces. With this spell, a mage can briefly amp up an electronic
      devices power, making it run better and faster. Roll Sorcery + Magic vs.
      Object Resistance. For each net hit, you can increase an attribute of the

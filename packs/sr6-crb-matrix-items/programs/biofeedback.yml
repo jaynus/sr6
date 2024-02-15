@@ -8,6 +8,9 @@ system:
   description: >-
     Causes Stun (if target is in cold-sim) or Physical (if target is in hot-sim)
     damage with Matrix attack. This program is linked to the Attack attribute.
+  activation:
+    mode: manual
+    type: minor
 _id: OGjOSZ6bvo6rgWap
 _key: '!items!OGjOSZ6bvo6rgWap'
 folder: 6p0wiyAb0onQd68n

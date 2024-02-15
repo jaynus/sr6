@@ -6,6 +6,9 @@ system:
   type: hacking
   source: CRB p.185
   description: Allow Device Rating or Body roll to soak damage from Data Bomb.
+  activation:
+    mode: manual
+    type: minor
 _id: iBbGR6bpPWMtYt6C
 _key: '!items!iBbGR6bpPWMtYt6C'
 folder: 6p0wiyAb0onQd68n

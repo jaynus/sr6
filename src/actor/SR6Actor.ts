@@ -26,6 +26,7 @@ import GearDataModel from '@/item/data/gear/GearDataModel';
 import SR6Item from '@/item/SR6Item';
 import { Modifiers, ModifiersSourceData, ModifierTarget } from '@/modifier';
 import FormulaRoll from '@/roll/FormulaRoll';
+import { SR6Token } from '@/token/SR6Token';
 import * as util from '@/util';
 
 export interface SR6ActorFlags {
@@ -196,13 +197,16 @@ export default class SR6Actor<ActorDataModel extends foundry.abstract.DataModel 
 
 		this.effects.forEach((effect) => {
 			const e = effect as SR6ActiveEffect;
+			console.log(e.isTemporary, e.duration.remaining);
 			if (e.isTemporary && e.duration.remaining !== null && e.duration.remaining < 1) {
 				toDelete.push(effect.id);
 			}
 		});
 
-		for (const itemId of toDelete) {
-			await this.effects.get(itemId)!.delete();
+		if (toDelete.length) {
+			for (const id of toDelete) {
+				await this.effects.get(id)!.delete();
+			}
 		}
 
 		for (const item of this.items) {

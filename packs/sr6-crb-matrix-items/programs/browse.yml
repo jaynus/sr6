@@ -8,6 +8,9 @@ system:
   description: >-
     When doing Matrix searches, gain 1 Edge that is either spent immediately on
     thataction or disappears.
+  activation:
+    mode: manual
+    type: minor
 _id: GJlAe4J2Aia2cnT8
 _key: '!items!GJlAe4J2Aia2cnT8'
 folder: 6p0wiyAb0onQd68n

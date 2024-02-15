@@ -1,13 +1,17 @@
 <script lang="ts" setup>
 import CharacterDataModel from '@/actor/data/CharacterDataModel';
+import { DialogPrompt } from '@/app/DialogPrompt';
 import { ActivationPeriod, ActivationType } from '@/data';
 import GeneralActionDataModel, { GeneralActionCategory } from '@/item/data/action/GeneralActionDataModel';
 import WeaponDataModel from '@/item/data/gear/WeaponDataModel';
 import WearableDataModel from '@/item/data/gear/WearableDataModel';
+import SpellDataModel from '@/item/data/SpellDataModel';
 import SR6Item from '@/item/SR6Item';
 import { MeleeAttackTest } from '@/test/MeleeTests';
 import { RangedAttackTest } from '@/test/RangedTests';
+import { SpellCastTest } from '@/test/SpellTests';
 import { getTargetActors } from '@/util';
+import VueSelectItemPrompt from '@/vue/apps/SelectItemPrompt.vue';
 import CombatInfo from '@/vue/components/combat/CombatInfo.vue';
 import Weapons from '@/vue/components/combat/Weapons.vue';
 import Wearing from '@/vue/components/combat/Wearing.vue';
@@ -107,11 +111,20 @@ async function useGeneralAction(action: SR6Item<GeneralActionDataModel>) {
 			await new RangedAttackTest({ actor: toRaw(context.data.actor), item: weapon }).execute();
 			// TODO: consume and use
 		}
-	} /* else if (action.name == 'Cast Spell') {
-		const actor = toRaw(context.data.actor);
-		const pickSpell = new SelectListDialog();
-		const spell = pickSpell.selection();
-	} */ else {
+	} else if (action.name == 'Cast Spell') {
+		const selectedSpell = await DialogPrompt.prompt<SR6Item<SpellDataModel>, { choices: SR6Item[] }>(
+			VueSelectItemPrompt,
+			{ choices: toRaw(context.data.actor).items.filter((i) => i.type === 'spell') as SR6Item[] },
+			{
+				classes: ['app-select-item-prompt'],
+				title: 'Select Spell',
+				resizable: true,
+			},
+		);
+		if (selectedSpell) {
+			await new SpellCastTest({ actor: toRaw(context.data.actor), item: toRaw(selectedSpell) }).execute();
+		}
+	} else {
 		let consume = false;
 		if (actor.inCombat) {
 			consume = await Dialog.confirm({

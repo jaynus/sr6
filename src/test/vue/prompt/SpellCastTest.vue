@@ -48,7 +48,7 @@ function currentDrain(): number {
 }
 
 emit('setText', {
-	title: `Matrix Action (${actionName.value})`,
+	title: `Cast Spell (${actionName.value})`,
 	hint: ``,
 });
 </script>

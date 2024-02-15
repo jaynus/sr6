@@ -26,7 +26,7 @@ async function focusTarget(target: SR6Actor<BaseActorDataModel>): Promise<void> 
 }
 
 emit('setText', {
-	title: `Roll Attack (${weapon.value.name})`,
+	title: `Melee Attack (${weapon.value.name})`,
 	hint: `${system.value.description}`,
 });
 </script>

@@ -14,7 +14,7 @@ import { Collapse } from 'vue-collapsed';
 const props = withDefaults(
 	defineProps<{
 		actor: SR6Actor<BaseActorDataModel>;
-		test: Maybe<ITest>;
+		test?: Maybe<ITest>;
 		phase: ActivationPhase;
 		show?: boolean;
 	}>(),
