@@ -1,0 +1,19 @@
+name: Encryption
+type: program
+img: /systems/sr6/assets/matrix/program.webp
+effects: []
+system:
+  type: basic
+  source: CRB p.185
+  description: +2 dice when doing Encrypt File action.
+  modifiers:
+    - class: PoolModifier
+      data:
+        value: 2
+        testClasses:
+          - MatrixActionTest
+        testItemNames:
+          - Encrypt File
+_id: m9Z4l6UM9gvpMK5B
+_key: '!items!m9Z4l6UM9gvpMK5B'
+folder: 6p0wiyAb0onQd68n

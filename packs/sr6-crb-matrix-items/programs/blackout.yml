@@ -1,0 +1,13 @@
+name: Blackout
+type: program
+img: /systems/sr6/assets/matrix/program.webp
+effects: []
+system:
+  type: hacking
+  source: CRB p.185
+  description: >-
+    Like Biofeedback, but Stun damage only. This program is linked to the
+    At-tack attribute.
+_id: NAKaX67FAmzHohJD
+_key: '!items!NAKaX67FAmzHohJD'
+folder: 6p0wiyAb0onQd68n

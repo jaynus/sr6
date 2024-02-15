@@ -142,6 +142,7 @@ export class ImportPrompt extends VueSheet(Application) {
 	}
 
 	protected async _genericItemImport(all: SR6Item[], action: ImportAction): Promise<Result<ImportResult, string>> {
+		console.log('_genericItemImport', all, action);
 		if (all.length < 1) {
 			return Ok({});
 		}
@@ -194,7 +195,6 @@ export class ImportPrompt extends VueSheet(Application) {
 				break;
 			}
 			case ImportAction.Fresh: {
-				await this._removeItemType(all[0].type);
 				await this.actor!.createEmbeddedDocuments('Item', all);
 				break;
 			}
@@ -761,6 +761,59 @@ export class ImportPrompt extends VueSheet(Application) {
 		if (!this.actor) {
 			ui.notifications!.error('import failed to create actor');
 			return;
+		}
+
+		// Clear out all freshes
+		//	Attributes: ImportAction = DefaultImportAction;
+		// 	Qualities: ImportAction = DefaultImportAction;
+		// 	AdeptPowers: ImportAction = DefaultImportAction;
+		// 	Augmentations: ImportAction = DefaultImportAction;
+		// 	Skills: ImportAction = DefaultImportAction;
+		//
+		// 	Gear: ImportAction = DefaultImportAction;
+		// 	Weapons: ImportAction = DefaultImportAction;
+		// 	GeneralActions: ImportAction = DefaultImportAction;
+		// 	MatrixActions: ImportAction = DefaultImportAction;
+		//
+		// 	Lifestyles: ImportAction = DefaultImportAction;
+		// 	Contacts: ImportAction = DefaultImportAction;
+		// 	SINs: ImportAction = DefaultImportAction;
+		// 	Spells: ImportAction = DefaultImportAction;
+		if (this.settings.Qualities === ImportAction.Fresh) {
+			await this._removeItemType('quality');
+		}
+		if (this.settings.AdeptPowers === ImportAction.Fresh) {
+			await this._removeItemType('adeptpower');
+		}
+		if (this.settings.Augmentations === ImportAction.Fresh) {
+			await this._removeItemType('augmentation');
+		}
+		if (this.settings.Skills === ImportAction.Fresh) {
+			await this._removeItemType('skill');
+		}
+		if (this.settings.Gear === ImportAction.Fresh) {
+			await this._removeItemType('gear');
+		}
+		if (this.settings.Weapons === ImportAction.Fresh) {
+			await this._removeItemType('weapon');
+		}
+		if (this.settings.GeneralActions === ImportAction.Fresh) {
+			await this._removeItemType('general_action');
+		}
+		if (this.settings.MatrixActions === ImportAction.Fresh) {
+			await this._removeItemType('matrix_action');
+		}
+		if (this.settings.Lifestyles === ImportAction.Fresh) {
+			await this._removeItemType('lifestyle');
+		}
+		if (this.settings.Contacts === ImportAction.Fresh) {
+			await this._removeItemType('contact');
+		}
+		if (this.settings.SINs === ImportAction.Fresh) {
+			await this._removeItemType('sin');
+		}
+		if (this.settings.Spells === ImportAction.Fresh) {
+			await this._removeItemType('spell');
 		}
 
 		// Add all core actions

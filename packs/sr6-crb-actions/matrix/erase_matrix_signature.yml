@@ -1,0 +1,34 @@
+name: Erase Matrix Signature
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    You eradicate a Matrix signature that has been left by a Resonance being,
+    such as a technomancer or a sprite. If the test is successful, the signature
+    dissipates. You must have a Resonance rating to attempt this action. Unlike
+    other actions that need Resonance, this one’s a real Matrix Action, and
+    illegal to boot, so you risk Matrix damage and Overwatch Score when you use
+    it.
+  type: resonance
+  skillUse:
+    skill: Electronics
+    specialization: Computer
+    attribute: logic
+  limits:
+    illegal: true
+    access_level:
+      - user
+      - admin
+  activation:
+    type: major
+    period: initiative
+  formulas:
+    attack: null
+    defend: '@willpower + @persona.f'
+    deviceDefend: '@persona.f * f'
+    damage: null
+    soak: null
+_id: 5U34ylLf7pGa5jZM
+_key: '!items!5U34ylLf7pGa5jZM'
+folder: 4yIhN1JUHscZ134J

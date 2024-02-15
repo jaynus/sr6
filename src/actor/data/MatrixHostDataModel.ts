@@ -1,24 +1,69 @@
 import BaseActorDataModel from '@/actor/data/BaseActorDataModel';
 import { MonitorDataModel } from '@/actor/data/MonitorsDataModel';
+import SR6Combat from '@/combat/SR6Combat';
+import SR6Combatant from '@/combat/SR6Combatant';
+import { InitiativeType } from '@/data';
 import { DocumentUUIDField } from '@/data/fields';
-import { IHasMatrix, IHasMatrixPersona } from '@/data/interfaces';
-import { IHasPostCreate } from '@/data/interfaces';
+import { AvailableActions, IHasInitiative, IHasMatrix, IHasMatrixPersona, IHasPostCreate } from '@/data/interfaces';
 import { AdjustableMatrixAttributesDataModel } from '@/data/MatrixAttributesDataModel';
 import MatrixPersonaDataModel, { PersonaType } from '@/item/data/feature/MatrixPersonaDataModel';
 import GearDataModel from '@/item/data/gear/GearDataModel';
 import MatrixICDataModel from '@/item/data/MatrixICDataModel';
 import SR6Item from '@/item/SR6Item';
+import { InitiativeRollData } from '@/roll/InitiativeRoll';
 
 export default abstract class MatrixHostDataModel
 	extends BaseActorDataModel
-	implements IHasMatrix, IHasMatrixPersona, IHasPostCreate
+	implements IHasMatrix, IHasMatrixPersona, IHasPostCreate, IHasInitiative
 {
 	abstract rating: number;
 	abstract attributes: AdjustableMatrixAttributesDataModel;
 
 	protected abstract _personas: (() => SR6Item<MatrixPersonaDataModel>)[];
 
+	// IHasInitiative
+	//
+	hasInitiativeType(type: InitiativeType): boolean {
+		return type === InitiativeType.Matrix;
+	}
+
+	getInitiative(type: InitiativeType): null | InitiativeRollData {
+		if (type !== InitiativeType.Matrix) {
+			return null;
+		}
+		const rollData = {
+			score: this.rating,
+			dice: 4,
+		};
+
+		if (rollData) {
+			// Apply modifiers
+			this.actor!.modifiers.getApplicable(null).forEach((modifier) => {
+				if (modifier.prepareInitiative) {
+					modifier.prepareInitiative(type, rollData, null);
+				}
+			});
+		}
+
+		return rollData;
+	}
+
+	getAvailableActions(type: InitiativeType): AvailableActions {
+		if (type !== InitiativeType.Matrix) {
+			return {
+				major: 0,
+				minor: 0,
+			};
+		}
+
+		return {
+			major: 2,
+			minor: 0,
+		};
+	}
+
 	// IHasMatrixPersona
+	//
 	get matrixPersona(): null | MatrixPersonaDataModel {
 		return this._matrixPersona;
 	}

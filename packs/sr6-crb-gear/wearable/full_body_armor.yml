@@ -1,0 +1,27 @@
+name: Full Body Armor
+type: wearable
+img: /systems/sr6/assets/items/armor_body.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: armor
+  skillUse: null
+  costFormula: '2000'
+  capacity: 10
+  slots:
+    - armor
+  formulas:
+    defenseRatingFormula: '5'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 4
+  description: >-
+    This cowboy-style duster has been consistently popular on the mean streets
+    of the worlds sprawls for the past fifty years. Besides being protective,
+    the armored trenchcoat provides a bonus Edge against tests to spot items
+    hidden underneath.
+_id: 569KvSH5MrP6rAlP
+_key: '!items!569KvSH5MrP6rAlP'
+folder: P7KvXzvHmJgtJAly

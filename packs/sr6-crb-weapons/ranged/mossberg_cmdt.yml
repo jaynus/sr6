@@ -1,0 +1,42 @@
+name: Mossberg CMDT
+type: weapon
+img: /systems/sr6/assets/items/shotguns.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: SHOTGUNS
+  skillUse:
+    skill: firearms
+    specialization: shotguns
+    attribute: agility
+  costFormula: '700'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 4
+  matrix: null
+  attackRatings:
+    closeFormula: '4'
+    nearFormula: '11'
+    mediumFormula: '7'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '4'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+  description: >-
+    10(c)
+
+    This assault shotgun provides classic bang for the buck. It can either be
+    loaded with ten-round ammo clips or a big boy twenty-four-round drum. The
+    best feature are burst fire mode and a top-mounted laser sight.
+_id: 5ZnuBYL66EP0si9U
+_key: '!items!5ZnuBYL66EP0si9U'
+folder: 0jZhSKyFMAK4NHyF

@@ -1,16 +1,14 @@
 import { InitiativeType } from '@/data';
 import { AvailableActions } from '@/data/interfaces';
 import { ConditionalData } from '@/effect/conditional';
-import SR6Effect from '@/effect/SR6Effect';
-import { BlockActionModifier } from '@/modifier/impl/BlockActionModifier';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import { MatrixPersonaModifier } from '@/modifier/impl/MatrixPersonaModifier';
-import { CoverModifier } from '@/modifier/status/CoverModifier';
-
 import { ModifierDataModel } from '@/modifier/ModifierDataModel';
 import { InitiativeRollData } from '@/roll/InitiativeRoll';
 
 import { ITest } from 'src/test';
 import { ClassData } from '@/data/serialize';
+
 import BaseModifier from '@/modifier/BaseModifier';
 import {
 	PoolModifier,
@@ -18,6 +16,9 @@ import {
 	AttackRatingModifier,
 	DefenseRatingModifier,
 } from '@/modifier/TestModifiers';
+import { BlockActionModifier } from '@/modifier/impl/BlockActionModifier';
+import { CoverModifier } from '@/modifier/status/CoverModifier';
+import { BlindedModifier } from '@/modifier/status/BlindedModifier';
 
 // Specialized impls
 import { WoundModifier } from '@/modifier/impl/WoundModifier';
@@ -58,8 +59,6 @@ export interface IModifier {
 
 	prepareTest?<TTest extends ITest>(test: TTest): Promise<void>;
 	finishTest?<TTest extends ITest>(test: TTest): Promise<void>;
-
-	prepareDocument?(document: foundry.abstract.Document): Promise<void>;
 
 	prepareInitiative?(
 		type: InitiativeType,
@@ -168,6 +167,7 @@ export function config(): Record<string, unknown> {
 
 		InitiativeModifier: InitiativeModifier,
 		CoverModifier: CoverModifier,
+		BlindedModifier: BlindedModifier,
 
 		BlockActionModifier: BlockActionModifier,
 
@@ -177,7 +177,7 @@ export function config(): Record<string, unknown> {
 
 export async function createModifiers<TParent extends foundry.abstract.Document>(
 	parent: TParent,
-	effect: SR6Effect,
+	effect: SR6ActiveEffect,
 	modifiers: ModifierDataModel[],
 ): Promise<void> {
 	if (effect) {

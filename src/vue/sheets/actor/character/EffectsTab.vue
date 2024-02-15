@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import EffectsView from '@/vue/views/EffectsView.vue';
 import ModifiersView from '@/vue/views/ModifiersView.vue';
 
@@ -13,7 +13,7 @@ const context = inject<ActorSheetContext<CharacterDataModel>>(RootContext)!;
 // We have to:
 //   1. Use an 'any' typing to skirt around TypeScript's complaints.
 //   2. Keep a local ref that gets updated in onBeforeUpdate in order to work around some struggles with Foundry.
-const effects = ref<SR6Effect[]>([]);
+const effects = ref<SR6ActiveEffect[]>([]);
 const componentKey = ref(0);
 
 async function addEffect(category: string) {
@@ -33,7 +33,7 @@ function updateEffects(): void {
 	effects.value = [...toRaw(context.sheet.actor).allApplicableEffects()] as any;
 }
 
-async function deleteEffect(effect: SR6Effect): Promise<void> {
+async function deleteEffect(effect: SR6ActiveEffect): Promise<void> {
 	await toRaw(effect).delete();
 	updateEffects();
 }

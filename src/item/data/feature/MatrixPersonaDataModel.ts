@@ -1,6 +1,6 @@
 import { MonitorDataModel } from '@/actor/data/MonitorsDataModel';
 import { InitiativeType } from '@/data';
-import { AvailableActions, IHasInitiative } from '@/data/interfaces';
+import { AvailableActions } from '@/data/interfaces';
 import { MatrixSimType } from '@/data/matrix';
 import { AdjustableMatrixAttributesDataModel } from '@/data/MatrixAttributesDataModel';
 import BaseItemDataModel from '@/item/data/BaseItemDataModel';
@@ -38,7 +38,7 @@ type MatrixPersonaFormulasData = {
 	defenseRating: string;
 };
 
-export default abstract class MatrixPersonaDataModel extends BaseItemDataModel implements IHasInitiative {
+export default abstract class MatrixPersonaDataModel extends BaseItemDataModel {
 	abstract overwatchScore: MonitorDataModel;
 	abstract noise: MonitorDataModel;
 
@@ -70,6 +70,10 @@ export default abstract class MatrixPersonaDataModel extends BaseItemDataModel i
 		this.noise.damage = value;
 	}
 
+	// IHasInitiative
+	hasInitiativeType(type: InitiativeType): boolean {
+		return type === InitiativeType.Matrix;
+	}
 	getInitiative(type: InitiativeType): null | InitiativeRollData {
 		if (type !== InitiativeType.Matrix) {
 			return null;
@@ -96,8 +100,8 @@ export default abstract class MatrixPersonaDataModel extends BaseItemDataModel i
 	getAvailableActions(_type: InitiativeType): AvailableActions {
 		console.warn('TODO getAvailableActions');
 		return {
-			major: 0,
-			minor: 0,
+			major: 1,
+			minor: 1,
 		};
 	}
 

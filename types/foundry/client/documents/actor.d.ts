@@ -22,6 +22,7 @@ declare global {
 	class Actor<
 		TParent extends TokenDocument = TokenDocument,
 		TItemTypeMap extends ItemTypeMap = ItemTypeMap,
+		TActiveEffect extends ActiveEffect = ActiveEffect,
 	> extends ActorConstructor {
 		constructor(data: PreCreate<foundry.data.ActorSource>, context?: DocumentConstructionContext<Actor>);
 
@@ -173,14 +174,18 @@ declare global {
 		protected _onEmbeddedDocumentChange(embeddedName: 'Item' | 'ActiveEffect'): void;
 	}
 
-	interface Actor<TParent extends TokenDocument = TokenDocument> {
-		readonly data: foundry.data.ActorData<Actor, ActiveEffect, Item>;
+	interface Actor<
+		TParent extends TokenDocument = TokenDocument,
+		TItemTypeMap extends ItemTypeMap = ItemTypeMap,
+		TActiveEffect extends ActiveEffect = ActiveEffect,
+	> {
+		readonly data: foundry.data.ActorData<Actor, TActiveEffect, Item>;
 
 		readonly parent: TParent | null;
 
 		readonly items: foundry.abstract.EmbeddedCollection<Item>;
 
-		readonly effects: foundry.abstract.EmbeddedCollection<ActiveEffect>;
+		readonly effects: foundry.abstract.EmbeddedCollection<TActiveEffect>;
 
 		prototypeToken: foundry.data.PrototypeToken;
 

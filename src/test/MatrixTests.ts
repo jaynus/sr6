@@ -2,7 +2,7 @@ import { EnumAttribute } from '@/actor/data';
 import BaseActorDataModel from '@/actor/data/BaseActorDataModel';
 import LifeformDataModel from '@/actor/data/LifeformDataModel';
 import SR6Actor from '@/actor/SR6Actor';
-import { EffectType } from '@/effect/SR6Effect';
+import { EffectType } from '@/effect/SR6ActiveEffect';
 import MatrixActionDataModel from '@/item/data/action/MatrixActionDataModel';
 import SR6Item from '@/item/SR6Item';
 import SR6Roll from '@/roll/SR6Roll';

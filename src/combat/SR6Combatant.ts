@@ -9,6 +9,7 @@ import SR6Actor from '@/actor/SR6Actor';
 import SR6Combat from '@/combat/SR6Combat';
 import { InitiativeType } from '@/data';
 import { IHasInitiative, AvailableActions } from '@/data/interfaces';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 
 export type CombatantFlagData = {
 	initiativeType: InitiativeType;
@@ -18,11 +19,19 @@ export type CombatantFlagData = {
 
 export default class SR6Combatant extends Combatant<SR6Combat, SR6Actor> {
 	get actorSystemData(): IHasInitiative {
-		return this.actor.systemData as LifeformDataModel as IHasInitiative;
+		return this.actor.systemData as unknown as IHasInitiative;
 	}
 
 	get systemData(): CombatantFlagData {
 		return this.getFlag('sr6', 'CombatantFlagData') as CombatantFlagData;
+	}
+
+	protected override async _preCreate(
+		data: PreDocumentId<this['_source']>,
+		options: DocumentModificationContext,
+		user: User,
+	): Promise<void> {
+		console.log('combatant precreate', data, options, user);
 	}
 
 	constructor(data: PreCreate<foundry.data.CombatantSource>, context?: DocumentConstructionContext<Combatant>) {
@@ -42,7 +51,7 @@ export default class SR6Combatant extends Combatant<SR6Combat, SR6Actor> {
 	}
 
 	async _setSystemData(data: CombatantFlagData): Promise<void> {
-		if (!this.isOwner) {
+		if (!game.user!.isGM) {
 			ui.notifications.error('Cannot set combat data for unowned combatant');
 		}
 
@@ -57,28 +66,29 @@ export default class SR6Combatant extends Combatant<SR6Combat, SR6Actor> {
 
 	async _cycleEffects(): Promise<void> {
 		// Cycle conditions
-		/*
-		const toDelete: string[] = [];
-		this.actor.items
-			.filter((i) => i.type === 'condition')
-			.forEach((item) => {
-				item.effects.forEach((effect) => {
-					const e = effect as SR6Effect;
-					if (e.isTemporary && e.duration.remaining !== null && e.duration.remaining < 1) {
-						toDelete.push(item.id);
-					}
-				});
-			});
-		for (const itemId of toDelete) {
-			await this.actor.items.get(itemId)!.delete();
+		await (this.actor as SR6Actor).cycleActiveEffects();
+	}
+
+	async startTurn(): Promise<void> {
+		console.log('SR6Combatant::startTurn', this.actor.name);
+		if (game.user!.isGM) {
+			await this._resetActions();
+			await this._cycleEffects();
 		}
-		*/
+		await this.actor.startTurn?.(this.parent, this);
 	}
 
-	async beginTurn(): Promise<void> {
-		await this._resetActions();
-		await this._cycleEffects();
+	async endTurn(): Promise<void> {
+		console.log('SR6Combatant::endTurn', this.actor.name);
+		await this.actor.endTurn?.(this.parent, this);
 	}
 
-	async endTurn(): Promise<void> {}
+	async startCombat(): Promise<void> {
+		console.log('SR6Combatant::startCombat', this.actor.name);
+		await this.actor.startCombat?.(this.parent, this);
+	}
+	async endCombat(): Promise<void> {
+		console.log('SR6Combatant::endCombat', this.actor.name);
+		await this.actor.endCombat?.(this.parent, this);
+	}
 }

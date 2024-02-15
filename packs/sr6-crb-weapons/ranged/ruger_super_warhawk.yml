@@ -1,0 +1,39 @@
+name: Ruger Super Warhawk
+type: weapon
+img: /systems/sr6/assets/items/pistols_heavy.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: PISTOLS_HEAVY
+  skillUse:
+    skill: firearms
+    specialization: pistols_heavy
+    attribute: agility
+  costFormula: '400'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 3
+  matrix: null
+  attackRatings:
+    closeFormula: '8'
+    nearFormula: '11'
+    mediumFormula: '8'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '4'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+  description: >-
+    6(cy)Boom and glitz! That s the standard street tag for th e Super Warhawk.
+    This revolver is shiny and chrome and makes holes the size o f a troll s
+    fist straight out of the box. Upgrade the ammo or the featur e and those
+    holes get real precise.
+_id: ebPAx97URNKPGNRc
+_key: '!items!ebPAx97URNKPGNRc'
+folder: 0jZhSKyFMAK4NHyF

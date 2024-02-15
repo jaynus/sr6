@@ -33,6 +33,7 @@ export const SR6StatusEffects: StatusEffect[] = [
 			},
 		},
 	},
+	// Cover
 	{
 		id: 'cover1',
 		name: 'SR6.Effect.Cover1',
@@ -79,6 +80,92 @@ export const SR6StatusEffects: StatusEffect[] = [
 					modifiers: [{ class: 'CoverModifier', name: 'Cover IV', description: 'Cover lol', level: 4 }],
 				},
 			},
+		},
+	},
+	// Blinded
+	{
+		id: 'blind1',
+		name: 'SR6.Effect.Blind1',
+		icon: 'systems/sr6/assets/status/blind1.webp',
+		flags: {
+			sr6: {
+				modifiers: {
+					modifiers: [{ class: 'BlindedModifier', name: 'Blinded I', description: 'Blinded lol', level: 1 }],
+				},
+			},
+		},
+	},
+	{
+		id: 'blind2',
+		name: 'SR6.Effect.Blind2',
+		icon: 'systems/sr6/assets/status/blind2.webp',
+		flags: {
+			sr6: {
+				modifiers: {
+					modifiers: [{ class: 'BlindedModifier', name: 'Blinded II', description: 'Blinded lol', level: 2 }],
+				},
+			},
+		},
+	},
+	{
+		id: 'blind3',
+		name: 'SR6.Effect.Blind3',
+		icon: 'systems/sr6/assets/status/blind3.webp',
+		flags: {
+			sr6: {
+				modifiers: {
+					modifiers: [
+						{ class: 'BlindedModifier', name: 'Blinded III', description: 'Blinded lol', level: 3 },
+					],
+				},
+			},
+		},
+	},
+	// Burning
+	{
+		id: 'burning1',
+		name: 'SR6.Effect.Burning1',
+		icon: 'systems/sr6/assets/status/burning1.webp',
+		flags: {
+			sr6: {
+				effects: [
+					{
+						class: 'BurningEffect',
+					},
+				],
+			},
+		},
+	},
+	{
+		id: 'burning2',
+		name: 'SR6.Effect.Burning2',
+		icon: 'systems/sr6/assets/status/burning2.webp',
+		flags: {
+			sr6: {},
+		},
+	},
+	{
+		id: 'burning3',
+		name: 'SR6.Effect.Burning3',
+		icon: 'systems/sr6/assets/status/burning3.webp',
+		flags: {
+			sr6: {},
+		},
+	},
+	{
+		id: 'burning4',
+		name: 'SR6.Effect.Burning4',
+		icon: 'systems/sr6/assets/status/burning4.webp',
+		flags: {
+			sr6: {},
+		},
+	},
+	{
+		id: 'burning5',
+		name: 'SR6.Effect.Burning5',
+		icon: 'systems/sr6/assets/status/burning5.webp',
+		flags: {
+			sr6: {},
 		},
 	},
 ];

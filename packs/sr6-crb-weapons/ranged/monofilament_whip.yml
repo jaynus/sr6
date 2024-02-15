@@ -1,0 +1,45 @@
+name: Monofilament Whip
+type: weapon
+img: /systems/sr6/assets/items/pistols_light.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: OTHER_CLOSE
+  skillUse:
+    skill: exotic_weapons
+    specialization: unarmed
+    attribute: agility
+  costFormula: '1300'
+  availability:
+    illegal: false
+    rating: 6
+  matrix: null
+  attackRatings:
+    closeFormula: '14'
+    nearFormula: '0'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '6'
+    damageType: P
+  description: >-
+    Striking fear in the hearts of those who have warily watched its serpentine
+    glow since the 2050s. In the hands of a trained user, this terrifying weapon
+    can cut through armor, flesh, and bone as easy as butter with every
+    millimeter of its two meters of monofilament line. In the wrong hands, or
+    even with a bad twist of a skilled wrist, that line can send you to the
+    street doc looking for a new limb. The whip is stored in the specially
+    designed compartment in the handle with a small weight that detaches when
+    the weapon is activated. Glitches are handled as usual, but a critical
+    glitch always requires the wielder to resist the base damage of the weapon.
+    Whips add the attackers Reaction instead of Strength to Attack Rating.
+    Wireless bonus: The whip uses your visuals on the target to make small
+    adjustments in targeting, and the whip adjusts its trajectory. This
+    increases the Attack Rating by 2. Also, the whip s built-in safety system
+    retracts automatically instead of hitting you on a critical glitch.
+_id: GakkxuZ1zgDqL8SZ
+_key: '!items!GakkxuZ1zgDqL8SZ'
+folder: 0jZhSKyFMAK4NHyF

@@ -11,7 +11,7 @@ import { ActivationDataModel } from '@/data/ActivationDataModel';
 import BaseDataModel from '@/data/BaseDataModel';
 import { DocumentUUIDField } from '@/data/fields';
 import { IHasOnDelete, IHasPostCreate, IHasPreCreate } from '@/data/interfaces';
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import QualityDataModel from '@/item/data/feature/QualityDataModel';
 import SR6Item from '@/item/SR6Item';
 import { ModifierDataModel } from '@/modifier/ModifierDataModel';
@@ -72,9 +72,11 @@ export default abstract class BaseItemDataModel
 		return status;
 	}
 
-	getEffect(): SR6Effect {
+	getEffect(): SR6ActiveEffect {
 		// Either create our effect or find it
-		const effect: Maybe<SR6Effect> = this.item!.effects.getName(this.item!.name) as SR6Effect | undefined;
+		const effect: Maybe<SR6ActiveEffect> = this.item!.effects.getName(this.item!.name) as
+			| SR6ActiveEffect
+			| undefined;
 		if (!effect) {
 			ui.notifications.error('Wtf we dont have an effect?');
 			throw 'error';
@@ -107,7 +109,7 @@ export default abstract class BaseItemDataModel
 		_options: DocumentModificationContext<SR6Item<BaseItemDataModel>>,
 		_user: foundry.documents.BaseUser,
 	): Promise<void> {
-		const effect: Maybe<SR6Effect> = document.effects.getName(this.item!.name) as SR6Effect | undefined;
+		const effect: Maybe<SR6ActiveEffect> = document.effects.getName(this.item!.name) as SR6ActiveEffect | undefined;
 		if (!effect) {
 			document.updateSource({
 				['effects']: [

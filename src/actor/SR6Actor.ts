@@ -4,8 +4,11 @@
  * @file Base SR6 Actor
  */
 import BaseActorDataModel from '@/actor/data/BaseActorDataModel';
+import SR6Combat from '@/combat/SR6Combat';
+import SR6Combatant from '@/combat/SR6Combatant';
 import BaseDataModel from '@/data/BaseDataModel';
 import {
+	IHasCombat,
 	IHasMatrix,
 	IHasModifiers,
 	IHasOnDelete,
@@ -14,7 +17,7 @@ import {
 	IHasPreCreate,
 	IHasSystemData,
 } from '@/data/interfaces';
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import MatrixActionDataModel from '@/item/data/action/MatrixActionDataModel';
 import MatrixPersonaDataModel from '@/item/data/feature/MatrixPersonaDataModel';
 import SkillDataModel from '@/item/data/feature/SkillDataModel';
@@ -30,8 +33,8 @@ export interface SR6ActorFlags {
 }
 
 export default class SR6Actor<ActorDataModel extends foundry.abstract.DataModel = BaseActorDataModel>
-	extends Actor
-	implements IHasSystemData, IHasModifiers, IHasMatrix
+	extends Actor<TokenDocument, Record<string, SR6Item>, SR6ActiveEffect>
+	implements IHasSystemData, IHasModifiers, IHasMatrix, IHasCombat
 {
 	declare flags: {
 		sr6?: SR6ActorFlags;
@@ -54,6 +57,39 @@ export default class SR6Actor<ActorDataModel extends foundry.abstract.DataModel 
 
 	matrixRunningSilent(): boolean {
 		return (<IHasMatrix>this.systemData).matrixRunningSilent?.() || false;
+	}
+
+	// IHasCombat
+	combatantCreated(combat: SR6Combat, combatant: SR6Combatant): void {
+		(<IHasCombat>this.systemData).combatantCreated?.(combat, combatant);
+		this.effects.forEach((effect) => (effect as SR6ActiveEffect).combatantCreated?.(combat, combatant));
+	}
+	async startCombat(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+		await (<IHasCombat>this.systemData).startCombat?.(combat, combatant);
+		for (const effect of this.effects) {
+			await (effect as SR6ActiveEffect).startCombat?.(combat, combatant);
+		}
+	}
+
+	async endCombat(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+		await (<IHasCombat>this.systemData).endCombat?.(combat, combatant);
+		for (const effect of this.effects) {
+			await (effect as SR6ActiveEffect).endCombat?.(combat, combatant);
+		}
+	}
+
+	async startTurn(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+		await (<IHasCombat>this.systemData).startTurn?.(combat, combatant);
+		for (const effect of this.effects) {
+			await (effect as SR6ActiveEffect).startTurn?.(combat, combatant);
+		}
+	}
+
+	async endTurn(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+		await (<IHasCombat>this.systemData).endTurn?.(combat, combatant);
+		for (const effect of this.effects) {
+			await (effect as SR6ActiveEffect).endTurn?.(combat, combatant);
+		}
 	}
 
 	/**
@@ -155,11 +191,30 @@ export default class SR6Actor<ActorDataModel extends foundry.abstract.DataModel 
 		this.systemData.prepareDerivedData();
 	}
 
+	async cycleActiveEffects(): Promise<void> {
+		const toDelete: string[] = [];
+
+		this.effects.forEach((effect) => {
+			const e = effect as SR6ActiveEffect;
+			if (e.isTemporary && e.duration.remaining !== null && e.duration.remaining < 1) {
+				toDelete.push(effect.id);
+			}
+		});
+
+		for (const itemId of toDelete) {
+			await this.effects.get(itemId)!.delete();
+		}
+
+		for (const item of this.items) {
+			await (item as SR6Item).cycleActiveEffects();
+		}
+	}
+
 	override applyActiveEffects(): void {
 		super.applyActiveEffects();
 
 		for (const e of this.allApplicableEffects()) {
-			const effect = e as SR6Effect;
+			const effect = e as SR6ActiveEffect;
 			if (e.disabled) {
 				continue;
 			}

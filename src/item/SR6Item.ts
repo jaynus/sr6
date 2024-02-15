@@ -4,8 +4,11 @@
  * @file Base SR6 Item
  */
 import SR6Actor from '@/actor/SR6Actor';
+import SR6Combat from '@/combat/SR6Combat';
+import SR6Combatant from '@/combat/SR6Combatant';
 import BaseDataModel from '@/data/BaseDataModel';
 import {
+	IHasCombat,
 	IHasLinks,
 	IHasMatrix,
 	IHasModifiers,
@@ -15,7 +18,7 @@ import {
 	IHasPreCreate,
 	IHasSystemData,
 } from '@/data/interfaces';
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import BaseItemDataModel from '@/item/data/BaseItemDataModel';
 import { Modifiers, ModifiersSourceData, ModifierTarget } from '@/modifier';
 import FormulaRoll from '@/roll/FormulaRoll';
@@ -31,7 +34,7 @@ export interface SR6ItemFlags {
  */
 export default class SR6Item<ItemDataModel extends BaseDataModel = BaseDataModel>
 	extends Item<SR6Actor>
-	implements IHasSystemData, IHasModifiers, IHasMatrix
+	implements IHasSystemData, IHasModifiers, IHasMatrix, IHasCombat
 {
 	overrides: Record<string, unknown> = {};
 	modifiers: Modifiers<SR6Item<ItemDataModel>> = new Modifiers(this);
@@ -47,6 +50,39 @@ export default class SR6Item<ItemDataModel extends BaseDataModel = BaseDataModel
 
 	matrixRunningSilent(): boolean {
 		return (<IHasMatrix>this.systemData).matrixRunningSilent?.() || false;
+	}
+
+	// IHasCombat
+	combatantCreated(combat: SR6Combat, combatant: SR6Combatant): void {
+		(<IHasCombat>this.systemData).combatantCreated?.(combat, combatant);
+		this.effects.forEach((effect) => (effect as SR6ActiveEffect).combatantCreated?.(combat, combatant));
+	}
+	async startCombat(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+		await (<IHasCombat>this.systemData).startCombat?.(combat, combatant);
+		for (const effect of this.effects) {
+			await (effect as SR6ActiveEffect).startCombat?.(combat, combatant);
+		}
+	}
+
+	async endCombat(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+		await (<IHasCombat>this.systemData).endCombat?.(combat, combatant);
+		for (const effect of this.effects) {
+			await (effect as SR6ActiveEffect).endCombat?.(combat, combatant);
+		}
+	}
+
+	async startTurn(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+		await (<IHasCombat>this.systemData).startTurn?.(combat, combatant);
+		for (const effect of this.effects) {
+			await (effect as SR6ActiveEffect).startTurn?.(combat, combatant);
+		}
+	}
+
+	async endTurn(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+		await (<IHasCombat>this.systemData).endTurn?.(combat, combatant);
+		for (const effect of this.effects) {
+			await (effect as SR6ActiveEffect).endTurn?.(combat, combatant);
+		}
 	}
 
 	//
@@ -68,7 +104,7 @@ export default class SR6Item<ItemDataModel extends BaseDataModel = BaseDataModel
 			'ActiveEffect',
 			Array.from(
 				this.effects
-					.map((effect) => effect as SR6Effect)
+					.map((effect) => effect as SR6ActiveEffect)
 					.map((effect) => {
 						return { _id: effect.id, disabled: !enabled };
 					}),
@@ -76,8 +112,8 @@ export default class SR6Item<ItemDataModel extends BaseDataModel = BaseDataModel
 		);
 	}
 
-	getEffectByName(name: string): Maybe<SR6Effect> {
-		return this.effects.find((effect) => effect.name === name) as SR6Effect | undefined;
+	getEffectByName(name: string): Maybe<SR6ActiveEffect> {
+		return this.effects.find((effect) => effect.name === name) as SR6ActiveEffect | undefined;
 	}
 
 	/**
@@ -99,8 +135,8 @@ export default class SR6Item<ItemDataModel extends BaseDataModel = BaseDataModel
 		return roll.evaluate({ async: false }).total;
 	}
 
-	allApplicableEffects(): SR6Effect[] {
-		return this.effects.map((e) => e as SR6Effect);
+	allApplicableEffects(): SR6ActiveEffect[] {
+		return this.effects.map((e) => e as SR6ActiveEffect);
 	}
 
 	async cleanLinks(): Promise<void> {
@@ -123,6 +159,19 @@ export default class SR6Item<ItemDataModel extends BaseDataModel = BaseDataModel
 		}
 	}
 
+	async cycleActiveEffects(): Promise<void> {
+		const toDelete: string[] = [];
+		this.effects.forEach((effect) => {
+			const e = effect as SR6ActiveEffect;
+			if (e.isTemporary && e.duration.remaining !== null && e.duration.remaining < 1) {
+				toDelete.push(effect.id);
+			}
+		});
+
+		for (const itemId of toDelete) {
+			await this.effects.get(itemId)!.delete();
+		}
+	}
 	applyActiveEffects(): void {
 		// console.log('SR6Item::applyActiveEffects', this.name);
 		const overrides = {};

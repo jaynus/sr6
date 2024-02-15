@@ -1,6 +1,6 @@
 import SR6Actor from '@/actor/SR6Actor';
 import { SR6ChatMessage } from '@/chat/SR6ChatMessage';
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import SR6Item from '@/item/SR6Item';
 import SR6Combat from '@/combat/SR6Combat';
 import SR6Combatant from '@/combat/SR6Combatant';
@@ -18,7 +18,7 @@ declare global {
 	interface SR6Config
 		extends Config<
 			AmbientLightDocument,
-			SR6Effect,
+			SR6ActiveEffect,
 			SR6Actor,
 			ActorDirectory<SR6Actor>,
 			SR6ChatMessage,

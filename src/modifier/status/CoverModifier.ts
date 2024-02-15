@@ -2,8 +2,6 @@ import { ModifierConstructorData } from '@/modifier';
 import { StatusLevelModifier, StatusLevelModifierSourceData } from '@/modifier/status/StatusLevelModifier';
 import { ITest, TestType } from '@/test';
 
-export interface CoverModifierSourceData extends StatusLevelModifierSourceData {}
-
 export class CoverModifier extends StatusLevelModifier {
 	async prepareTest<TTest extends ITest>(test: TTest): Promise<void> {
 		if (!test.data.pool) {
@@ -50,7 +48,7 @@ export class CoverModifier extends StatusLevelModifier {
 		ui.notifications.warn('A target is under cover by cover defense rating modifiers arnt implemented');
 	}
 
-	constructor({ parent, source, target, conditions, data }: ModifierConstructorData<CoverModifierSourceData>) {
+	constructor({ parent, source, target, conditions, data }: ModifierConstructorData<StatusLevelModifierSourceData>) {
 		data.class = 'CoverModifier';
 		data.testClasses = data.testClasses || ['RangedAttackTest', 'RangedDefenseTest'];
 

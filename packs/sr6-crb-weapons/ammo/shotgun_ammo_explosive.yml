@@ -1,0 +1,15 @@
+name: Shotgun Ammo (Explosive)
+type: ammo
+img: /systems/sr6/assets/items/ammo.webp
+effects: []
+system:
+  description: ''
+  costFormula: '3'
+  availability:
+    illegal: false
+    rating: 1
+  damageModifierFormula: '0'
+  attackRatingModifierFormula: '1'
+_id: yqd1ModWadTgNyY1
+_key: '!items!yqd1ModWadTgNyY1'
+folder: qG1jGXHXVDz3GvHB

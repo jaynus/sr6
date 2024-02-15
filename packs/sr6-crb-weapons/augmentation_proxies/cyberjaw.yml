@@ -1,0 +1,31 @@
+name: Cyberjaw
+type: weapon
+img: /systems/sr6/assets/items/fist.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: CYBER
+  skillUse:
+    skill: close_combat
+    specialization: unarmed
+    attribute: strength
+  costFormula: '500'
+  availability:
+    illegal: false
+    rating: 2
+  matrix: null
+  attackRatings:
+    closeFormula: '2'
+    nearFormula: '0'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '5'
+    damageType: P
+  description: Unarmed Attack
+_id: WHxQxhzK799obWhs
+_key: '!items!WHxQxhzK799obWhs'
+folder: AjbJp8fZgU28FZw3

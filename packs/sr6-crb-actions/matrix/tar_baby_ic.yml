@@ -1,0 +1,31 @@
+name: Tar Baby IC
+type: matrix_ic
+img: /systems/sr6/assets/matrix/ic_tarbaby.webp
+effects: []
+system:
+  description: >-
+    Tar Baby is about slowing you down so you can be caught by other IC or you
+    abandon the host in frustration. If Tar Baby hits in cybercombat, it forces
+    link-lock.
+  type: ic
+  skillUse: null
+  limits:
+    activationType: major
+    activationPeriod: initiative
+  formulas:
+    attack: '@rating * 2'
+    defend: '@willpower + @persona.s'
+    deviceDefend: null
+    damage: null
+    soak: null
+  effects:
+    - target: target
+      when: onhit
+      effect:
+        name: Link-locked
+        statuses:
+          - linklocked
+        icon: systems/sr6/assets/matrix/lock.webp
+_id: C18uJxVyZg7PKr1U
+_key: '!items!C18uJxVyZg7PKr1U'
+folder: 4yIhN1JUHscZ134J

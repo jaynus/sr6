@@ -3,6 +3,8 @@ import AttributeDataModel from '@/actor/data/AttributeDataModel';
 import BaseActorDataModel from '@/actor/data/BaseActorDataModel';
 import MonitorsDataModel from '@/actor/data/MonitorsDataModel';
 import MonitorDataModel, { WoundModifierData } from '@/actor/data/MonitorsDataModel';
+import SR6Combat from '@/combat/SR6Combat';
+import SR6Combatant from '@/combat/SR6Combatant';
 import { InitiativeType } from '@/data';
 import InitiativeDataModel from '@/data/InitiativeDataModel';
 
@@ -101,6 +103,18 @@ export default abstract class LifeformDataModel
 	//
 	// IHasInitiative
 	//
+	hasInitiativeType(type: InitiativeType): boolean {
+		switch (type) {
+			case InitiativeType.Physical:
+				return true;
+			case InitiativeType.Astral:
+				return false;
+			case InitiativeType.Matrix: {
+				return this.matrixPersona != null;
+			}
+		}
+	}
+
 	getInitiative(type: InitiativeType): null | InitiativeRollData {
 		let result: null | InitiativeRollData = null;
 		switch (type) {
@@ -140,12 +154,16 @@ export default abstract class LifeformDataModel
 				ui.notifications.error('astral actions not implemented');
 				break;
 			case InitiativeType.Matrix:
-				ui.notifications.error('matrix actions not implemented');
-				break;
+				if (!this.matrixPersona) {
+					ui.notifications.error('No matrix persona activated for actions');
+				} else {
+					return this.matrixPersona!.getAvailableActions(type);
+				}
 		}
+
 		return {
-			major: 1,
-			minor: 1,
+			major: 0,
+			minor: 0,
 		};
 	}
 

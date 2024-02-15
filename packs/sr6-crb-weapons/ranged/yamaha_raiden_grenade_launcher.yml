@@ -1,0 +1,35 @@
+name: Yamaha Raiden (Grenade Launcher)
+type: weapon
+img: /systems/sr6/assets/items/rifle_assault.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: RIFLE_ASSAULT
+  skillUse:
+    skill: firearms
+    specialization: rifles
+    attribute: agility
+  costFormula: '0'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 5
+  matrix: null
+  attackRatings:
+    closeFormula: '4'
+    nearFormula: '11'
+    mediumFormula: '7'
+    farFormula: '1'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '0'
+    damageType: ''
+  firemodes:
+    - SS
+  description: |
+    4(c)
+_id: L3h3NjAk95SgP55o
+_key: '!items!L3h3NjAk95SgP55o'
+folder: 0jZhSKyFMAK4NHyF

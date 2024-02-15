@@ -1,24 +1,24 @@
 <script lang="ts" setup>
 import CharacterDataModel from '@/actor/data/CharacterDataModel';
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import { inject, toRaw } from 'vue';
 import { ActorSheetContext, RootContext } from '@/vue/SheetContext';
 import Localized from '@/vue/components/Localized.vue';
 
 defineProps<{
-	effects: SR6Effect[];
+	effects: SR6ActiveEffect[];
 }>();
 
 const emit = defineEmits<{
 	(e: 'addEffect', category: string): void;
-	(e: 'deleteEffect', effect: SR6Effect): void;
+	(e: 'deleteEffect', effect: SR6ActiveEffect): void;
 }>();
 
 const rootContext = inject<ActorSheetContext<CharacterDataModel>>(RootContext)!;
 
 type EffectSection = {
 	label: string;
-	filter: (effect: SR6Effect) => boolean;
+	filter: (effect: SR6ActiveEffect) => boolean;
 };
 
 const sections: EffectSection[] = [
@@ -27,11 +27,11 @@ const sections: EffectSection[] = [
 	{ label: 'Suppressed', filter: (e) => e.isSuppressed },
 ];
 
-async function openEffect(effect: SR6Effect) {
+async function openEffect(effect: SR6ActiveEffect) {
 	await toRaw(effect).sheet.render(true);
 }
 
-async function suppressEffect(effect: SR6Effect) {
+async function suppressEffect(effect: SR6ActiveEffect) {
 	await toRaw(effect).update({
 		disabled: !effect.disabled,
 	});

@@ -1,0 +1,38 @@
+name: Telescoping staff
+type: weapon
+img: /systems/sr6/assets/items/clubs.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: CLUBS
+  skillUse:
+    skill: close_combat
+    specialization: clubs
+    attribute: agility
+  costFormula: '250'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '8'
+    nearFormula: '0'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '4'
+    damageType: S
+  description: >-
+    A big stick that starts out as a small stick. This metal and composite staff
+    can telescope down to the size of a stun baton or a sword. It can be
+    extended and locked in place by spinning or snapping it out in each
+    direction and giving the handle a twist to lock it. Or it can use a wireless
+    signal to activate the telescoping effect. Extending or retracting it takes
+    a Minor Action. Wireless bonus: You gain a bonus Minor Action on a turn when
+    you retract or extend the baton.
+_id: 4Y6Fc7BuY1MsBxCb
+_key: '!items!4Y6Fc7BuY1MsBxCb'
+folder: FvJmc1i7ebr9iEKg

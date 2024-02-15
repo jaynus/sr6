@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import GearDataModel from '@/item/data/gear/GearDataModel';
+import WearableDataModel from '@/item/data/gear/WearableDataModel';
 import Selector from '@/vue/components/Selector.vue';
 import { createNewItem, deleteItem } from '@/vue/directives';
 import { computed, inject, toRaw } from 'vue';
@@ -22,6 +23,17 @@ const weapons = computed(() =>
 		.filter((i) => !i.systemData.isProxy),
 );
 
+const wearables = computed(() =>
+	toRaw(context.data.actor)
+		.items.filter((i) => i.type === 'wearable')
+		.map((i) => i as SR6Item<WearableDataModel>)
+		.sort(
+			(a, b) =>
+				a.systemData.category.type.localeCompare(b.systemData.category.type) || a.name.localeCompare(b.name),
+		)
+		.filter((i) => !i.systemData.isProxy),
+);
+
 const gear = computed(() =>
 	toRaw(context.data.actor)
 		.items.filter((i) => i.type === 'gear')
@@ -33,11 +45,14 @@ const gear = computed(() =>
 		.filter((i) => !i.systemData.isProxy),
 );
 
-function toggleEquipWeapon(weapon: SR6Item<WeaponDataModel>) {
-	if (system.value.equipped._weapon === weapon.uuid) {
-		system.value.equipped.weapon = null;
+function toggleEquip(item: SR6Item<WeaponDataModel> | SR6Item<WearableDataModel>) {
+	if (item.systemData instanceof WeaponDataModel) {
+		if (system.value.equipped._weapon === item.uuid) {
+			system.value.equipped.weapon = null;
+		} else {
+			system.value.equipped.weapon = item as unknown as SR6Item<WeaponDataModel>;
+		}
 	} else {
-		system.value.equipped.weapon = weapon as unknown as SR6Item<WeaponDataModel>;
 	}
 }
 
@@ -65,10 +80,7 @@ function dragStart(ev: DragEvent, item: SR6Item<GearDataModel>) {
 					</td>
 					<td>{{ item.name }}</td>
 					<td>
-						<Selector
-							:selected="system.equipped.weapon?.uuid === item.uuid"
-							@click="toggleEquipWeapon(item)"
-						/>
+						<Selector :selected="system.equipped.weapon?.uuid === item.uuid" @click="toggleEquip(item)" />
 					</td>
 					<td>
 						<a @click.prevent="item.sheet?.render(true)"><i class="fas fa-edit" /></a
@@ -77,9 +89,31 @@ function dragStart(ev: DragEvent, item: SR6Item<GearDataModel>) {
 				</tr>
 			</table>
 		</div>
-		<div class="section-gear">
+		<div class="section-wearable">
 			<div class="section-title">
-				<label>Gear</label> <a class="fas fa-plus" @click.prevent="createNewItem(context.data.actor, 'gear')" />
+				<label>Clothing & Armor</label>
+				<a class="fas fa-plus" @click.prevent="createNewItem(context.data.actor, 'gear')" />
+			</div>
+			<table>
+				<tr v-for="item in wearables" v-bind:key="item.uuid">
+					<td style="width: 24px; height: 24px; padding: 0; margin: 0">
+						<img :src="item.img" :alt="item.name" style="width: 16px; height: 16px" />
+					</td>
+					<td>{{ item.name }}</td>
+					<td>
+						<Selector :selected="system.equipped.isEquipped(item)" @click="toggleEquip(item)" />
+					</td>
+					<td>
+						<a @click.prevent="item.sheet?.render(true)"><i class="fas fa-edit" /></a
+						><a @click.prevent="deleteItem(item)"><i class="fas fa-trash" /></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="section-wearable">
+			<div class="section-title">
+				<label>Gear</label>
+				<a class="fas fa-plus" @click.prevent="createNewItem(context.data.actor, 'gear')" />
 			</div>
 			<table>
 				<tr
@@ -121,6 +155,11 @@ function dragStart(ev: DragEvent, item: SR6Item<GearDataModel>) {
 }
 
 .section-gear {
+	@extend .section;
+	width: 97%;
+}
+
+.section-wearable {
 	@extend .section;
 	width: 97%;
 }

@@ -1,0 +1,34 @@
+name: Combat Knife
+type: weapon
+img: /systems/sr6/assets/items/blades.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: BLADES
+  skillUse:
+    skill: close_combat
+    specialization: blades
+    attribute: agility
+  costFormula: '220'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '8'
+    nearFormula: '2'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '3'
+    damageType: P
+  description: >-
+    A simple, elegant, efficient killing device with a chisel point to make
+    light work of armor. It s also carbon-coated black, so no reflections give
+    away your approach.
+_id: 7IRkXjFGLuxHV19B
+_key: '!items!7IRkXjFGLuxHV19B'
+folder: FvJmc1i7ebr9iEKg

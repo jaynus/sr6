@@ -7,7 +7,7 @@ import { ActorSheetContext, RootContext } from '@/vue/SheetContext';
 import Localized from '@/vue/components/Localized.vue';
 import Editor from '@/vue/components/Editor.vue';
 import EffectsView from '@/vue/views/EffectsView.vue';
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 
 const props = withDefaults(
 	defineProps<{
@@ -31,7 +31,7 @@ const system = computed(() => toRaw(context.data.actor).systemData);
 // We have to:
 //   1. Use an 'any' typing to skirt around TypeScript's complaints.
 //   2. Keep a local ref that gets updated in onBeforeUpdate in order to work around some struggles with Foundry.
-const effects = ref<SR6Effect[]>([]);
+const effects = ref<SR6ActiveEffect[]>([]);
 
 async function addEffect(category: string) {
 	await toRaw(context.sheet.actor).createEmbeddedDocuments('ActiveEffect', [
@@ -46,7 +46,7 @@ async function addEffect(category: string) {
 
 function updateEffects(): void {
 	componentKey.value += 1;
-	effects.value = [...toRaw(context.data.actor).effects.map((e) => e as SR6Effect)];
+	effects.value = [...toRaw(context.data.actor).effects.map((e) => e as SR6ActiveEffect)];
 }
 
 onBeforeMount(updateEffects);

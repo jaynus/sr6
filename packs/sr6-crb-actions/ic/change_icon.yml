@@ -1,0 +1,30 @@
+name: Change Icon
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: >-
+    You change the target’s icon to one that you have a copy of or have designed
+    yourself. Chang- ing an icon doesn’t change the results of a Matrix
+    Perception action but might fool personas who don’t take the time to inspect
+    your new look. You can target your own icon, if you like.
+  type: decker
+  skillUse: null
+  limits:
+    illegal: false
+    access_level:
+      - outsider
+      - user
+      - admin
+  activation:
+    type: minor
+    period: any
+  formulas:
+    attack: null
+    defend: null
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: hQGhfxCpVRyzAg9N
+_key: '!items!hQGhfxCpVRyzAg9N'
+folder: tle1g5mVeSNYNEA6

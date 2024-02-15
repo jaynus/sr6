@@ -1,0 +1,24 @@
+name: Switch Interface Mode
+type: matrix_action
+img: /systems/sr6/assets/items/software.webp
+effects: []
+system:
+  description: You switch your interface from AR to VR, or back.
+  type: decker
+  skillUse: null
+  limits:
+    illegal: false
+    access_level:
+      - admin
+  activation:
+    type: minor
+    period: initiative
+  formulas:
+    attack: null
+    defend: null
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: l2pL4Ewgy9nqUGDS
+_key: '!items!l2pL4Ewgy9nqUGDS'
+folder: 4yIhN1JUHscZ134J

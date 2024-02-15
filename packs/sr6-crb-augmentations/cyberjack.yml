@@ -14,7 +14,7 @@ system:
     and response times.
   essenceCostFormula: 1 + ((@rating * 0.5) - 0.5)
   sourceGearIds:
-    - Compendium.sr6.sr6-crb-gear.Item.POsLtThnJSDYJrQ4
+    - Compendium.sr6.sr6-crb-gear.Item.Tyf9sM59gJoOmPCs
   cost: '45000'
   availability:
     illegal: false

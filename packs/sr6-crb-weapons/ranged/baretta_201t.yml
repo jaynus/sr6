@@ -1,0 +1,42 @@
+name: Baretta 201T
+type: weapon
+img: /systems/sr6/assets/items/pistols_light.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: PISTOLS_LIGHT
+  skillUse:
+    skill: firearms
+    specialization: pistols_light
+    attribute: agility
+  costFormula: '460'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 3
+  matrix: null
+  attackRatings:
+    closeFormula: '9'
+    nearFormula: '8'
+    mediumFormula: '6'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '2'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - FA
+  description: >-
+    21(c)The preferred sidearm of many security forces around th e world, the
+    T-series is classified as a light pistol, even though the 201 design offers
+    automatic fire capability, making it popular in nations that limit heav y
+    and machine pistols. Since the frame is the same, it s easier to disguis e
+    as a 101. The 201 also comes with a detachable shoulder stock, though it i s
+    often lost before the gun reaches the street market.
+_id: GOPobTAeK9uN3Msm
+_key: '!items!GOPobTAeK9uN3Msm'
+folder: 0jZhSKyFMAK4NHyF

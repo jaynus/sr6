@@ -1,0 +1,42 @@
+name: 'Colt Government 2076 '
+type: weapon
+img: /systems/sr6/assets/items/pistols_heavy.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: PISTOLS_HEAVY
+  skillUse:
+    skill: firearms
+    specialization: pistols_heavy
+    attribute: agility
+  costFormula: '275'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 3
+  matrix: null
+  attackRatings:
+    closeFormula: '10'
+    nearFormula: '8'
+    mediumFormula: '6'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '3'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+  description: >-
+    14(c)Governments need new weapons contracts for bribe purposes,  so having a
+    new standard issue after only ten years seems about par for the course. The
+    years of technomancer and hacker fear since th e 60s have left the
+    electronic firing 2066 in a lot of storage cabinets for fear of hacking. 
+    The 2076 takes a jump back to the style of the classic Manhunter (in fact,
+    th e model with an integrated smartgun system has that denotation) and comes
+    wit h an integral laser sight.
+_id: LG6FbZbow736pe3V
+_key: '!items!LG6FbZbow736pe3V'
+folder: 0jZhSKyFMAK4NHyF

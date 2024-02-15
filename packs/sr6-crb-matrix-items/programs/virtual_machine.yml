@@ -1,0 +1,25 @@
+name: Virtual Machine
+type: program
+img: /systems/sr6/assets/matrix/program.webp
+effects:
+  - name: Virtual Machine
+    description: >-
+      2 extra program slots; take 1 extra box of unresisted Matrix damage when
+      attacked.
+    transfer: false
+    disabled: false
+    changes:
+      - mode: 2
+        key: system.matrix.availableSlotsFormula
+        value: + 3
+    _id: 4839dVEXFJKi9Y8X
+    _key: '!items.effects!vZJBob7U2fa38Kix.4839dVEXFJKi9Y8X'
+system:
+  type: basic
+  source: CRB p.185
+  description: >-
+    2 extra program slots; take 1 extra box of unresisted Matrix damage when
+    attacked.
+_id: vZJBob7U2fa38Kix
+_key: '!items!vZJBob7U2fa38Kix'
+folder: 6p0wiyAb0onQd68n

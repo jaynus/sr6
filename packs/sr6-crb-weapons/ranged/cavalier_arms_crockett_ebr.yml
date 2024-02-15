@@ -1,0 +1,41 @@
+name: Cavalier Arms Crockett EBR
+type: weapon
+img: /systems/sr6/assets/items/rifle_sniper.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: RIFLE_SNIPER
+  skillUse:
+    skill: firearms
+    specialization: rifles
+    attribute: agility
+  costFormula: '9050'
+  availability:
+    illegal: true
+    requiresLicense: true
+    rating: 5
+  matrix: null
+  attackRatings:
+    closeFormula: '3'
+    nearFormula: '8'
+    mediumFormula: '11'
+    farFormula: '8'
+    extremeFormula: '8'
+  damageData:
+    damageFormula: '5'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+  description: >-
+    20(c)Cavalier played a dangerous game by offering a sniper rifle capable of
+    burst fire. The Crockett EBR can stay accurate at long range, bu t those
+    bursts don t allow repeated accuracy. The Crockett comes standar d with a
+    rigid stock with shock pad and a detachable imaging scope.
+_id: ac373izj7yoTGert
+_key: '!items!ac373izj7yoTGert'
+folder: 0jZhSKyFMAK4NHyF

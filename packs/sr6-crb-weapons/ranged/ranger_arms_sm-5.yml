@@ -1,0 +1,42 @@
+name: Ranger Arms SM-5
+type: weapon
+img: /systems/sr6/assets/items/rifle_sniper.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: RIFLE_SNIPER
+  skillUse:
+    skill: firearms
+    specialization: rifles
+    attribute: agility
+  costFormula: '13200'
+  availability:
+    illegal: true
+    requiresLicense: true
+    rating: 5
+  matrix: null
+  attackRatings:
+    closeFormula: '3'
+    nearFormula: '6'
+    mediumFormula: '9'
+    farFormula: '11'
+    extremeFormula: '12'
+  damageData:
+    damageFormula: '5'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+  description: >-
+    15(c)Ranger Arms knows what the SM line has always been abou t silently
+    neutralizing targets. This sniper rifle feature a silencer, an imaging
+    scope, a smartgun system, and a rigid stock with shock pad. The SM 6 carrie
+    s on the line s ability to quickly get into the action and then get out jus
+    t as fast. It can fit into a standard briefcase; setting it up or breaking i
+    t down takes a Firearms + Logic (6, Major Action) Extended test. The SM-6 ha
+    s dealt with the line s fragility issues, and once put tog
+_id: Zr1J0O74Bj3BGZUs
+_key: '!items!Zr1J0O74Bj3BGZUs'
+folder: 0jZhSKyFMAK4NHyF

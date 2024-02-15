@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import GearDataModel, { GearType } from '@/item/data/gear/GearDataModel';
 import WeaponDataModel from '@/item/data/gear/WeaponDataModel';
 import SR6Item from '@/item/SR6Item';
@@ -34,7 +34,7 @@ const system = computed(() => context.data.item.systemData as WeaponDataModel);
 // We have to:
 //   1. Use an 'any' typing to skirt around TypeScript's complaints.
 //   2. Keep a local ref that gets updated in onBeforeUpdate in order to work around some struggles with Foundry.
-const effects = ref<SR6Effect[]>([]);
+const effects = ref<SR6ActiveEffect[]>([]);
 
 async function addEffect(category: string) {
 	await toRaw(context.sheet.item).createEmbeddedDocuments('ActiveEffect', [

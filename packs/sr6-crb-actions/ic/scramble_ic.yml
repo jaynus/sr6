@@ -1,0 +1,23 @@
+name: Scramble IC
+type: matrix_ic
+img: /systems/sr6/assets/matrix/ic_scramble.webp
+effects: []
+system:
+  description: >-
+    Scramble IC doesn’t care how hurt or damaged you are; it just wants you
+    gone. If Scramble IC hits in cybercombat, it forces the target to reboot on
+    the target’s next turn, unless the target is link-locked.
+  type: ic
+  skillUse: null
+  limits:
+    activationType: major
+    activationPeriod: initiative
+  formulas:
+    attack: '@rating * 2'
+    defend: '@intuition + @persona.f'
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: X7SZCWCfReAf0JCs
+_key: '!items!X7SZCWCfReAf0JCs'
+folder: tle1g5mVeSNYNEA6

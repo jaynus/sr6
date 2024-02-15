@@ -1,0 +1,43 @@
+name: Ingram Valiant
+type: weapon
+img: /systems/sr6/assets/items/mmg.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: LMG
+  skillUse:
+    skill: firearms
+    specialization: assault_cannons
+    attribute: agility
+  costFormula: '4175'
+  availability:
+    illegal: true
+    requiresLicense: true
+    rating: 4
+  matrix: null
+  attackRatings:
+    closeFormula: '2'
+    nearFormula: '11'
+    mediumFormula: '12'
+    farFormula: '7'
+    extremeFormula: '3'
+  damageData:
+    damageFormula: '4'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+    - BF_narrow
+    - BF_wide
+    - FA
+  description: >-
+    50(c) or 100(belt)
+
+    The Valiant light machine gun sits in the hands of mercenary units the world
+    over. Basic equipment includes a rigid stock with shock pad, a laser sight,
+    and a barrel-mounted gas-vent system.
+_id: QAuo3Mu757uQemvr
+_key: '!items!QAuo3Mu757uQemvr'
+folder: 0jZhSKyFMAK4NHyF

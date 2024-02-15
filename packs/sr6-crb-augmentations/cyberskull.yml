@@ -10,6 +10,6 @@ system:
   essenceCostFormula: '1.0'
   rating: 1
   sourceGearIds:
-    - '@@sr6-crb-gear:Cyberjaw'
+    - Compendium.sr6.sr6-crb-weapons.Item.WHxQxhzK799obWhs
 _id: 1vL0SPYOZZzerZf4
 _key: '!items!1vL0SPYOZZzerZf4'

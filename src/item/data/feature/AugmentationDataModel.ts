@@ -1,5 +1,5 @@
 import { DocumentUUIDField } from '@/data/fields';
-import { IHasOnDelete } from '@/data/interfaces';
+import { IHasOnDelete, IHasOnUpdate, IHasPostCreate } from '@/data/interfaces';
 import QualityDataModel from '@/item/data/feature/QualityDataModel';
 import { GearAvailabilityDataModel } from '@/item/data/gear/GearDataModel';
 import SR6Item from '@/item/SR6Item';
@@ -12,7 +12,10 @@ export enum AugmentationVisibility {
 
 export default abstract class AugmentationDataModel
 	extends QualityDataModel
-	implements IHasOnDelete<SR6Item<QualityDataModel>>
+	implements
+		IHasOnDelete<SR6Item<AugmentationDataModel>>,
+		IHasPostCreate,
+		IHasOnUpdate<SR6Item<AugmentationDataModel>>
 {
 	abstract rating: number;
 	abstract quality: number;
@@ -44,7 +47,7 @@ export default abstract class AugmentationDataModel
 
 	override async onPostCreate(): Promise<void> {
 		await super.onPostCreate();
-
+		console.log('post create cyberjack?', this);
 		for (const gearId of this.sourceGearIds) {
 			const item = await getItem(SR6Item, gearId);
 			if (!item) {
@@ -52,17 +55,34 @@ export default abstract class AugmentationDataModel
 				return;
 			}
 
+			item.system.rating = this.rating;
+
 			const attachedGear = (await this.actor!.createEmbeddedDocuments('Item', [item])) as SR6Item[];
 			this._attachedGearIds.push(attachedGear[0].uuid);
 		}
 		await this.item!.update({ ['system._attachedGearIds']: this._attachedGearIds });
 	}
 
+	async onUpdate(
+		changed: DeepPartial<SR6Item<AugmentationDataModel>['_source']>,
+		options: DocumentUpdateContext<SR6Item<AugmentationDataModel>>,
+		userId: string,
+	): Promise<void> {
+		for (const uuid of this._attachedGearIds) {
+			const item = getItemSync(SR6Item, uuid);
+			if (item) {
+				await item.update({ ['system.rating']: this.rating });
+			}
+		}
+	}
+
 	override onDelete(
-		_document: SR6Item<QualityDataModel>,
-		_options: DocumentModificationContext<SR6Item<QualityDataModel>>,
-		_userId: string,
+		document: SR6Item<AugmentationDataModel>,
+		options: DocumentModificationContext<SR6Item<AugmentationDataModel>>,
+		userId: string,
 	): void {
+		super.onDelete(document, options, userId);
+
 		this._attachedGearIds.forEach((uuid) => {
 			const item = getItemSync(SR6Item, uuid);
 			if (item) {

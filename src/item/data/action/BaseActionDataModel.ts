@@ -2,7 +2,7 @@ import SR6Actor from '@/actor/SR6Actor';
 import SR6Combat from '@/combat/SR6Combat';
 import { ActivationPeriod, ActivationType, TargetString } from '@/data';
 import BaseDataModel from '@/data/BaseDataModel';
-import SR6Effect, { EffectType } from '@/effect/SR6Effect';
+import SR6ActiveEffect, { EffectType } from '@/effect/SR6ActiveEffect';
 import BaseItemDataModel from '@/item/data/BaseItemDataModel';
 import SR6Item from '@/item/SR6Item';
 import { Err, Ok, Result } from 'ts-results';
@@ -76,7 +76,7 @@ export abstract class ActionEffectDataModel extends BaseDataModel {
 	async apply(
 		targets: Maybe<SR6Actor[]> = null,
 		origin: Maybe<SR6Actor | SR6Item> = null,
-	): Promise<Result<SR6Effect[], string>> {
+	): Promise<Result<SR6ActiveEffect[], string>> {
 		if (
 			(this.target === TargetString.Target && (!targets || targets.length === 0)) ||
 			(this.target === TargetString.Self && !this.actor)
@@ -91,7 +91,7 @@ export abstract class ActionEffectDataModel extends BaseDataModel {
 			origin = this.item || this.actor;
 		}
 
-		const effects: SR6Effect[] = [];
+		const effects: SR6ActiveEffect[] = [];
 		for (const target of targets!) {
 			// Dont re-apply the effect
 			if (!this.duplicates && this.hasEffect(target)) {
@@ -109,7 +109,7 @@ export abstract class ActionEffectDataModel extends BaseDataModel {
 							data,
 						},
 					])
-				)[0] as SR6Effect,
+				)[0] as SR6ActiveEffect,
 			);
 		}
 
@@ -233,8 +233,8 @@ export default abstract class BaseActionDataModel extends BaseItemDataModel {
 		when: EffectType,
 		targets: Maybe<SR6Actor[]> = null,
 		origin: Maybe<SR6Actor | SR6Item> = null,
-	): Promise<Result<SR6Effect[], string>> {
-		let effects: SR6Effect[] = [];
+	): Promise<Result<SR6ActiveEffect[], string>> {
+		let effects: SR6ActiveEffect[] = [];
 
 		for (const effect of this.effects.filter((e) => e.when === when)) {
 			const newEffect = await effect.apply(targets, origin);

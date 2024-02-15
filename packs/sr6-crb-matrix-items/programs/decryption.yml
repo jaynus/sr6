@@ -1,0 +1,19 @@
+name: Decryption
+type: program
+img: /systems/sr6/assets/matrix/program.webp
+effects: []
+system:
+  type: hacking
+  source: CRB p.185
+  description: +2 dice on Crack File action.
+  modifiers:
+    - class: PoolModifier
+      data:
+        value: 2
+        testClasses:
+          - MatrixActionTest
+        testItemNames:
+          - Crack File
+_id: yixOtK9lrX406ZrL
+_key: '!items!yixOtK9lrX406ZrL'
+folder: 6p0wiyAb0onQd68n

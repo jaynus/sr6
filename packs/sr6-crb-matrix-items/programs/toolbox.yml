@@ -1,0 +1,21 @@
+name: Toolbox
+type: program
+img: /systems/sr6/assets/matrix/program.webp
+effects:
+  - name: Toolbox
+    description: +1 to Data Processing.
+    transfer: false
+    disabled: true
+    changes:
+      - mode: 2
+        key: system.matrix.attributes.dataProcessing
+        value: '2'
+    _id: l9VjH3GM7r3kafmo
+    _key: '!items.effects!jaRqVVF54c4OaaNe.l9VjH3GM7r3kafmo'
+system:
+  type: basic
+  source: CRB p.185
+  description: +1 to Data Processing.
+_id: jaRqVVF54c4OaaNe
+_key: '!items!jaRqVVF54c4OaaNe'
+folder: 6p0wiyAb0onQd68n

@@ -6,7 +6,7 @@ declare global {
 	 * Each Combat document contains CombatData which defines its data schema.
 	 * @param [data={}] Initial data provided to construct the Combat document
 	 */
-	class Combat extends CombatConstructor {
+	class Combat<TCombatant extends Combatant = Combatant> extends CombatConstructor {
 		constructor(data: PreCreate<foundry.data.CombatSource>, context?: DocumentConstructionContext<Combat>);
 
 		active: boolean;
@@ -79,13 +79,13 @@ declare global {
 		 * Get a Combatant using its Token id
 		 * @param tokenId The id of the Token for which to acquire the combatant
 		 */
-		getCombatantByToken(tokenId: string): Combatant<this> | undefined;
+		getCombatantByToken(tokenId: string): TCombatant<this> | undefined;
 
 		/**
 		 * Get a Combatant using its Actor id
 		 * @param actorId The id of the Actor for which to acquire the combatant
 		 */
-		getCombatantByActor(actorId: string): Combatant<this> | undefined;
+		getCombatantByActor(actorId: string): TCombatant<this> | undefined;
 
 		/** Advance the combat to the next round */
 		nextRound(): Promise<this>;
@@ -142,7 +142,7 @@ declare global {
 		setInitiative(id: string, value: number): Promise<void>;
 
 		/** Return the Array of combatants sorted into initiative order, breaking ties alphabetically by name. */
-		setupTurns(): Combatant<this>[];
+		setupTurns(): TCombatant<this>[];
 
 		/** Begin the combat encounter, advancing to round 1 and turn 1 */
 		startCombat(): Promise<this>;
@@ -152,7 +152,7 @@ declare global {
 		 * This method can be overridden by a system or module which needs to display combatants in an alternative order.
 		 * By default sort by initiative, next falling back to name, lastly tie-breaking by combatant id.
 		 */
-		protected _sortCombatants(a: Combatant<this>, b: Combatant<this>): number;
+		protected _sortCombatants(a: TCombatant<this>, b: TCombatant<this>): number;
 
 		/* -------------------------------------------- */
 		/*  Event Handlers                              */
@@ -174,40 +174,46 @@ declare global {
 
 		protected override _onCreateEmbeddedDocuments(
 			type: 'Combatant',
-			documents: Combatant[],
-			result: Combatant['_source'][],
-			options: DocumentModificationContext<Combatant>,
+			documents: TCombatant[],
+			result: TCombatant['_source'][],
+			options: DocumentModificationContext<TCombatant>,
 			userId: string,
 		): void;
 
 		protected override _onUpdateEmbeddedDocuments(
 			embeddedName: 'Combatant',
-			documents: Combatant[],
-			result: Combatant['_source'][],
-			options: DocumentModificationContext<Combatant>,
+			documents: TCombatant[],
+			result: TCombatant['_source'][],
+			options: DocumentModificationContext<TCombatant>,
 			userId: string,
 		): void;
 
 		protected override _onDeleteEmbeddedDocuments(
 			embeddedName: 'Combatant',
-			documents: Combatant[],
-			result: Combatant['_source'][],
-			options: DocumentModificationContext<Combatant>,
+			documents: TCombatant[],
+			result: TCombatant['_source'][],
+			options: DocumentModificationContext<TCombatant>,
 			userId: string,
 		): void;
+
+		protected _preCreate(
+			data: PreDocumentId<this['_source']>,
+			options: DocumentModificationContext,
+			user: User,
+		): Promise<void>;
 	}
 
 	interface Combat {
-		readonly data: foundry.data.CombatData<this, Combatant>;
+		readonly data: foundry.data.CombatData<this, TCombatant>;
 
 		// V10 shim
 		readonly flags: this['data']['flags'];
 
 		createEmbeddedDocuments(
 			embeddedName: 'Combatant',
-			data: PreCreate<Combatant['_source']>[],
-			context?: DocumentModificationContext<Combatant>,
-		): Promise<Combatant<this>[]>;
+			data: PreCreate<TCombatant['_source']>[],
+			context?: DocumentModificationContext<TCombatant>,
+		): Promise<TCombatant<this>[]>;
 	}
 
 	interface RollInitiativeOptions {

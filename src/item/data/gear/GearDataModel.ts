@@ -9,7 +9,7 @@ import { DocumentUUIDField, EnumNumberField } from '@/data/fields';
 import { MonitorDataModel } from '@/actor/data/MonitorsDataModel';
 import { IHasLinks, IHasMatrix } from '@/data/interfaces';
 import SkillUseDataModel from '@/data/SkillUseDataModel';
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import BaseItemDataModel from '@/item/data/BaseItemDataModel';
 import { MatrixAttributesDataModel } from '@/data/MatrixAttributesDataModel';
 import { MatrixSimType } from '@/data/matrix';
@@ -297,7 +297,7 @@ export default abstract class GearDataModel extends BaseItemDataModel implements
 						transfer: this.matrix!.wirelessBonus.transfer,
 					},
 				])
-			)[0] as SR6Effect;
+			)[0] as SR6ActiveEffect;
 
 			if (this.matrix?.wirelessBonus?.modifiers) {
 				await createModifiers(this.item!, effect, this.matrix!.wirelessBonus!.modifiers);

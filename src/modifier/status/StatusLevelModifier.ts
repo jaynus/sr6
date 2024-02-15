@@ -5,7 +5,9 @@ export interface StatusLevelModifierSourceData extends TestModifierSourceData {
 	level: number;
 }
 
-export abstract class StatusLevelModifier extends TestModifier<StatusLevelModifierSourceData> {
+export abstract class StatusLevelModifier<
+	TSourceData extends StatusLevelModifierSourceData = StatusLevelModifierSourceData,
+> extends TestModifier<TSourceData> {
 	get level(): number {
 		return this.data.level;
 	}
@@ -17,13 +19,7 @@ export abstract class StatusLevelModifier extends TestModifier<StatusLevelModifi
 		};
 	}
 
-	protected constructor({
-		parent,
-		source,
-		target,
-		conditions,
-		data,
-	}: ModifierConstructorData<StatusLevelModifierSourceData>) {
+	protected constructor({ parent, source, target, conditions, data }: ModifierConstructorData<TSourceData>) {
 		super({ parent, source, target, conditions, data });
 	}
 }

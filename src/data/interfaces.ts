@@ -1,5 +1,7 @@
 import BaseActorDataModel from '@/actor/data/BaseActorDataModel';
 import SR6Actor from '@/actor/SR6Actor';
+import SR6Combat from '@/combat/SR6Combat';
+import SR6Combatant from '@/combat/SR6Combatant';
 import BaseDataModel from '@/data/BaseDataModel';
 import { InitiativeType } from '@/data/index';
 import BaseItemDataModel from '@/item/data/BaseItemDataModel';
@@ -26,7 +28,19 @@ export interface IHasSystemData<T extends BaseDataModel = BaseDataModel> {
 	getSystemData?(): T;
 }
 
-export interface IHasInitiative extends IHasActor {
+export interface IHasCombat {
+	combatantCreated?(combat: SR6Combat, combatant: SR6Combatant): void;
+
+	startCombat?(combat: SR6Combat, combatant: SR6Combatant): Promise<void>;
+	endCombat?(combat: SR6Combat, combatant: SR6Combatant): Promise<void>;
+
+	startTurn?(combat: SR6Combat, combatant: SR6Combatant): Promise<void>;
+	endTurn?(combat: SR6Combat, combatant: SR6Combatant): Promise<void>;
+}
+
+export interface IHasInitiative extends IHasActor, IHasCombat {
+	hasInitiativeType(type: InitiativeType): boolean;
+
 	getInitiative(type: InitiativeType): null | InitiativeRollData;
 
 	getAvailableActions(type: InitiativeType): AvailableActions;

@@ -6,6 +6,7 @@
 
 import BaseDataModel from '@/data/BaseDataModel';
 import { IHasLinks } from '@/data/interfaces';
+import { AmmoStorageType, AmmoType } from '@/item/data/AmmoDataModel';
 import BaseItemDataModel from '@/item/data/BaseItemDataModel';
 import GearDataModel from '@/item/data/gear/GearDataModel';
 import { DamageType, FireMode, Distance } from '@/data';
@@ -82,9 +83,29 @@ export type WeaponDamage = {
 	damageType: DamageType;
 };
 
-export type WeaponAttachmentEffectData = {
-	sourceAttachmentId: ItemUUID;
-};
+export abstract class AmmoStorageDataModel extends BaseDataModel {
+	static defineSchema(): foundry.data.fields.DataSchema {
+		const fields = foundry.data.fields;
+
+		return {
+			type: new fields.StringField({
+				initial: AmmoType.Light,
+				required: true,
+				nullable: false,
+				blank: false,
+				choices: Object.values(AmmoType),
+			}),
+			storageType: new fields.StringField({
+				initial: AmmoStorageType.Clip,
+				required: true,
+				nullable: false,
+				blank: false,
+				choices: Object.values(AmmoStorageType),
+			}),
+			capacity: new fields.NumberField({ positive: true, integer: true }),
+		};
+	}
+}
 
 export default abstract class WeaponDataModel extends GearDataModel implements IHasLinks {
 	abstract attackRatings: AttackRatingDataModel;
@@ -92,6 +113,8 @@ export default abstract class WeaponDataModel extends GearDataModel implements I
 	abstract damageData: WeaponDamage;
 
 	abstract firemodes: FireMode[];
+
+	abstract ammo: Maybe<AmmoStorageDataModel>;
 
 	abstract _accessories: LinkedItemsDataModel;
 
@@ -201,6 +224,11 @@ export default abstract class WeaponDataModel extends GearDataModel implements I
 				{ initial: [], required: true, nullable: true },
 			),
 			_accessories: new fields.EmbeddedDataField(LinkedItemsDataModel, { nullable: false, required: true }),
+			ammo: new fields.EmbeddedDataField(AmmoStorageDataModel, {
+				initial: null,
+				nullable: true,
+				required: false,
+			}),
 		};
 	}
 }

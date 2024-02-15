@@ -1,0 +1,41 @@
+name: Defiance T-250
+type: weapon
+img: /systems/sr6/assets/items/shotguns.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: SHOTGUNS
+  skillUse:
+    skill: firearms
+    specialization: shotguns
+    attribute: agility
+  costFormula: '330'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 2
+  matrix: null
+  attackRatings:
+    closeFormula: '7'
+    nearFormula: '10'
+    mediumFormula: '6'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '4'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+  description: >-
+    5(m)A solid street howitzer, this semi-automatic shotgun is available in
+    either a normal-length or short-barreled version. It is gas operated and
+     feature a secondary pump action for situations where preventing jams is
+    mor e important than quickly firing a second shot (clear glitch jams with a
+    Mino r Action). The short-barreled version has a Concealability threshold of
+    3, D V 3, Attack Ratings 8/8/4/ / .
+_id: QVR9Y4dYtSCA0sVI
+_key: '!items!QVR9Y4dYtSCA0sVI'
+folder: 0jZhSKyFMAK4NHyF

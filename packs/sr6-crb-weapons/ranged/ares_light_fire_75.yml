@@ -1,0 +1,43 @@
+name: Ares Light Fire 75
+type: weapon
+img: /systems/sr6/assets/items/pistols_light.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: PISTOLS_LIGHT
+  skillUse:
+    skill: firearms
+    specialization: pistols_light
+    attribute: agility
+  costFormula: '400'
+  availability:
+    illegal: false
+    requiresLicense: true
+    rating: 3
+  matrix: null
+  attackRatings:
+    closeFormula: '10'
+    nearFormula: '7'
+    mediumFormula: '6'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '2'
+    damageType: P
+  firemodes:
+    - SS
+    - SA
+  description: >-
+    16(c)The Light Fire Series is designed for special operators.  The 70 is a
+    street standard, while the 75 is not commonly available throug h regular
+    dealers and standard legal channels. But what runner uses those? The
+    integration of a barrel-mounted silencer in both designs makes the Light Fir
+    e series nearly trid-flick silent. The 75 comes preloaded with smartlink
+    hardwar e and software, and both come with a laser sight. The silencer for
+    these model s increases the threshold for audio Perception tests by 3 for
+    the Light Fire Serie s when equipped and costs 750\xA5.
+_id: 3NGBBnJbH8ITIaZ7
+_key: '!items!3NGBBnJbH8ITIaZ7'
+folder: 0jZhSKyFMAK4NHyF

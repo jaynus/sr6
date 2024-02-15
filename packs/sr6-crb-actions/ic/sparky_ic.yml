@@ -1,0 +1,23 @@
+name: Sparky IC
+type: matrix_ic
+img: /systems/sr6/assets/matrix/ic_sparky.webp
+effects: []
+system:
+  description: >-
+    Sparky is aggressive IC that wants to bring the damage right to the user,
+    bypassing hardware entirely. If Sparky IC hits in cybercombat, it does (host
+    rating + net hits) in biofeedback damage.
+  type: ic
+  skillUse: null
+  limits:
+    activationType: major
+    activationPeriod: initiative
+  formulas:
+    attack: '@rating * 2'
+    defend: '@logic + @persona.f'
+    deviceDefend: null
+    damage: '@rating + @net_hits'
+    soak: '@firewall'
+_id: VtaTcD7FBm1XS9dv
+_key: '!items!VtaTcD7FBm1XS9dv'
+folder: tle1g5mVeSNYNEA6

@@ -1,0 +1,23 @@
+name: Track IC
+type: matrix_ic
+img: /systems/sr6/assets/matrix/ic_track.webp
+effects: []
+system:
+  description: >-
+    Track IC doesn’t do harm directly—it’s about gathering information in case
+    harm needs to be done later. If it hits in cybercombat, Track IC discovers
+    the target’s physical location.
+  type: ic
+  skillUse: null
+  limits:
+    activationType: major
+    activationPeriod: initiative
+  formulas:
+    attack: '@rating * 2'
+    defend: '@intuition + @persona.f'
+    deviceDefend: null
+    damage: null
+    soak: null
+_id: B32hksNXiu2H9s5Y
+_key: '!items!B32hksNXiu2H9s5Y'
+folder: tle1g5mVeSNYNEA6

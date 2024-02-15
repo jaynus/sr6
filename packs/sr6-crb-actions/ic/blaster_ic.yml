@@ -1,0 +1,36 @@
+name: Blaster IC
+type: matrix_ic
+img: /systems/sr6/assets/matrix/ic_blaster.webp
+effects: []
+system:
+  description: >-
+    Blaster IC isn’t fun, but at least it’s not as focused on killing you as
+    Black IC is. Yeah, it might want to subject you to all sorts of unpleasant
+    Matrix-based torture, but you have to be alive to experience pain, so that’s
+    something, right? In cyber-combat, this does (Rating) Matrix damage while
+    also link-locking the target.
+  type: ic
+  skillUse: null
+  limits:
+    activationType: major
+    activationPeriod: initiative
+  damage:
+    type:
+      - M
+  formulas:
+    attack: '@rating * 2'
+    defend: '@logic + @persona.f'
+    deviceDefend: null
+    damage: '@rating'
+    soak: '@firewall'
+  effects:
+    - target: target
+      when: onhit
+      effect:
+        name: Link-locked
+        statuses:
+          - linklocked
+        icon: systems/sr6/assets/matrix/lock.webp
+_id: 3euhbkeElTPnUhDu
+_key: '!items!3euhbkeElTPnUhDu'
+folder: tle1g5mVeSNYNEA6

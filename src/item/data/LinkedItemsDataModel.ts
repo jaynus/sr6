@@ -1,7 +1,7 @@
 import SR6Actor from '@/actor/SR6Actor';
 import BaseDataModel from '@/data/BaseDataModel';
 import { DocumentUUIDField } from '@/data/fields';
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import BaseItemDataModel from '@/item/data/BaseItemDataModel';
 import GearDataModel from '@/item/data/gear/GearDataModel';
 import SR6Item from '@/item/SR6Item';
@@ -30,11 +30,11 @@ export class LinkedItemEntryDataModel extends BaseDataModel {
 	}
 }
 
-export abstract class LinkedItemsDataModel extends BaseDataModel {
-	protected abstract _items: LinkedItemEntryDataModel[];
-	abstract slots: Maybe<string[]>;
-
-	abstract path: string;
+export class LinkedItemsDataModel extends BaseDataModel {
+	declare parent: SR6Item | SR6Actor | BaseDataModel;
+	declare _items: LinkedItemEntryDataModel[];
+	declare slots: Maybe<string[]>;
+	declare path: string;
 
 	get items(): SR6Item<BaseItemDataModel>[] {
 		return this._items.map(
@@ -60,7 +60,7 @@ export abstract class LinkedItemsDataModel extends BaseDataModel {
 			this.item!.modifiers.all = this.item!.modifiers.all.concat(linkedItem.modifiers.all);
 
 			for (const effectData of linkedItem.effects) {
-				const effect = effectData as SR6Effect;
+				const effect = effectData as SR6ActiveEffect;
 
 				for (const change of effect.changes) {
 					if (change.mode < 900) {
@@ -175,5 +175,13 @@ export abstract class LinkedItemsDataModel extends BaseDataModel {
 
 	override prepareBaseData(): void {
 		void this.clean();
+	}
+
+	constructor(
+		data?: DeepPartial<SourceFromSchema<foundry.data.fields.DataSchema>>,
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		options?: DataModelConstructionOptions<any>,
+	) {
+		super(data, options);
 	}
 }

@@ -1,0 +1,38 @@
+name: Streetline Special
+type: weapon
+img: /systems/sr6/assets/items/holdouts.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: HOLDOUTS
+  skillUse:
+    skill: firearms
+    specialization: holdouts
+    attribute: agility
+  costFormula: '200'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '8'
+    nearFormula: '8'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '3'
+    damageType: P
+  firemodes:
+    - SS
+  description: >-
+    6(c)
+
+    Designed for cheap 3D nanoprinting, the Streetline Special is made of
+    composite materials, making it harder to detect with MAD scanners
+    (increasing the threshold to detect it by 1).
+_id: 8bE2fzsBNo7pbuH3
+_key: '!items!8bE2fzsBNo7pbuH3'
+folder: 0jZhSKyFMAK4NHyF

@@ -1,0 +1,31 @@
+name: Jammer IC
+type: matrix_ic
+img: /systems/sr6/assets/matrix/ic_jammer.webp
+effects: []
+system:
+  description: >-
+    Jammer IC is an expert fencer who toys with you rather than killing you
+    outright. In cyber-combat, when Jammer IC hits, the target’s Attack
+    attribute is reduced by 1 per net hit. No actionsusing the Attack rating can
+    be performed when the Attack rating is 0. Lost points are restored after
+    leaving the host, at a rate of 1 point per minute.
+  type: ic
+  skillUse: null
+  limits:
+    activationType: major
+    activationPeriod: initiative
+  formulas:
+    attack: '@rating * 2'
+    defend: '@willpower + @persona.a'
+    deviceDefend: null
+    damage: null
+    soak: null
+  effects:
+    - target: target
+      when: onhit
+      effect:
+        name: Jammer IC
+        icon: systems/sr6/assets/matrix/ic_jammer.webp
+_id: nRJqS9zAEbOxLGRJ
+_key: '!items!nRJqS9zAEbOxLGRJ'
+folder: tle1g5mVeSNYNEA6

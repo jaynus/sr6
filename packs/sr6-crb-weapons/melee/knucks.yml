@@ -1,0 +1,35 @@
+name: Knucks
+type: weapon
+img: /systems/sr6/assets/items/pistols_light.webp
+effects: []
+system:
+  rating: 1
+  category:
+    type: weapon
+    subtype: UNARMED
+  skillUse:
+    skill: close_combat
+    specialization: unarmed
+    attribute: agility
+  costFormula: '100'
+  availability:
+    illegal: false
+    rating: 1
+  matrix: null
+  attackRatings:
+    closeFormula: '6'
+    nearFormula: '0'
+    mediumFormula: '0'
+    farFormula: '0'
+    extremeFormula: '0'
+  damageData:
+    damageFormula: '3'
+    damageType: P
+  description: >-
+    Everything from a roll of quarters in the palm (though who has that lying
+    around?) to brass knuckles to Ares Hardliner Gloves, these weapons move a
+    fist from potentially deadly to a probably deadly by augmenting the
+    structure of the hand with metals or composites.
+_id: KC4592W43jq0nV9K
+_key: '!items!KC4592W43jq0nV9K'
+folder: FvJmc1i7ebr9iEKg

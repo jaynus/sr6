@@ -10,7 +10,7 @@ import { IHasInitiative } from '@/data/interfaces';
 import InitiativeRollPrompt from '@/roll/InitiativeRollPrompt';
 import { emit as socketEmit, SOCKET_NAME, SocketPayload, SocketOperation, CombatSocketBaseData } from '@/socket';
 
-export default class SR6Combat extends Combat {
+export default class SR6Combat extends Combat<SR6Combatant> {
 	constructor(data: PreCreate<foundry.data.CombatSource>, context?: DocumentConstructionContext<Combat>) {
 		super(data, context);
 
@@ -26,19 +26,30 @@ export default class SR6Combat extends Combat {
 		super.prepareDerivedData();
 	}
 
-	override startCombat(): Promise<this> {
+	override async startCombat(): Promise<this> {
 		if (this.turns[0]) {
-			const next = this.turns[0] as SR6Combatant;
-			void next.beginTurn();
+			const next = this.turns[0];
+			await next.startTurn();
+		}
+		for (const combatant of this.combatants) {
+			await combatant.startCombat();
 		}
 
 		return super.startCombat();
 	}
 
+	override async endCombat(): Promise<this> {
+		for (const combatant of this.combatants) {
+			await combatant.endCombat();
+		}
+
+		return super.endCombat();
+	}
+
 	getCombatantData(actor: SR6Actor): null | CombatantFlagData {
 		const entry = this.combatants.find((c) => c.actor!.uuid === actor.uuid);
 		if (entry) {
-			return (entry as SR6Combatant).systemData;
+			return entry.systemData;
 		}
 
 		return null;
@@ -47,18 +58,16 @@ export default class SR6Combat extends Combat {
 	async setCombatantData(actor: SR6Actor, data: CombatantFlagData): Promise<void> {
 		const entry = this.combatants.find((c) => c.actor!.uuid === actor.uuid);
 		if (entry) {
-			await (entry as SR6Combatant)._setSystemData(data);
+			await entry._setSystemData(data);
 		}
 	}
 
 	override nextTurn(): Promise<this> {
 		if (this.nextCombatant) {
-			const next = this.nextCombatant! as SR6Combatant;
-			void next.beginTurn();
+			void this.nextCombatant!.startTurn();
 		}
 		if (this.combatant) {
-			const current = this.combatant! as SR6Combatant;
-			void current.endTurn();
+			void this.combatant!.endTurn();
 		}
 
 		socketEmit(SocketOperation.UpdateCombatTracker, { combatId: this.id });
@@ -66,15 +75,13 @@ export default class SR6Combat extends Combat {
 		return super.nextTurn();
 	}
 
-	override previousTurn(): Promise<this> {
+	override async previousTurn(): Promise<this> {
 		if (this.previous && this.previous.combatantId && this.turn > 0) {
-			const next = this.combatants.get(this.previous!.combatantId!) as SR6Combatant;
-			void next.beginTurn();
+			await this.combatants.get(this.previous!.combatantId!).startTurn();
 		}
 
 		if (this.combatant) {
-			const current = this.combatant! as SR6Combatant;
-			void current.endTurn();
+			await this.combatant!.endTurn();
 		}
 
 		socketEmit(SocketOperation.UpdateCombatTracker, { combatId: this.id });
@@ -104,7 +111,7 @@ export default class SR6Combat extends Combat {
 		const messages = [];
 		for (const [i, id] of ids.entries()) {
 			// Get Combatant data (non-strictly)
-			const combatant = this.combatants.get(id) as SR6Combatant;
+			const combatant = this.combatants.get(id);
 			if (!combatant?.isOwner) continue;
 
 			// Produce an initiative roll for the Combatant

@@ -8,7 +8,7 @@ import { ItemSheetContext, RootContext } from '@/vue/SheetContext';
 import Localized from '@/vue/components/Localized.vue';
 import Editor from '@/vue/components/Editor.vue';
 import EffectsView from '@/vue/views/EffectsView.vue';
-import SR6Effect from '@/effect/SR6Effect';
+import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 
 const props = withDefaults(
 	defineProps<{
@@ -32,7 +32,9 @@ const system = computed(() => (context.data.item as SR6Item<GearDataModel>).syst
 // We have to:
 //   1. Use an 'any' typing to skirt around TypeScript's complaints.
 //   2. Keep a local ref that gets updated in onBeforeUpdate in order to work around some struggles with Foundry.
-const effects = computed<SR6Effect[]>(() => [...(Array.from(toRaw(context.data.item).effects) as SR6Effect[])]);
+const effects = computed<SR6ActiveEffect[]>(() => [
+	...(Array.from(toRaw(context.data.item).effects) as SR6ActiveEffect[]),
+]);
 
 async function addEffect(category: string) {
 	await toRaw(context.sheet.item).createEmbeddedDocuments('ActiveEffect', [
