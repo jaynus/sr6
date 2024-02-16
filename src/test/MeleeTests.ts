@@ -5,7 +5,7 @@ import SR6Item from '@/item/SR6Item';
 import PhysicalSoakTest from '@/test/PhysicalSoakTest';
 import SR6Roll from '@/roll/SR6Roll';
 import { PhysicalAttackTestData } from '@/test/AttackTestData';
-import BaseTest, { BaseTestData, TestSourceData } from '@/test/BaseTest';
+import BaseTest, { BaseTestData, TestConstructorData, TestSourceData } from '@/test/BaseTest';
 import { ITest, RollDataDelta, TestType } from '@/test/index';
 import { getTargetActorIds } from '@/util';
 import { Component } from 'vue';
@@ -51,7 +51,7 @@ export class MeleeAttackTest extends BaseTest<MeleeAttackTestData> {
 
 	soak(defenseTest: MeleeDefenseTest): ITest {
 		return new PhysicalSoakTest({
-			actor: defenseTest.actor,
+			actor: defenseTest.actor as unknown as SR6Actor<LifeformDataModel>,
 			data: {
 				pool: defenseTest.actor.solveFormula(this.weapon.systemData.damageData?.soakFormula),
 				threshold: this.damage - defenseTest.roll!.hits,
@@ -69,20 +69,8 @@ export class MeleeAttackTest extends BaseTest<MeleeAttackTestData> {
 		return AttackPromptComponent;
 	}
 
-	constructor({
-		actor,
-		item,
-		data,
-		roll,
-		delta,
-	}: {
-		actor: SR6Actor<LifeformDataModel>;
-		item: SR6Item;
-		data?: MeleeAttackTestData;
-		roll?: SR6Roll;
-		delta?: RollDataDelta;
-	}) {
-		const weapon = item as SR6Item<WeaponDataModel>;
+	constructor(args: TestConstructorData<MeleeAttackTestData, LifeformDataModel>) {
+		const weapon = args.item as SR6Item<WeaponDataModel>;
 		const defaultData = {
 			targetIds: getTargetActorIds(),
 			damage: weapon.systemData.damage,
@@ -90,15 +78,11 @@ export class MeleeAttackTest extends BaseTest<MeleeAttackTestData> {
 			pool: weapon.systemData.pool,
 		};
 
-		super({
-			actor,
-			item,
-			data: data
-				? foundry.utils.mergeObject(data, defaultData, { overwrite: false, inplace: true })
-				: defaultData,
-			roll,
-			delta,
-		});
+		args.data = args.data
+			? foundry.utils.mergeObject(args.data, defaultData, { overwrite: false, inplace: true })
+			: defaultData;
+
+		super(args);
 
 		this.weapon = weapon;
 		this._baseDamage = this.weapon.systemData.damage;
@@ -128,23 +112,11 @@ export class MeleeDefenseTest extends BaseTest<MeleeDefenseTestData> {
 		return DefenseChatComponent;
 	}
 
-	constructor({
-		actor,
-		item,
-		data,
-		delta,
-		roll,
-	}: {
-		actor: SR6Actor;
-		item?: SR6Item;
-		data: MeleeDefenseTestData;
-		delta?: RollDataDelta;
-		roll?: SR6Roll;
-	}) {
+	constructor(args: TestConstructorData<MeleeDefenseTestData, LifeformDataModel>) {
 		// Set the threshold automatically from the opposed data
-		const opposedTest = BaseTest.fromData<MeleeAttackTest>(data.opposedData);
+		const opposedTest = BaseTest.fromData<MeleeAttackTest>(args.data.opposedData);
 		if (opposedTest.ok) {
-			data.threshold = opposedTest.val.roll?.hits;
+			args.data.threshold = opposedTest.val.roll?.hits;
 		} else {
 			throw opposedTest.val;
 		}

@@ -101,20 +101,8 @@ export class SpellCastTest extends BaseTest<SpellCastTestData> {
 		return ActionPromptComponent;
 	}
 
-	constructor({
-		actor,
-		item,
-		data,
-		roll,
-		delta,
-	}: {
-		actor: SR6Actor<LifeformDataModel>;
-		item: SR6Item;
-		data?: SpellCastTestData;
-		roll?: SR6Roll;
-		delta?: RollDataDelta;
-	}) {
-		const spell = item as SR6Item<SpellDataModel>;
+	constructor(args: TestConstructorData<SpellCastTestData, LifeformDataModel>) {
+		const spell = args.item as SR6Item<SpellDataModel>;
 		const defaultData = {
 			targetIds: getTargetActorIds(),
 			damage: spell.systemData.getDamage(),
@@ -128,15 +116,11 @@ export class SpellCastTest extends BaseTest<SpellCastTestData> {
 			},
 		};
 
-		super({
-			actor,
-			item,
-			data: data
-				? foundry.utils.mergeObject(data, defaultData, { overwrite: false, inplace: true })
-				: defaultData,
-			roll,
-			delta,
-		});
+		args.data = args.data
+			? foundry.utils.mergeObject(args.data, defaultData, { overwrite: false, inplace: true })
+			: defaultData;
+
+		super(args);
 		this.spell = spell;
 	}
 }
@@ -164,29 +148,17 @@ export class SpellDrainTest extends BaseTest<SpellDrainTestData> {
 		}
 	}
 
-	constructor({
-		actor,
-		item,
-		data,
-		delta,
-		roll,
-	}: {
-		actor: SR6Actor<LifeformDataModel>;
-		item?: SR6Item;
-		data: SpellDefenseTestData;
-		delta?: RollDataDelta;
-		roll?: SR6Roll;
-	}) {
+	constructor(args: TestConstructorData<SpellDefenseTestData, LifeformDataModel>) {
 		// Set the threshold automatically from the opposed data
-		const opposedTest = BaseTest.fromData<SpellCastTest>(data.opposedData);
+		const opposedTest = BaseTest.fromData<SpellCastTest>(args.data.opposedData);
 		if (opposedTest.ok) {
-			data.threshold = opposedTest.val.data.drain;
-			data.pool = actor.systemData.spellDrainPool;
+			args.data.threshold = opposedTest.val.data.drain;
+			args.data.pool = args.actor.systemData.spellDrainPool;
 		} else {
 			throw opposedTest.val;
 		}
 
-		super({ actor, item, data, roll, delta });
+		super(args);
 
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		this.opposedTest = opposedTest.val;
@@ -232,29 +204,17 @@ export class SpellDefenseTest extends BaseTest<SpellDefenseTestData> {
 		return DefenseChatComponent;
 	}
 
-	constructor({
-		actor,
-		item,
-		data,
-		delta,
-		roll,
-	}: {
-		actor: SR6Actor<LifeformDataModel>;
-		item?: SR6Item;
-		data: SpellDefenseTestData;
-		delta?: RollDataDelta;
-		roll?: SR6Roll;
-	}) {
+	constructor(args: TestConstructorData<SpellDefenseTestData, LifeformDataModel>) {
 		// Set the threshold automatically from the opposed data
-		const opposedTest = BaseTest.fromData<SpellCastTest>(data.opposedData);
+		const opposedTest = BaseTest.fromData<SpellCastTest>(args.data.opposedData);
 		if (opposedTest.ok) {
-			data.threshold = opposedTest.val.roll?.hits;
-			data.pool = opposedTest.val.spell.systemData.getDefensePool(actor);
+			args.data.threshold = opposedTest.val.roll?.hits;
+			args.data.pool = opposedTest.val.spell.systemData.getDefensePool(args.actor);
 		} else {
 			throw opposedTest.val;
 		}
 
-		super({ actor, item, data, roll, delta });
+		super(args);
 
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		this.opposedTest = opposedTest.val;

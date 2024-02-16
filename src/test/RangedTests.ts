@@ -6,7 +6,7 @@ import WeaponDataModel from '@/item/data/gear/WeaponDataModel';
 import SR6Item from '@/item/SR6Item';
 import SR6Roll from '@/roll/SR6Roll';
 import { PhysicalAttackTestData } from '@/test/AttackTestData';
-import BaseTest, { BaseTestData, TestSourceData } from '@/test/BaseTest';
+import BaseTest, { BaseTestData, TestConstructorData, TestSourceData } from '@/test/BaseTest';
 import { ITest, RollDataDelta, TestType } from '@/test/index';
 import PhysicalSoakTest from '@/test/PhysicalSoakTest';
 import AttackChatComponent from '@/test/vue/chat/RangedAttackTest.vue';
@@ -43,7 +43,7 @@ export class RangedAttackTest extends BaseTest<RangedAttackTestData> {
 		return this._baseDamage;
 	}
 
-	opposed(actor: SR6Actor, item: undefined | SR6Item = undefined): RangedDefenseTest {
+	opposed(actor: SR6Actor<LifeformDataModel>, item: undefined | SR6Item = undefined): RangedDefenseTest {
 		return new RangedDefenseTest({
 			actor,
 			item,
@@ -57,7 +57,7 @@ export class RangedAttackTest extends BaseTest<RangedAttackTestData> {
 
 	soak(defenseTest: RangedDefenseTest): ITest {
 		return new PhysicalSoakTest({
-			actor: defenseTest.actor,
+			actor: defenseTest.actor as unknown as SR6Actor<LifeformDataModel>,
 			data: {
 				pool: defenseTest.actor.solveFormula(this.weapon.systemData.damageData?.soakFormula),
 				threshold: this.damage - defenseTest.roll!.hits,
@@ -86,20 +86,8 @@ export class RangedAttackTest extends BaseTest<RangedAttackTestData> {
 		);
 	}
 
-	constructor({
-		actor,
-		item,
-		data,
-		roll,
-		delta,
-	}: {
-		actor: SR6Actor<LifeformDataModel>;
-		item: SR6Item;
-		data?: RangedAttackTestData;
-		roll?: SR6Roll;
-		delta?: RollDataDelta;
-	}) {
-		const weapon = item as SR6Item<WeaponDataModel>;
+	constructor(args: TestConstructorData<RangedAttackTestData, LifeformDataModel>) {
+		const weapon = args.item as SR6Item<WeaponDataModel>;
 		const defaultData = {
 			targetIds: getTargetActorIds(),
 			damage: weapon.systemData.damage,
@@ -109,15 +97,11 @@ export class RangedAttackTest extends BaseTest<RangedAttackTestData> {
 			pool: weapon.systemData.pool,
 		};
 
-		super({
-			actor,
-			item,
-			data: data
-				? foundry.utils.mergeObject(data, defaultData, { overwrite: false, inplace: true })
-				: defaultData,
-			roll,
-			delta,
-		});
+		args.data = args.data
+			? foundry.utils.mergeObject(args.data, defaultData, { overwrite: false, inplace: true })
+			: defaultData;
+
+		super(args);
 
 		this._baseDamage = this.weapon.systemData.damage;
 	}
@@ -150,28 +134,16 @@ export class RangedDefenseTest extends BaseTest<RangedDefenseTestData> {
 		return attribute === EnumAttribute.agility || attribute === EnumAttribute.intuition;
 	}
 
-	constructor({
-		actor,
-		item,
-		data,
-		delta,
-		roll,
-	}: {
-		actor: SR6Actor;
-		item?: SR6Item;
-		data: RangedDefenseTestData;
-		delta?: RollDataDelta;
-		roll?: SR6Roll;
-	}) {
+	constructor(args: TestConstructorData<RangedDefenseTestData, LifeformDataModel>) {
 		// Set the threshold automatically from the opposed data
-		const opposedTest = BaseTest.fromData<RangedAttackTest>(data.opposedData);
+		const opposedTest = BaseTest.fromData<RangedAttackTest>(args.data.opposedData);
 		if (opposedTest.ok) {
-			data.threshold = opposedTest.val.roll?.hits;
+			args.data.threshold = opposedTest.val.roll?.hits;
 		} else {
 			throw opposedTest.val;
 		}
 
-		super({ actor, item, data, roll, delta });
+		super(args);
 
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		this.opposedTest = opposedTest.val;

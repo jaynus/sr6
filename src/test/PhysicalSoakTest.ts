@@ -1,9 +1,7 @@
 import { EnumAttribute } from '@/actor/data';
-import SR6Actor from '@/actor/SR6Actor';
-import SR6Item from '@/item/SR6Item';
-import SR6Roll from '@/roll/SR6Roll';
-import BaseTest, { BaseTestData } from '@/test/BaseTest';
-import { RollDataDelta, TestType } from '@/test/index';
+import LifeformDataModel from '@/actor/data/LifeformDataModel';
+import BaseTest, { BaseTestData, TestConstructorData } from '@/test/BaseTest';
+import { TestType } from '@/test/index';
 import { RangedDefenseTestData } from '@/test/RangedTests';
 import ChatComponent from '@/test/vue/chat/PhysicalSoakTest.vue';
 
@@ -38,19 +36,7 @@ export default class PhysicalSoakTest extends BaseTest<PhysicalSoakTestData> {
 		return attribute === EnumAttribute.body;
 	}
 
-	constructor({
-		actor,
-		item,
-		data,
-		delta,
-		roll,
-	}: {
-		actor: SR6Actor;
-		item?: SR6Item;
-		data: PhysicalSoakTestData;
-		delta?: RollDataDelta;
-		roll?: SR6Roll;
-	}) {
-		super({ actor, item, data, delta, roll });
+	constructor(args: TestConstructorData<PhysicalSoakTestData, LifeformDataModel>) {
+		super(args);
 	}
 }
