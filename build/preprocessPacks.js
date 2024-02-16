@@ -20,7 +20,7 @@ async function createMissingIds() {
 		const oldYaml = fs.readFileSync(srcpath, { encoding: 'utf8', flag: 'r' });
 		const obj = yaml.load(oldYaml);
 		if (obj) {
-			if (obj._key.includes('!folders!')) {
+			if (obj._key && obj._key.includes('!folders!')) {
 				continue;
 			}
 
@@ -118,5 +118,5 @@ async function createMissingFolders() {
 	}
 }
 
-await createMissingIds();
 await createMissingFolders();
+await createMissingIds();

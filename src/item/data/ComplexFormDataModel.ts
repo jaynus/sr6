@@ -1,22 +1,25 @@
 import { Duration } from '@/data';
+import TestDataModel from '@/data/TestDataModel';
 import BaseItemDataModel from '@/item/data/BaseItemDataModel';
-
-export type ComplexFormFormulas = {
-	fade: string;
-	test: string;
-};
 
 export type ComplexFormDurationData = {
 	type: Duration;
 	value: number;
 };
 
+export type ComplexFormTestData = {
+	use: Maybe<TestDataModel>;
+	opposed: Maybe<TestDataModel>;
+};
+
 export default abstract class ComplexFormDataModel extends BaseItemDataModel {
 	abstract duration: ComplexFormDurationData;
-	abstract formulas: ComplexFormFormulas;
+	abstract fadeFormula: string;
+
+	abstract tests: ComplexFormTestData;
 
 	get fade(): number {
-		return this.solveFormula(this.formulas.fade);
+		return this.solveFormula(this.fadeFormula);
 	}
 
 	static override defineSchema(): foundry.data.fields.DataSchema {
@@ -37,10 +40,19 @@ export default abstract class ComplexFormDataModel extends BaseItemDataModel {
 				},
 				{ required: true, nullable: false },
 			),
-			formulas: new fields.SchemaField({
-				fade: new fields.StringField({ initial: '0', required: true, nullable: false }),
-				test: new fields.StringField({ initial: null, required: true, nullable: true }),
+			tests: new fields.SchemaField({
+				use: new fields.EmbeddedDataField(TestDataModel, {
+					initial: undefined,
+					required: false,
+					nullable: true,
+				}),
+				opposed: new fields.EmbeddedDataField(TestDataModel, {
+					initial: undefined,
+					required: false,
+					nullable: true,
+				}),
 			}),
+			fadeFormula: new fields.StringField({ initial: '0', required: true, nullable: false }),
 		};
 	}
 }

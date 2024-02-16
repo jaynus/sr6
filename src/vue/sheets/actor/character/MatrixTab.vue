@@ -2,6 +2,7 @@
 import CharacterDataModel from '@/actor/data/CharacterDataModel';
 import { MagicAwakenedType } from '@/data/magic';
 import MatrixActionDataModel from '@/item/data/action/MatrixActionDataModel';
+import ComplexFormDataModel from '@/item/data/ComplexFormDataModel';
 import MatrixPersonaDataModel from '@/item/data/feature/MatrixPersonaDataModel';
 import GearDataModel, { GearMatrixDataModel } from '@/item/data/gear/GearDataModel';
 
@@ -9,6 +10,7 @@ import SR6Item from '@/item/SR6Item';
 import { MatrixActionTest } from '@/test/MatrixTests';
 import { deleteItem } from '@/vue/directives';
 import { ActorSheetContext, RootContext } from '@/vue/SheetContext';
+import ItemListView from '@/vue/views/ItemListView.vue';
 import MatrixPersonaView from '@/vue/views/MatrixPersonaView.vue';
 import ProgramSlotsView from '@/vue/views/ProgramSlotsView.vue';
 import MonitorView from '@/vue/views/MonitorView.vue';
@@ -31,6 +33,12 @@ const matrixDevices = computed(() =>
 		.map((i) => i as SR6Item<GearDataModel>)
 		.filter((i) => i.systemData.matrix)
 		.sort((a, b) => a.name.localeCompare(b.name)),
+);
+
+const complexForms = computed(() =>
+	toRaw(context.data.actor)
+		.items.filter((i) => i.type === 'complexform')
+		.map((i) => i as SR6Item<ComplexFormDataModel>),
 );
 
 const deviceVisible = ref(
@@ -156,6 +164,10 @@ async function getMatrixActionPool(action: SR6Item<MatrixActionDataModel>): Prom
 	} else {
 		return 0;
 	}
+}
+
+async function rollComplexForm(complexForm: SR6Item<ComplexFormDataModel>): void {
+	await toRaw(complexForm).systemData.tests.use?.execute();
 }
 
 onBeforeUpdate(() => {
@@ -333,6 +345,19 @@ onBeforeUpdate(() => {
 					</template>
 				</table>
 			</div>
+			<ItemListView
+				title="Complex Forms"
+				type="complexform"
+				class="section-complex-forms"
+				:actor="context.data.actor"
+				:items="complexForms"
+			>
+				<template v-slot:customActions="slotProps">
+					<a @click="rollComplexForm(slotProps.item as SR6Item<ComplexFormDataModel>)"
+						><i class="roll-button">&nbsp;&nbsp;&nbsp;&nbsp;</i></a
+					>
+				</template>
+			</ItemListView>
 		</div>
 	</section>
 </template>

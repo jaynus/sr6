@@ -1,0 +1,22 @@
+name: Cat's Eyes
+type: augmentation
+img: /systems/sr6/assets/items/cyber_headware.webp
+effects: []
+system:
+  description: >-
+    These transgenic vat-grown implants are very literally cats’ eyes with a
+    modified DNA profile and occipital connecting structures. The structure of
+    cat’s eyes amplifies light and enhances night vi-sion, providing low-light
+    vision (p. 72). Cat’s eyes are slit and reflective, just like, well, a
+    cat’s. This bioware is obviously not compatible with cyberware eye
+    replacements, but individual vision enhancements can be purchased.
+  essenceCostFormula: '0.1'
+  cost: '4000'
+  availability:
+    illegal: false
+    rating: 3
+  activation:
+    mode: always
+_id: F7mrlyVc2TiOOnfv
+_key: '!items!F7mrlyVc2TiOOnfv'
+folder: jsFh6uFWdxgV0TB4

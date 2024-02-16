@@ -6,6 +6,7 @@ import SR6Item from '@/item/SR6Item';
 import { IModifier } from '@/modifier';
 import SR6Roll from '@/roll/SR6Roll';
 import { BaseTestData } from '@/test/BaseTest';
+import { ComplexFormFadeTest, ComplexFormOpposedTest, ComplexFormUseTest } from '@/test/ComplexFormTests';
 import ContactTest from '@/test/ContactTest';
 import { MeleeAttackTest, MeleeDefenseTest } from '@/test/MeleeTests';
 import { KnowledgeTest, LanguageTest, MemoryTest } from '@/test/MemoryTests';
@@ -55,6 +56,10 @@ export enum TestType {
 	SpellDefense = 'SpellDefenseTest',
 	SpellSoak = 'SpellSoakTest',
 
+	ComplexFormUse = 'ComplexFormUseTest',
+	ComplexFormFade = 'ComplexFormFadeTest',
+	ComplexFormOpposed = 'ComplexFormOpposedTest',
+
 	// Memory
 	Memory = 'MemoryTest',
 	Knowledge = 'KnowledgeTest',
@@ -92,6 +97,11 @@ export function config(): Record<string, unknown> {
 		SpellDrainTest: SpellDrainTest,
 		SpellDefenseTest: SpellDefenseTest,
 		SpellSoakTest: SpellSoakTest,
+
+		// Complex Forms
+		ComplexFormUseTest: ComplexFormUseTest,
+		ComplexFormFadeTest: ComplexFormFadeTest,
+		ComplexFormOpposedTest: ComplexFormOpposedTest,
 
 		// Logic
 		MemoryTest: MemoryTest,

@@ -18,7 +18,7 @@ const weapons = computed(() =>
 		.map((i) => i as SR6Item<WeaponDataModel>)
 		.sort(
 			(a, b) =>
-				a.systemData.category.type.localeCompare(b.systemData.category.type) || a.name.localeCompare(b.name),
+				a.systemData.category.type?.localeCompare(b.systemData.category.type) || a.name.localeCompare(b.name),
 		)
 		.filter((i) => !i.systemData.isProxy),
 );
@@ -29,7 +29,7 @@ const wearables = computed(() =>
 		.map((i) => i as SR6Item<WearableDataModel>)
 		.sort(
 			(a, b) =>
-				a.systemData.category.type.localeCompare(b.systemData.category.type) || a.name.localeCompare(b.name),
+				a.systemData.category.type?.localeCompare(b.systemData.category.type) || a.name.localeCompare(b.name),
 		)
 		.filter((i) => !i.systemData.isProxy),
 );
@@ -40,7 +40,7 @@ const gear = computed(() =>
 		.map((i) => i as SR6Item<WeaponDataModel>)
 		.sort(
 			(a, b) =>
-				a.systemData.category.type.localeCompare(b.systemData.category.type) || a.name.localeCompare(b.name),
+				a.systemData.category.type?.localeCompare(b.systemData.category.type) || a.name.localeCompare(b.name),
 		)
 		.filter((i) => !i.systemData.isProxy),
 );

@@ -73,6 +73,10 @@ export default abstract class LifeformDataModel
 		return this.solveFormula(`@willpower + @${MAGIC_TRADITION_ATTRIBUTE[this.magicTradition]}`);
 	}
 
+	get fadePool(): number {
+		return this.solveFormula(`@willpower + @logic`);
+	}
+
 	get spellAmps(): number {
 		return this.solveFormula(`max(@magic, @sorcery)`);
 	}

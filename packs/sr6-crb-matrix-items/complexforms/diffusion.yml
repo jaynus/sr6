@@ -1,0 +1,28 @@
+name: Diffusion
+type: complexform
+img: /systems/sr6/assets/matrix/program.webp
+effects: []
+system:
+  type: hacking
+  source: CRB p.190
+  description: >-
+    Make an Electronics + Resonance vs Willpower + Firewall opposed test. Each
+    net hit reduces (attribute) by 1, to a minimum of 1. Can be purchased
+    multiple times, with each time targeting a different attribute.
+  activation:
+    mode: manual
+    type: major
+  tests:
+    use:
+      testClass: ComplexFormUseTest
+      skill: electronics
+      attributes:
+        - resonance
+    opposed:
+      testClass: ComplexFormUseTest
+      attributes:
+        - willpower
+        - firewall
+folder: yxthFNV1ZOh9fGQt
+_id: 03MKtfCfYqHvocdU
+_key: '!items!03MKtfCfYqHvocdU'

@@ -1,0 +1,22 @@
+name: Cleaner
+type: complexform
+img: /systems/sr6/assets/matrix/program.webp
+effects: []
+system:
+  type: hacking
+  source: CRB p.190
+  description: >-
+    Make an Electronics + Resonance test. Each hit reduces your Overwatch Score
+    by 1.
+  activation:
+    mode: manual
+    type: major
+  tests:
+    use:
+      testClass: ComplexFormUseTest
+      skill: electronics
+      attributes:
+        - resonance
+folder: yxthFNV1ZOh9fGQt
+_id: X6w6ulkfe7HuakLg
+_key: '!items!X6w6ulkfe7HuakLg'
