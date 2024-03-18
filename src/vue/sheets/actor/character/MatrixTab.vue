@@ -166,7 +166,7 @@ async function getMatrixActionPool(action: SR6Item<MatrixActionDataModel>): Prom
 	}
 }
 
-async function rollComplexForm(complexForm: SR6Item<ComplexFormDataModel>): void {
+async function rollComplexForm(complexForm: SR6Item<ComplexFormDataModel>): Promise<void> {
 	await toRaw(complexForm).systemData.tests.use?.execute();
 }
 

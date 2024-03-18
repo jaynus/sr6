@@ -3,10 +3,9 @@ import SR6Actor from '@/actor/SR6Actor';
 import SpellDataModel, { damageFromSpellAdjustments, drainFromSpellAdjustments } from '@/item/data/SpellDataModel';
 import { SpellAdjustments, SpellAdjustmentType } from '@/data/magic';
 import SR6Item from '@/item/SR6Item';
-import SR6Roll from '@/roll/SR6Roll';
 import { AttackTestData } from '@/test/AttackTestData';
 import BaseTest, { BaseTestData, TestConstructorData, TestSourceData } from '@/test/BaseTest';
-import { ITest, RollDataDelta, TestType } from '@/test/index';
+import { ITest, TestType } from '@/test/index';
 import { getTargetActorIds } from '@/util';
 import { Result } from 'ts-results';
 import { Component } from 'vue';
@@ -22,8 +21,8 @@ import DefenseChatComponent from '@/test/vue/chat/SpellDefenseTest.vue';
 import SoakChatComponent from '@/test/vue/chat/SpellSoakTest.vue';
 
 export interface SpellCastTestData extends AttackTestData {
-	drain: number;
-	adjustments: SpellAdjustments;
+	drain?: number;
+	adjustments?: SpellAdjustments;
 }
 
 export class SpellCastTest extends BaseTest<SpellCastTestData> {
@@ -49,17 +48,17 @@ export class SpellCastTest extends BaseTest<SpellCastTestData> {
 		if (this.roll) {
 			return (
 				this.spell.systemData.getDamage(this.roll.getRollData()) +
-				damageFromSpellAdjustments(this.data.adjustments)
+				damageFromSpellAdjustments(this.data.adjustments!)
 			);
 		} else {
-			return this.spell.systemData.getDamage() + damageFromSpellAdjustments(this.data.adjustments);
+			return this.spell.systemData.getDamage() + damageFromSpellAdjustments(this.data.adjustments!);
 		}
 	}
 
 	override async performRoll(): Promise<Result<null, string>> {
 		// save amp values and then execute
-		this.data.drain = this.baseData.drain + drainFromSpellAdjustments(this.data.adjustments);
-		this.data.damage = this.baseData.damage! + drainFromSpellAdjustments(this.data.adjustments);
+		this.data.drain = this.baseData.drain! + drainFromSpellAdjustments(this.data.adjustments!);
+		this.data.damage = this.baseData.damage! + drainFromSpellAdjustments(this.data.adjustments!);
 
 		return super.performRoll();
 	}
@@ -142,9 +141,9 @@ export class SpellDrainTest extends BaseTest<SpellDrainTestData> {
 
 	get drain(): number {
 		if (this.roll) {
-			return Math.max(0, this.opposedTest.data.drain - this.roll!.hits);
+			return Math.max(0, this.opposedTest.data.drain! - this.roll!.hits);
 		} else {
-			return this.opposedTest.data.drain;
+			return this.opposedTest.data.drain!;
 		}
 	}
 
@@ -152,7 +151,7 @@ export class SpellDrainTest extends BaseTest<SpellDrainTestData> {
 		// Set the threshold automatically from the opposed data
 		const opposedTest = BaseTest.fromData<SpellCastTest>(args.data.opposedData);
 		if (opposedTest.ok) {
-			args.data.threshold = opposedTest.val.data.drain;
+			args.data.threshold = opposedTest.val.data.drain!;
 			args.data.pool = args.actor.systemData.spellDrainPool;
 		} else {
 			throw opposedTest.val;
@@ -182,12 +181,12 @@ export class SpellDefenseTest extends BaseTest<SpellDefenseTestData> {
 				this.opposedTest.spell.systemData.getDamage(
 					this.opposedTest.roll!.getRollData(),
 					this.roll.getRollData(),
-				) + damageFromSpellAdjustments(this.opposedTest.data.adjustments)
+				) + damageFromSpellAdjustments(this.opposedTest.data.adjustments!)
 			);
 		} else {
 			return (
 				this.opposedTest.spell.systemData.getDamage() +
-				damageFromSpellAdjustments(this.opposedTest.data.adjustments)
+				damageFromSpellAdjustments(this.opposedTest.data.adjustments!)
 			);
 		}
 	}
@@ -250,9 +249,9 @@ export class SpellSoakTest extends BaseTest<SpellSoakTestData> {
 
 	constructor(args: TestConstructorData<SpellSoakTestData, LifeformDataModel>) {
 		const defenseTest = BaseTest.fromData<SpellDefenseTest>(args.data.defenseTest);
-		if (defenseTest.ok) {
-			args.data.threshold = defenseTest.val.damage;
-			args.data.pool = defenseTest.val.opposedTest.spell.systemData.getSoakPool(args.actor);
+		if (defenseTest.ok && args.data) {
+			args.data!.threshold = defenseTest.val.damage;
+			args.data!.pool = defenseTest.val.opposedTest.spell.systemData.getSoakPool(args.actor);
 		}
 		super(args);
 

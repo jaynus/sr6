@@ -52,7 +52,6 @@ function toggleEquip(item: SR6Item<WeaponDataModel> | SR6Item<WearableDataModel>
 		} else {
 			system.value.equipped.weapon = item as unknown as SR6Item<WeaponDataModel>;
 		}
-	} else {
 	}
 }
 

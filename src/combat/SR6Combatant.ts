@@ -4,12 +4,10 @@
  * @file
  */
 
-import LifeformDataModel from '@/actor/data/LifeformDataModel';
 import SR6Actor from '@/actor/SR6Actor';
 import SR6Combat from '@/combat/SR6Combat';
 import { InitiativeType } from '@/data';
 import { IHasInitiative, AvailableActions } from '@/data/interfaces';
-import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 
 export type CombatantFlagData = {
 	initiativeType: InitiativeType;
@@ -87,6 +85,7 @@ export default class SR6Combatant extends Combatant<SR6Combat, SR6Actor> {
 		console.log('SR6Combatant::startCombat', this.actor.name);
 		await this.actor.startCombat?.(this.parent, this);
 	}
+
 	async endCombat(): Promise<void> {
 		console.log('SR6Combatant::endCombat', this.actor.name);
 		await this.actor.endCombat?.(this.parent, this);

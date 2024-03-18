@@ -8,10 +8,11 @@ interface BurningEffectSourceData extends BaseEffectSourceData {
 }
 
 export class BurningEffect extends BaseEffect<BurningEffectSourceData> {
-	async startCombat(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+	async startCombat(combat: SR6Combat, _combatant: SR6Combatant): Promise<void> {
 		console.log('BurningEffect::startCombat', this.data, combat);
 	}
-	async startTurn(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
+
+	async startTurn(combat: SR6Combat, _combatant: SR6Combatant): Promise<void> {
 		console.log('BurningEffect::startTurn', this.data, combat);
 	}
 

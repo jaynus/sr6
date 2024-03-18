@@ -3,7 +3,6 @@
  * @author jaynus
  * @file Effect registration
  */
-import { ClassData, getClass } from '@/data/serialize';
 import SR6ActiveEffect from '@/effect/SR6ActiveEffect';
 import { BurningEffect } from '@/effect/impl/BurningEffect';
 import SR6ActiveEffectSheet from '@/effect/SR6ActiveEffectSheet';

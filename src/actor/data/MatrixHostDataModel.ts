@@ -1,7 +1,5 @@
 import BaseActorDataModel from '@/actor/data/BaseActorDataModel';
 import { MonitorDataModel } from '@/actor/data/MonitorsDataModel';
-import SR6Combat from '@/combat/SR6Combat';
-import SR6Combatant from '@/combat/SR6Combatant';
 import { InitiativeType } from '@/data';
 import { DocumentUUIDField } from '@/data/fields';
 import { AvailableActions, IHasInitiative, IHasMatrix, IHasMatrixPersona, IHasPostCreate } from '@/data/interfaces';

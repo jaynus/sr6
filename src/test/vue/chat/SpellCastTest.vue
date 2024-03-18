@@ -54,9 +54,9 @@ async function executeDrainTest() {
 
 function hasAdjustment() {
 	return (
-		toRaw(props.test).data.adjustments[SpellAdjustmentType.AmpUp] ||
-		toRaw(props.test).data.adjustments[SpellAdjustmentType.IncreaseArea] ||
-		toRaw(props.test).data.adjustments[SpellAdjustmentType.ShiftArea]
+		toRaw(props.test).data.adjustments![SpellAdjustmentType.AmpUp] ||
+		toRaw(props.test).data.adjustments![SpellAdjustmentType.IncreaseArea] ||
+		toRaw(props.test).data.adjustments![SpellAdjustmentType.ShiftArea]
 	);
 }
 </script>
@@ -82,7 +82,7 @@ function hasAdjustment() {
 					&nbsp;
 				</a>
 				<FloatCollapse class="formula" :when="visibility.damageFormula">
-					{{ toRaw(test).baseDamage }} + {{ damageFromSpellAdjustments(toRaw(test).data.adjustments) }} +
+					{{ toRaw(test).baseDamage }} + {{ damageFromSpellAdjustments(toRaw(test).data.adjustments!) }} +
 					{{ test.roll?.hits }} = {{ toRaw(test).damage }}
 				</FloatCollapse>
 			</div>
@@ -94,12 +94,12 @@ function hasAdjustment() {
 				</a>
 				<FloatCollapse class="formula" :when="visibility.drainFormula">
 					{{ toRaw(test.spell).systemData.drain }} +
-					{{ drainFromSpellAdjustments(toRaw(test).data.adjustments) }} = {{ test.data.drain }}
+					{{ drainFromSpellAdjustments(toRaw(test).data.adjustments!) }} = {{ test.data.drain }}
 				</FloatCollapse>
 			</div>
 			<div class="chat-head" v-if="hasAdjustment()">Adjustments</div>
-			<div v-if="toRaw(test).data.adjustments[SpellAdjustmentType.AmpUp]">
-				Amp Up: {{ toRaw(test).data.adjustments[SpellAdjustmentType.AmpUp] }}
+			<div v-if="toRaw(test).data.adjustments![SpellAdjustmentType.AmpUp]">
+				Amp Up: {{ toRaw(test).data.adjustments![SpellAdjustmentType.AmpUp] }}
 			</div>
 		</div>
 		<Targets v-if="test.targets.length > 0" :targets="test.targets" />

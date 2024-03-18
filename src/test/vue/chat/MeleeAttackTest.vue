@@ -1,5 +1,6 @@
 /* eslint-disable vue/multi-word-component-names */
 <script lang="ts" setup>
+import LifeformDataModel from '@/actor/data/LifeformDataModel';
 import { isTargetOwner } from '@/test/AttackTestData';
 import { MeleeAttackTest } from '@/test/MeleeTests';
 import { getSelfActor, getSelfOrSelectedActors } from '@/util';
@@ -31,7 +32,7 @@ async function executeOpposedTest() {
 		const result = await toRaw(props.test).opposed?.(getSelfActor()).execute();
 		showRoll.value = !result.ok;
 	} else {
-		for (const actor of getSelfOrSelectedActors()) {
+		for (const actor of getSelfOrSelectedActors<LifeformDataModel>()) {
 			await toRaw(props.test).opposed?.(actor).execute();
 		}
 	}

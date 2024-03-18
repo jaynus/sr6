@@ -19,15 +19,16 @@ export class ComplexFormUseTest extends BaseTest<ComplexFormUseTestData> {
 	complexForm: SR6Item<ComplexFormDataModel>;
 
 	get hasOpposed(): boolean {
-		return this.complexForm.systemData.tests.opposed != null;
+		return this.complexForm.systemData.tests.opposed !== null;
 	}
 
 	opposed(actor: SR6Actor<LifeformDataModel>, item: undefined | SR6Item = undefined): ComplexFormOpposedTest {
-		if (this.complexForm.systemData.tests.opposed != null) {
+		if (this.complexForm.systemData.tests.opposed !== null) {
 			return new ComplexFormOpposedTest({
 				actor,
 				item,
 				data: {
+					// eslint-disable-next-line @typescript-eslint/no-explicit-any
 					opposedData: this.toJSON() as any,
 				},
 			});
@@ -35,7 +36,7 @@ export class ComplexFormUseTest extends BaseTest<ComplexFormUseTestData> {
 		throw 'err';
 	}
 
-	constructor(args: TestConstructorData<ComplexFormUseTestData>) {
+	constructor(args: TestConstructorData<ComplexFormUseTestData, LifeformDataModel>) {
 		const complexForm = args.item as SR6Item<ComplexFormDataModel>;
 		const defaultData = {
 			targetIds: getTargetActorIds(),

@@ -31,7 +31,11 @@ const adeptpowers = computed(() =>
 );
 
 async function rollSpell(spell: SR6Item<SpellDataModel>) {
-	await new SpellCastTest({ actor: toRaw(context.data.actor), item: spell }).execute();
+	await new SpellCastTest({
+		actor: toRaw(context.data.actor),
+		item: spell,
+		data: { drain: undefined, adjustments: undefined },
+	}).execute();
 }
 
 async function rollAttribute(attribute: EnumAttribute) {

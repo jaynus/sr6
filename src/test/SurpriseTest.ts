@@ -18,11 +18,9 @@ export class SurpriseTest extends BaseTest {
 	}
 
 	constructor(args: TestConstructorData<BaseTestData, LifeformDataModel>) {
-		if (!args.data.pool) {
-			args.data.pool =
-				args.actor.systemData.attribute(EnumAttribute.reaction).value +
-				args.actor.systemData.attribute(EnumAttribute.intuition).value;
-		}
+		args.data.pool =
+			args.actor.systemData.attribute(EnumAttribute.reaction).value +
+			args.actor.systemData.attribute(EnumAttribute.intuition).value;
 
 		super(args);
 	}

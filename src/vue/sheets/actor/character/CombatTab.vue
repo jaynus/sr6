@@ -106,12 +106,12 @@ async function useGeneralAction(action: SR6Item<GeneralActionDataModel>) {
 			return;
 		}
 		if (weapon.systemData.isMelee) {
-			await new MeleeAttackTest({ actor: toRaw(context.data.actor), item: weapon }).execute();
+			await new MeleeAttackTest({ actor: toRaw(context.data.actor), item: weapon, data: {} }).execute();
 		} else {
-			await new RangedAttackTest({ actor: toRaw(context.data.actor), item: weapon }).execute();
+			await new RangedAttackTest({ actor: toRaw(context.data.actor), item: weapon, data: {} }).execute();
 			// TODO: consume and use
 		}
-	} else if (action.name == 'Cast Spell') {
+	} else if (action.name === 'Cast Spell') {
 		const selectedSpell = await DialogPrompt.prompt<SR6Item<SpellDataModel>, { choices: SR6Item[] }>(
 			VueSelectItemPrompt,
 			{ choices: toRaw(context.data.actor).items.filter((i) => i.type === 'spell') as SR6Item[] },
@@ -122,7 +122,11 @@ async function useGeneralAction(action: SR6Item<GeneralActionDataModel>) {
 			},
 		);
 		if (selectedSpell) {
-			await new SpellCastTest({ actor: toRaw(context.data.actor), item: toRaw(selectedSpell) }).execute();
+			await new SpellCastTest({
+				actor: toRaw(context.data.actor),
+				item: toRaw(selectedSpell),
+				data: {},
+			}).execute();
 		}
 	} else {
 		let consume = false;

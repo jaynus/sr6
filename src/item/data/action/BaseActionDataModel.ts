@@ -209,10 +209,12 @@ export default abstract class BaseActionDataModel extends BaseItemDataModel {
 		super.prepareBaseData();
 		this.effects.forEach((effect) => effect.prepareBaseData());
 	}
+
 	override prepareData(): void {
 		super.prepareData();
 		this.effects.forEach((effect) => effect.prepareData());
 	}
+
 	override prepareDerivedData(): void {
 		super.prepareDerivedData();
 		this.effects.forEach((effect) => effect.prepareDerivedData());

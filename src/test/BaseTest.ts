@@ -362,7 +362,7 @@ export default abstract class BaseTest<TData extends BaseTestData = BaseTestData
 
 	protected constructor(args: TestConstructorData<TData>) {
 		this.delta = args.delta || {};
-		this.baseData = args.data;
+		this.baseData = args.data!;
 		this.actor = args.actor;
 		this.item = args.item;
 		this.roll = args.roll;

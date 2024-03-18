@@ -33,7 +33,6 @@ import { ContextBase } from '@/vue/SheetContext';
 import VueSheet from '@/vue/VueSheet';
 import { Err, Ok, Result } from 'ts-results';
 import { Component } from 'vue';
-import { toRaw } from 'vue/dist/vue';
 
 export enum ImportAction {
 	Skip,

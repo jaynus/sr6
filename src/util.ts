@@ -1,3 +1,4 @@
+import BaseActorDataModel from '@/actor/data/BaseActorDataModel';
 import SR6Actor from '@/actor/SR6Actor';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -77,27 +78,27 @@ export async function waitForCanvasTokens(): Promise<void> {
 }
 
 /// /
-export function getSelfOrSelectedActors(): SR6Actor[] {
-	let actors: SR6Actor[] = [];
+export function getSelfOrSelectedActors<T extends BaseActorDataModel>(): SR6Actor<T>[] {
+	let actors: SR6Actor<T>[] = [];
 
 	if ((game as Game).user!.isGM) {
-		actors = getSelectedActors();
+		actors = getSelectedActors<T>();
 	} else {
-		actors = [getSelfActor()];
+		actors = [getSelfActor<T>()];
 	}
 
 	return actors;
 }
 
-export function getSelfActor(): SR6Actor {
-	return (game as Game).user!.character as SR6Actor;
+export function getSelfActor<T extends BaseActorDataModel>(): SR6Actor<T> {
+	return (game as Game).user!.character as SR6Actor<T>;
 }
 
-export function getSelectedActors(): SR6Actor[] {
+export function getSelectedActors<T extends BaseActorDataModel>(): SR6Actor<T>[] {
 	return getSelectedTokens()
 		.filter((token) => token.actor !== null)
 		.map((token) => {
-			return token.actor as SR6Actor;
+			return token.actor as SR6Actor<T>;
 		});
 }
 

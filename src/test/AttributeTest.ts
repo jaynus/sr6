@@ -23,7 +23,7 @@ export default class AttributeTest extends BaseTest<AttributeTestData> {
 	}
 
 	constructor(args: TestConstructorData<AttributeTestData, LifeformDataModel>) {
-		args.data.pool = args.actor.systemData.attribute(args.data.attribute).pool;
+		args.data!.pool = args.actor.systemData.attribute(args.data!.attribute).pool;
 		super(args);
 	}
 }

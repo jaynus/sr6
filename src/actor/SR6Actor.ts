@@ -26,7 +26,6 @@ import GearDataModel from '@/item/data/gear/GearDataModel';
 import SR6Item from '@/item/SR6Item';
 import { Modifiers, ModifiersSourceData, ModifierTarget } from '@/modifier';
 import FormulaRoll from '@/roll/FormulaRoll';
-import { SR6Token } from '@/token/SR6Token';
 import * as util from '@/util';
 
 export interface SR6ActorFlags {
@@ -65,6 +64,7 @@ export default class SR6Actor<ActorDataModel extends foundry.abstract.DataModel 
 		(<IHasCombat>this.systemData).combatantCreated?.(combat, combatant);
 		this.effects.forEach((effect) => (effect as SR6ActiveEffect).combatantCreated?.(combat, combatant));
 	}
+
 	async startCombat(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
 		await (<IHasCombat>this.systemData).startCombat?.(combat, combatant);
 		for (const effect of this.effects) {

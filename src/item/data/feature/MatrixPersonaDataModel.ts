@@ -74,6 +74,7 @@ export default abstract class MatrixPersonaDataModel extends BaseItemDataModel {
 	hasInitiativeType(type: InitiativeType): boolean {
 		return type === InitiativeType.Matrix;
 	}
+
 	getInitiative(type: InitiativeType): null | InitiativeRollData {
 		if (type !== InitiativeType.Matrix) {
 			return null;

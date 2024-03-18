@@ -64,9 +64,9 @@ export default abstract class AugmentationDataModel
 	}
 
 	async onUpdate(
-		changed: DeepPartial<SR6Item<AugmentationDataModel>['_source']>,
-		options: DocumentUpdateContext<SR6Item<AugmentationDataModel>>,
-		userId: string,
+		_changed: DeepPartial<SR6Item<AugmentationDataModel>['_source']>,
+		_options: DocumentUpdateContext<SR6Item<AugmentationDataModel>>,
+		_userId: string,
 	): Promise<void> {
 		for (const uuid of this._attachedGearIds) {
 			const item = getItemSync(SR6Item, uuid);

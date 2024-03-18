@@ -25,7 +25,7 @@ export abstract class CharacterEquippedDataModel extends BaseDataModel {
 	abstract _armor: ItemUUID | undefined | null;
 	abstract _head: ItemUUID | undefined | null;
 
-	async equip(item: SR6Item<WearableDataModel> | SR6Item<WeaponDataModel>): Promise<void> {}
+	async equip(_: SR6Item<WearableDataModel> | SR6Item<WeaponDataModel>): Promise<void> {}
 
 	get weapon(): null | SR6Item<WeaponDataModel> {
 		return this._weapon ? getItemSync(SR6Item<WeaponDataModel>, this._weapon!) : null;

@@ -58,6 +58,7 @@ export default class SR6Item<ItemDataModel extends BaseDataModel = BaseDataModel
 		(<IHasCombat>this.systemData).combatantCreated?.(combat, combatant);
 		this.effects.forEach((effect) => (effect as SR6ActiveEffect).combatantCreated?.(combat, combatant));
 	}
+
 	async startCombat(combat: SR6Combat, combatant: SR6Combatant): Promise<void> {
 		await (<IHasCombat>this.systemData).startCombat?.(combat, combatant);
 		for (const effect of this.effects) {
@@ -173,6 +174,7 @@ export default class SR6Item<ItemDataModel extends BaseDataModel = BaseDataModel
 			await this.effects.get(itemId)!.delete();
 		}
 	}
+
 	applyActiveEffects(): void {
 		// console.log('SR6Item::applyActiveEffects', this.name);
 		const overrides = {};

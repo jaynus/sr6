@@ -108,7 +108,7 @@ export default class SR6ActiveEffect extends ActiveEffect implements IHasCombat 
 
 		if (this.parent) {
 			if (this.parent instanceof SR6Item) {
-				//this.disabled = this.parent.systemData.activation.status;
+				// this.disabled = this.parent.systemData.activation.status;
 			}
 		}
 

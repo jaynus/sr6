@@ -1,5 +1,6 @@
 /* eslint-disable vue/multi-word-component-names */
 <script lang="ts" setup>
+import LifeformDataModel from '@/actor/data/LifeformDataModel';
 import { MonitorType } from '@/actor/data/MonitorsDataModel';
 import { ChatContext, ChatMessageContext } from '@/chat/SR6ChatMessage';
 import ChatHeader from '@/chat/vue/ChatHeader.vue';
@@ -54,7 +55,7 @@ function getDamage(): number {
 }
 
 async function applyDamage(type: MonitorType) {
-	for (const actor of getSelfOrSelectedActors()) {
+	for (const actor of getSelfOrSelectedActors<LifeformDataModel>()) {
 		if (type !== MonitorType.Matrix) {
 			await toRaw(actor.systemData.monitors.applyDamage(type, getDamage()));
 		} else {
@@ -67,7 +68,7 @@ async function applyDamage(type: MonitorType) {
 }
 
 async function applyHealing(type: MonitorType) {
-	for (const actor of getSelfOrSelectedActors()) {
+	for (const actor of getSelfOrSelectedActors<LifeformDataModel>()) {
 		await toRaw(actor.systemData.monitors.applyHeal(type, getDamage()));
 	}
 }

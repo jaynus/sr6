@@ -23,28 +23,28 @@ const maxAmps = ref((toRaw(props.test.actor).systemData as LifeformDataModel).sp
 function currentAmps(): number {
 	let n = 0;
 
-	n += props.test.data.adjustments[SpellAdjustmentType.AmpUp];
-	n += props.test.data.adjustments[SpellAdjustmentType.ShiftArea];
-	n += props.test.data.adjustments[SpellAdjustmentType.IncreaseArea];
+	n += props.test.data.adjustments![SpellAdjustmentType.AmpUp];
+	n += props.test.data.adjustments![SpellAdjustmentType.ShiftArea];
+	n += props.test.data.adjustments![SpellAdjustmentType.IncreaseArea];
 
 	return n;
 }
 
 function adjustAmp(amp: SpellAdjustmentType, val: number) {
-	if (props.test.data.adjustments[amp] === 0 && val === -1) {
+	if (props.test.data.adjustments![amp] === 0 && val === -1) {
 		return;
 	}
 	if (currentAmps() === maxAmps.value && val === 1) {
 		return;
 	}
-	props.test.data.adjustments[amp] += val;
+	props.test.data.adjustments![amp] += val;
 }
 
 function currentDamage(): number {
-	return toRaw(props.test).spell.systemData.baseDamage + damageFromSpellAdjustments(props.test.data.adjustments);
+	return toRaw(props.test).spell.systemData.baseDamage + damageFromSpellAdjustments(props.test.data.adjustments!);
 }
 function currentDrain(): number {
-	return toRaw(props.test).spell.systemData.drain + drainFromSpellAdjustments(props.test.data.adjustments);
+	return toRaw(props.test).spell.systemData.drain + drainFromSpellAdjustments(props.test.data.adjustments!);
 }
 
 emit('setText', {
@@ -70,7 +70,7 @@ emit('setText', {
 						<a class="fa-solid fa-plus" @click.prevent="adjustAmp(SpellAdjustmentType.AmpUp, 1)"></a
 						><a class="fa-solid fa-minus" @click.prevent="adjustAmp(SpellAdjustmentType.AmpUp, -1)"></a>
 					</td>
-					<td class="amp-number">{{ test.data.adjustments[SpellAdjustmentType.AmpUp] }}</td>
+					<td class="amp-number">{{ test.data.adjustments![SpellAdjustmentType.AmpUp] }}</td>
 					<td class="amp-title"><Localized label="SR6.Magic.SpellAdjustments.AmpUp.Name" /></td>
 					<td class="amp-description"><Localized label="SR6.Magic.SpellAdjustments.AmpUp.Description" /></td>
 				</tr>
@@ -82,7 +82,7 @@ emit('setText', {
 							@click.prevent="adjustAmp(SpellAdjustmentType.IncreaseArea, -1)"
 						></a>
 					</td>
-					<td class="amp-number">{{ test.data.adjustments[SpellAdjustmentType.IncreaseArea] }}</td>
+					<td class="amp-number">{{ test.data.adjustments![SpellAdjustmentType.IncreaseArea] }}</td>
 					<td class="amp-title"><Localized label="SR6.Magic.SpellAdjustments.IncreaseArea.Name" /></td>
 					<td class="amp-description">
 						<Localized label="SR6.Magic.SpellAdjustments.IncreaseArea.Description" />
@@ -93,7 +93,7 @@ emit('setText', {
 						<a class="fa-solid fa-plus" @click.prevent="adjustAmp(SpellAdjustmentType.ShiftArea, 1)"></a
 						><a class="fa-solid fa-minus" @click.prevent="adjustAmp(SpellAdjustmentType.ShiftArea, -1)"></a>
 					</td>
-					<td class="amp-number">{{ test.data.adjustments[SpellAdjustmentType.ShiftArea] }}</td>
+					<td class="amp-number">{{ test.data.adjustments![SpellAdjustmentType.ShiftArea] }}</td>
 					<td class="amp-title"><Localized label="SR6.Magic.SpellAdjustments.ShiftArea.Name" /></td>
 					<td class="amp-description">
 						<Localized label="SR6.Magic.SpellAdjustments.ShiftArea.Description" />

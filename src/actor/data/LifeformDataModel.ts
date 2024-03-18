@@ -3,8 +3,6 @@ import AttributeDataModel from '@/actor/data/AttributeDataModel';
 import BaseActorDataModel from '@/actor/data/BaseActorDataModel';
 import MonitorsDataModel from '@/actor/data/MonitorsDataModel';
 import MonitorDataModel, { WoundModifierData } from '@/actor/data/MonitorsDataModel';
-import SR6Combat from '@/combat/SR6Combat';
-import SR6Combatant from '@/combat/SR6Combatant';
 import { InitiativeType } from '@/data';
 import InitiativeDataModel from '@/data/InitiativeDataModel';
 
@@ -114,7 +112,7 @@ export default abstract class LifeformDataModel
 			case InitiativeType.Astral:
 				return false;
 			case InitiativeType.Matrix: {
-				return this.matrixPersona != null;
+				return this.matrixPersona !== null;
 			}
 		}
 	}

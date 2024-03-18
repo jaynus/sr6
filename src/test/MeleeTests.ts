@@ -3,10 +3,9 @@ import SR6Actor from '@/actor/SR6Actor';
 import WeaponDataModel from '@/item/data/gear/WeaponDataModel';
 import SR6Item from '@/item/SR6Item';
 import PhysicalSoakTest from '@/test/PhysicalSoakTest';
-import SR6Roll from '@/roll/SR6Roll';
 import { PhysicalAttackTestData } from '@/test/AttackTestData';
 import BaseTest, { BaseTestData, TestConstructorData, TestSourceData } from '@/test/BaseTest';
-import { ITest, RollDataDelta, TestType } from '@/test/index';
+import { ITest, TestType } from '@/test/index';
 import { getTargetActorIds } from '@/util';
 import { Component } from 'vue';
 
@@ -37,7 +36,7 @@ export class MeleeAttackTest extends BaseTest<MeleeAttackTestData> {
 		return this._baseDamage;
 	}
 
-	opposed(actor: SR6Actor, item: undefined | SR6Item = undefined): MeleeDefenseTest {
+	opposed(actor: SR6Actor<LifeformDataModel>, item: undefined | SR6Item = undefined): MeleeDefenseTest {
 		return new MeleeDefenseTest({
 			actor,
 			item,
@@ -121,7 +120,7 @@ export class MeleeDefenseTest extends BaseTest<MeleeDefenseTestData> {
 			throw opposedTest.val;
 		}
 
-		super({ actor, item, data, roll, delta });
+		super(args);
 
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		this.opposedTest = opposedTest.val;

@@ -59,7 +59,7 @@ export default class TestDataModel extends BaseDataModel {
 					nullable: false,
 					blank: false,
 					required: true,
-					//choices: () => Object.keys(EnumAttribute),
+					// choices: () => Object.keys(EnumAttribute),
 				}),
 				{ initial: [] },
 			),
