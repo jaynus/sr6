@@ -162,3 +162,7 @@ export function isAlpha(str: string): boolean {
 	}
 	return true;
 }
+
+export function stripUndefined(obj: object): void {
+	Object.keys(obj).forEach((key: any) => (obj[key as keyof {}] === undefined ? delete obj[key as keyof {}] : {}));
+}

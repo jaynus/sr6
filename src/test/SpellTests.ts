@@ -6,7 +6,7 @@ import SR6Item from '@/item/SR6Item';
 import { AttackTestData } from '@/test/AttackTestData';
 import BaseTest, { BaseTestData, TestConstructorData, TestSourceData } from '@/test/BaseTest';
 import { ITest, TestType } from '@/test/index';
-import { getTargetActorIds } from '@/util';
+import { stripUndefined, getTargetActorIds } from '@/util';
 import { Result } from 'ts-results';
 import { Component } from 'vue';
 
@@ -75,7 +75,7 @@ export class SpellCastTest extends BaseTest<SpellCastTestData> {
 				},
 			});
 		}
-		throw 'err';
+		throw 'Attempting opposed roll on something that isnt canDefend';
 	}
 
 	soak(defenseTest: SpellDefenseTest): ITest {
@@ -89,7 +89,7 @@ export class SpellCastTest extends BaseTest<SpellCastTestData> {
 				},
 			});
 		}
-		throw 'err';
+		throw 'Attempting opposed roll on something that isnt canSoak';
 	}
 
 	chatComponent(): Component {
@@ -115,6 +115,7 @@ export class SpellCastTest extends BaseTest<SpellCastTestData> {
 			},
 		};
 
+		stripUndefined(args.data);
 		args.data = args.data
 			? foundry.utils.mergeObject(args.data, defaultData, { overwrite: false, inplace: true })
 			: defaultData;

@@ -350,8 +350,20 @@ export default abstract class VehicleDataModel
 
 			seats: new fields.SchemaField(
 				{
-					front: new fields.NumberField({ nullable: false, required: true, min: 0, integer: true }),
-					back: new fields.NumberField({ nullable: false, required: true, min: 0, integer: true }),
+					front: new fields.NumberField({
+						nullable: false,
+						required: true,
+						min: 0,
+						integer: true,
+						initial: 2,
+					}),
+					back: new fields.NumberField({
+						nullable: false,
+						required: true,
+						min: 0,
+						integer: true,
+						initial: 2,
+					}),
 				},
 				{ nullable: false, required: true },
 			),

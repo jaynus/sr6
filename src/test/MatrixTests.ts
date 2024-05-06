@@ -17,7 +17,7 @@ import SoakChatComponent from '@/test/vue/chat/MatrixSoakTest.vue';
 import ActionPromptComponent from '@/test/vue/prompt/MatrixActionTest.vue';
 
 import DefensePromptComponent from '@/test/vue/prompt/MatrixDefenseTest.vue';
-import { getTargetActorIds } from '@/util';
+import { stripUndefined, getTargetActorIds } from '@/util';
 import { Component } from 'vue';
 
 export interface MatrixActionTestData extends AttackTestData {}
@@ -28,9 +28,6 @@ export class MatrixActionTest extends BaseTest<MatrixActionTestData> {
 	}
 
 	get matrixAction(): SR6Item<MatrixActionDataModel> {
-		if (!this.item || this.item!.type !== 'matrix_action') {
-			ui.notifications.error('invalid item or no item for matrix action!?');
-		}
 		return this.item! as SR6Item<MatrixActionDataModel>;
 	}
 
@@ -74,7 +71,7 @@ export class MatrixActionTest extends BaseTest<MatrixActionTestData> {
 				},
 			});
 		}
-		throw 'err';
+		throw 'Attempting opposed roll on something that isnt canDefend';
 	}
 
 	soak(defenseTest: MatrixDefenseTest): ITest {
@@ -88,7 +85,7 @@ export class MatrixActionTest extends BaseTest<MatrixActionTestData> {
 				},
 			});
 		}
-		throw 'err';
+		throw 'Attempting opposed roll on something that isnt canSoak';
 	}
 
 	override hasAttribute(attribute: EnumAttribute): boolean {
@@ -136,6 +133,10 @@ export class MatrixActionTest extends BaseTest<MatrixActionTestData> {
 			attackRating: matrixAction.systemData.getAttackRating(),
 			pool: matrixAction.systemData.pool,
 		};
+
+		if (data) {
+			stripUndefined(data);
+		}
 
 		super({
 			actor,

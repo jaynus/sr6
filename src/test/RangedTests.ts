@@ -12,7 +12,7 @@ import AttackChatComponent from '@/test/vue/chat/RangedAttackTest.vue';
 import DefenseChatComponent from '@/test/vue/chat/RangedDefenseTest.vue';
 
 import AttackPromptComponent from '@/test/vue/prompt/RangedAttackTest.vue';
-import { getTargetActorIds } from '@/util';
+import { stripUndefined, getTargetActorIds } from '@/util';
 import { Component } from 'vue';
 
 export interface RangedAttackTestData extends PhysicalAttackTestData {
@@ -96,6 +96,7 @@ export class RangedAttackTest extends BaseTest<RangedAttackTestData> {
 			pool: weapon.systemData.pool,
 		};
 
+		stripUndefined(args.data);
 		args.data = args.data
 			? foundry.utils.mergeObject(args.data, defaultData, { overwrite: false, inplace: true })
 			: defaultData;

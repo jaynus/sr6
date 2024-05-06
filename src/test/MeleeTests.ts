@@ -6,7 +6,7 @@ import PhysicalSoakTest from '@/test/PhysicalSoakTest';
 import { PhysicalAttackTestData } from '@/test/AttackTestData';
 import BaseTest, { BaseTestData, TestConstructorData, TestSourceData } from '@/test/BaseTest';
 import { ITest, TestType } from '@/test/index';
-import { getTargetActorIds } from '@/util';
+import { stripUndefined, getTargetActorIds } from '@/util';
 import { Component } from 'vue';
 
 import AttackPromptComponent from '@/test/vue/prompt/MeleeAttackTest.vue';
@@ -77,6 +77,7 @@ export class MeleeAttackTest extends BaseTest<MeleeAttackTestData> {
 			pool: weapon.systemData.pool,
 		};
 
+		stripUndefined(args.data);
 		args.data = args.data
 			? foundry.utils.mergeObject(args.data, defaultData, { overwrite: false, inplace: true })
 			: defaultData;

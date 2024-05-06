@@ -84,3 +84,25 @@ button:hover {
 .active {
 	color: white;
 }
+
+img {
+	color: #ffffff;
+}
+
+.sr6logo-icon {
+	position: relative;
+	width: 24px;
+	line-height: 24px;
+	float: left;
+	margin-right: 1px;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+
+	color: white;
+	background-color: white;
+
+	background-image: url(/systems/sr6/assets/SR6Logo3.png);
+}

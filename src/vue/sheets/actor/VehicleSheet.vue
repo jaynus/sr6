@@ -4,6 +4,7 @@ import VehicleDataModel from '@/actor/data/VehicleDataModel';
 import SR6Actor from '@/actor/SR6Actor';
 import { getActor } from '@/util';
 import { getEventValue } from '@/vue/directives';
+import BaseVehicleStats from '@/vue/views/BaseVehicleStats.vue';
 import { computed, toRaw, inject, ref } from 'vue';
 import { ActorSheetContext, RootContext } from '@/vue/SheetContext';
 import BasicActorSheet from '@/vue/sheets/actor/BasicActorSheet.vue';
@@ -84,11 +85,7 @@ async function setOccupant(idx: number, actor: Maybe<SR6Actor>) {
 	<BasicActorSheet show-effects-tab>
 		<template v-slot:data>
 			<div class="vehicle-sheet">
-				<div class="vehicle-info">
-					<div class="section-title">Information</div>
-					<div>Max Acceleration: {{ system.stats.acceleration }}</div>
-					<div>Max Speed: {{ system.stats.maxSpeed }}</div>
-				</div>
+				<BaseVehicleStats />
 				<div class="vehicle-current">
 					<div class="section">
 						<div class="section-title">

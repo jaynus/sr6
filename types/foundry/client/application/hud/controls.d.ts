@@ -2,7 +2,7 @@ declare interface SceneControlTool {
 	name: string;
 	title: string;
 	icon: string;
-	visible: boolean;
+	visible?: boolean;
 	toggle?: boolean;
 	active?: boolean;
 	button?: boolean;
@@ -10,6 +10,7 @@ declare interface SceneControlTool {
 }
 
 declare interface SceneControl {
+	activeTool: string;
 	name: string;
 	icon: string;
 	title: string;

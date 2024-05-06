@@ -4,6 +4,7 @@
  * @file System Entry Point
  */
 
+import { SR6Layer } from '@/app/SR6Layer';
 import { register as registerConfig, ready as readyConfigs } from '@/config';
 import { register as registerCombat } from '@/combat';
 import { register as registerEnrichers } from '@/enrichers';
@@ -15,6 +16,8 @@ import { register as registerModifiers } from '@/modifier';
 import { register as registerTests } from 'src/test';
 import { register as registerFonts } from '@/fonts';
 import { register as registerEdge } from '@/edge/';
+
+import { getSceneControlButtons } from '@/app/SR6SceneControls';
 
 import { onChatLogEntryContext } from '@/chat';
 
@@ -61,6 +64,10 @@ Hooks.once('init', async () => {
 	registerToken();
 	registerModifiers();
 	registerEdge();
+
+	CONFIG.Canvas.layers = foundry.utils.mergeObject(CONFIG.Canvas.layers, {
+		sr6: { layerClass: SR6Layer, group: 'primary' },
+	});
 });
 
 Hooks.once('ready', async () => {
@@ -112,4 +119,9 @@ Hooks.on('renderActorDirectory', async (_app: ActorDirectory<Actor>, html: JQuer
 
 Hooks.on('getChatLogEntryContext', function (html: JQuery, data: ContextMenuEntry[]) {
 	onChatLogEntryContext(html, data);
+});
+
+Hooks.on('getSceneControlButtons', function (controls: SceneControl[]) {
+	console.log('getSceneControlButtons', controls);
+	getSceneControlButtons(controls);
 });

@@ -5,7 +5,7 @@ import SR6Item from '@/item/SR6Item';
 import { AttackTestData } from '@/test/AttackTestData';
 import BaseTest, { BaseTestData, TestConstructorData, TestSourceData } from '@/test/BaseTest';
 import { TestType } from '@/test/index';
-import { getTargetActorIds } from '@/util';
+import { stripUndefined, getTargetActorIds } from '@/util';
 
 export interface ComplexFormUseTestData extends AttackTestData {
 	fade?: number;
@@ -43,7 +43,7 @@ export class ComplexFormUseTest extends BaseTest<ComplexFormUseTestData> {
 			pool: complexForm.systemData.tests.use!.pool,
 			fade: complexForm.systemData.fade,
 		};
-
+		stripUndefined(args.data);
 		args.data = args.data
 			? foundry.utils.mergeObject(args.data, defaultData, { overwrite: false, inplace: true })
 			: defaultData;

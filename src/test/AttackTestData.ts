@@ -14,7 +14,7 @@ export interface PhysicalAttackTestData extends AttackTestData {
 }
 
 export function getAttackDataTargets(data: AttackTestData): SR6Actor[] {
-	if (!data.targetIds) {
+	if (!data || Object.prototype.hasOwnProperty.call(data, 'targetIds') || !data.targetIds) {
 		return [];
 	}
 
